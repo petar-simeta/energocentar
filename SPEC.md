@@ -104,6 +104,39 @@ File location:
 
 ---
 
+## Navigation Requirements
+
+### Desktop navigation
+
+- Do not include "Početna" (logo links to homepage)
+- Keep menu compact; must fit in one row
+- Allowed to use a dropdown if needed
+
+Recommended structure:
+
+- Usluge (dropdown):
+  - Energetski certifikati
+  - Procjena nekretnina
+  - Etažiranje
+- FAQ
+- Cjenik
+- O nama
+- CTA button/link on the right: Kontakt
+
+### Mobile navigation
+
+- Hamburger menu
+- Opens a full-screen overlay panel
+- Contains the same items as desktop navigation:
+  - Usluge (expandable section or list)
+  - FAQ
+  - Cjenik
+  - O nama
+  - Kontakt
+- Clear close button and accessible focus handling
+
+---
+
 ## 7) Global Requirements (All Pages)
 
 - Mobile-first, responsive
@@ -116,11 +149,26 @@ File location:
 - Canonical URLs
 - Open Graph
 
-Header/Footer must always show:
+### Header
 
-- phone + email as clickable links (tel/mailto)
-- copy-to-clipboard icon next to each
-- toast "E-mail adresa kopirana" ili "Telefonski broj kopiran" on copy
+- Sticky header
+- Logo (clickable, links to homepage)
+- Primary navigation (compact, must fit in one row on desktop)
+- One CTA link/button on the right: "Kontakt" (accent color)
+- Header must NOT display phone/email (keep header clean)
+- Header must use the full logo (icon + text) from `/public/brand/logo.svg`
+- Icon-only logo (`logo-icon.svg`) must NOT be used in the header
+- Icon-only logo may be used in other contexts if needed (e.g. mobile menu toggle), but not as the primary header logo
+
+### Footer
+
+- Footer must show full NAP:
+  - ENERGOCENTAR d.o.o.
+  - OIB: 33876995825
+  - Phone (click-to-call) + copy icon
+  - Email (mailto) + copy icon
+  - Service area: Zagreb + okolica Zagreba + Hrvatska
+- Legal links in footer
 
 No contact form anywhere.
 
@@ -162,34 +210,34 @@ Implementation:
 
 1. Sticky Header
 
-   - Logo
+   - Logo (links to homepage)
    - Navigation
-   - Contact actions (tel/mailto + copy icons)
+   - CTA: "Kontakt"
 
-2. Hero (H1)
+2) Hero (H1)
 
    - Clear promise + short supporting copy
    - Primary CTA: “Nazovi” + secondary “Pošalji email” (no form)
 
-3. Services Overview (3 cards)
+3) Services Overview (3 cards)
 
    - Energetski certifikati
    - Procjena vrijednosti nekretnina
    - Etažiranje
 
-4. How it works (3–4 steps)
+4) How it works (3–4 steps)
 
-5. Trust Indicators
+5) Trust Indicators
 
    - Iskustvo, stručnost, ovlaštenja (placeholder)
 
-6. Local SEO Block
+6) Local SEO Block
 
    - Zagreb + okolica + Hrvatska
 
-7. CTA Block
+7) CTA Block
 
-8. Footer
+8) Footer
    - ENERGOCENTAR d.o.o., OIB
    - phone/email with copy icons
    - legal links

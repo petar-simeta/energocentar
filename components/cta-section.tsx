@@ -1,5 +1,6 @@
 import { Phone, Mail, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { siteConfig } from "@/lib/config/site"
 
 export function CtaSection() {
   return (
@@ -15,9 +16,9 @@ export function CtaSection() {
 
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button asChild size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 sm:w-auto">
-              <a href="tel:+385912345678" className="flex items-center justify-center gap-2">
+              <a href={`tel:${siteConfig.phone.href}`} className="flex items-center justify-center gap-2">
                 <Phone className="h-5 w-5" />
-                +385 91 234 5678
+                {siteConfig.phone.display}
               </a>
             </Button>
             <Button
@@ -26,9 +27,9 @@ export function CtaSection() {
               size="lg"
               className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground sm:w-auto bg-transparent"
             >
-              <a href="mailto:info@energocert.hr" className="flex items-center justify-center gap-2">
+              <a href={`mailto:${siteConfig.email}`} className="flex items-center justify-center gap-2">
                 <Mail className="h-5 w-5" />
-                info@energocert.hr
+                {siteConfig.email}
                 <ArrowRight className="h-4 w-4" />
               </a>
             </Button>

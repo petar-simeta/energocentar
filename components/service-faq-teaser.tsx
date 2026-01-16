@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { ArrowRight, HelpCircle } from "lucide-react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { siteConfig } from "@/lib/config/site"
 
 interface FaqItem {
   question: string
@@ -26,7 +27,7 @@ export function ServiceFaqTeaser({ faqs }: ServiceFaqTeaserProps) {
               Odgovori na najčešća pitanja naših klijenata. Imate dodatnih pitanja? Slobodno nas kontaktirajte.
             </p>
             <Link
-              href="tel:+385912345678"
+              href={`tel:${siteConfig.phone.href}`}
               className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-primary transition-colors hover:text-primary/80"
             >
               Nazovite za više informacija
