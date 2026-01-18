@@ -1,11 +1,9 @@
 import type { Metadata } from "next"
-import { HelpCircle, Phone, Mail } from "lucide-react"
+import { HelpCircle } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { CtaSection } from "@/components/cta-section"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { Button } from "@/components/ui/button"
-import { siteConfig } from "@/lib/config/site"
 import { faqGroups } from "@/content/faq"
 
 export const metadata: Metadata = {
@@ -74,36 +72,6 @@ export default function FaqPage() {
                   </Accordion>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Contact Section */}
-        <section className="border-t border-border bg-card py-16 sm:py-20">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl text-center">
-              <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">Imate dodatnih pitanja?</h2>
-              <p className="mt-4 text-muted-foreground">
-                Ako niste pronašli odgovor na svoje pitanje, slobodno nas kontaktirajte. Rado ćemo vam pomoći.
-              </p>
-              <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-                <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-accent/90 sm:w-auto">
-                  <a href={`tel:${siteConfig.phone.href}`} className="flex items-center justify-center gap-2">
-                    <Phone className="h-5 w-5" />
-                    {siteConfig.phone.display}
-                  </a>
-                </Button>
-                <Button
-                  asChild
-                  variant="outline"
-                  className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground sm:w-auto bg-transparent"
-                >
-                  <a href={`mailto:${siteConfig.email}`} className="flex items-center justify-center gap-2">
-                    <Mail className="h-5 w-5" />
-                    {siteConfig.email}
-                  </a>
-                </Button>
-              </div>
             </div>
           </div>
         </section>
