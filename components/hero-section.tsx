@@ -10,7 +10,7 @@ export function HeroSection() {
         <img
           src="/modern-zagreb-architecture-building-aerial-view-pr.jpg"
           alt="Moderna arhitektura u Zagrebu"
-          className="h-full w-full object-cover opacity-20"
+          className="h-full w-full object-cover opacity-30"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
       </div>
