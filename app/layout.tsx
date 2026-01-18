@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Inter, Bricolage_Grotesque } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { Toaster } from "sonner"
+import { CookieBanner } from "@/components/cookie-banner"
 import "./globals.css"
 
 const inter = Inter({
@@ -43,6 +44,7 @@ export default function RootLayout({
         {children}
         <Toaster position="bottom-center" richColors />
         <Analytics />
+        <CookieBanner />
       </body>
     </html>
   )

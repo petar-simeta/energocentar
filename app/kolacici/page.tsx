@@ -39,33 +39,37 @@ export default function KolaciciPage() {
                 Omogućuju stranici da zapamti vaše radnje i postavke.
               </p>
 
-              <h2 className="mt-12 font-serif text-2xl font-bold text-foreground">Koje kolačiće koristimo</h2>
+              <h2 className="mt-12 font-serif text-2xl font-bold text-foreground">Tehnologije koje koristimo</h2>
 
-              <h3 className="mt-8 font-serif text-xl font-semibold text-foreground">Nužni kolačići</h3>
+              <h3 className="mt-8 font-serif text-xl font-semibold text-foreground">Vercel Analytics (bez kolačića)</h3>
               <p className="text-muted-foreground">
-                Ovi kolačići su neophodni za funkcioniranje web stranice. Bez njih stranica ne bi radila ispravno.
+                Koristimo Vercel Analytics koji <strong>ne koristi kolačiće</strong>. Ova tehnologija prikuplja
+                anonimizirane podatke o posjećenosti bez pohrane informacija na vašem uređaju.
               </p>
-
-              <h3 className="mt-8 font-serif text-xl font-semibold text-foreground">Analitički kolačići</h3>
-              <p className="text-muted-foreground">
-                Koristimo analitičke kolačiće (Vercel Analytics) za razumijevanje kako posjetitelji koriste našu
-                stranicu. Ti podaci nam pomažu poboljšati korisničko iskustvo.
-              </p>
-              <p className="text-muted-foreground">Prikupljeni podaci su anonimizirani i uključuju:</p>
+              <p className="text-muted-foreground">Prikupljeni podaci uključuju:</p>
               <ul className="list-disc space-y-2 pl-6 text-muted-foreground">
                 <li>Broj posjetitelja</li>
                 <li>Stranice koje posjećujete</li>
-                <li>Vrijeme provedeno na stranici</li>
                 <li>Vrsta uređaja i preglednika</li>
+                <li>Država pristupa</li>
               </ul>
 
-              <h2 className="mt-12 font-serif text-2xl font-bold text-foreground">Kolačići trećih strana</h2>
-              <p className="text-muted-foreground">Naša stranica može sadržavati kolačiće trećih strana:</p>
+              <h3 className="mt-8 font-serif text-xl font-semibold text-foreground">Google Analytics (uz pristanak)</h3>
+              <p className="text-muted-foreground">
+                Ako prihvatite kolačiće putem bannera na stranici, aktivira se Google Analytics koji koristi kolačiće
+                za detaljniju analizu ponašanja korisnika. Ovi kolačići se postavljaju <strong>samo uz vaš pristanak</strong>.
+              </p>
+
+              <h2 className="mt-12 font-serif text-2xl font-bold text-foreground">Vaš izbor</h2>
+              <p className="text-muted-foreground">
+                Prilikom prvog posjeta stranici prikazat će vam se banner za odabir kolačića. Možete:
+              </p>
               <ul className="list-disc space-y-2 pl-6 text-muted-foreground">
-                <li>
-                  <strong>Vercel Analytics</strong> - za analizu prometa
-                </li>
+                <li><strong>Prihvatiti</strong> - aktivira se Google Analytics uz Vercel Analytics</li>
+                <li><strong>Odbiti</strong> - koristi se samo Vercel Analytics (bez kolačića)</li>
               </ul>
+              <p className="mt-4 text-muted-foreground">
+                Vaš odabir pohranjujemo u lokalnu pohranu preglednika (localStorage) koja nije kolačić.</p>
 
               <h2 className="mt-12 font-serif text-2xl font-bold text-foreground">Upravljanje kolačićima</h2>
               <p className="text-muted-foreground">
