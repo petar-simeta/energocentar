@@ -3,63 +3,13 @@ import { Banknote } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { CtaSection } from "@/components/cta-section"
+import { pricingTables, priceFactors } from "@/content/cjenik"
 
 export const metadata: Metadata = {
   title: "Cjenik usluga | ENERGOCENTAR d.o.o.",
   description:
     "Cjenik energetskih certifikata, procjena nekretnina i etažiranja. Transparentne cijene bez skrivenih troškova.",
 }
-
-const pricingTables = [
-  {
-    title: "Energetski certifikati",
-    items: [
-      { service: "Stan do 50 m²", price: "80 €" },
-      { service: "Stan 50-100 m²", price: "100 €" },
-      { service: "Stan preko 100 m²", price: "120 €" },
-      { service: "Kuća do 150 m²", price: "120 €" },
-      { service: "Kuća preko 150 m²", price: "150 €" },
-      { service: "Poslovni prostor", price: "Po dogovoru" },
-    ],
-    note: "Hitna izrada (isti dan): +30 €",
-  },
-  {
-    title: "Procjena nekretnina",
-    items: [
-      { service: "Procjena stana", price: "200 €" },
-      { service: "Procjena kuće", price: "300 €" },
-      { service: "Procjena zemljišta", price: "150 €" },
-      { service: "Procjena poslovnog prostora", price: "Po dogovoru" },
-    ],
-  },
-  {
-    title: "Etažiranje",
-    items: [
-      { service: "Etažiranje (do 4 stana)", price: "500 €" },
-      { service: "Etažiranje (5-10 stanova)", price: "800 €" },
-      { service: "Etažiranje (preko 10 stanova)", price: "Po dogovoru" },
-    ],
-  },
-]
-
-const priceFactors = [
-  {
-    title: "Veličina nekretnine",
-    description: "Veće nekretnine zahtijevaju više vremena za pregled i analizu",
-  },
-  {
-    title: "Lokacija",
-    description: "Udaljenije lokacije mogu uključivati dodatne putne troškove",
-  },
-  {
-    title: "Složenost",
-    description: "Nestandardne nekretnine zahtijevaju dodatnu analizu",
-  },
-  {
-    title: "Hitnost",
-    description: "Hitne izrade imaju dodatnu naknadu",
-  },
-]
 
 export default function CjenikPage() {
   return (
@@ -92,7 +42,7 @@ export default function CjenikPage() {
                     {table.items.map((item, itemIndex) => (
                       <div key={itemIndex} className="flex items-center justify-between border-b border-border pb-3">
                         <span className="text-sm text-muted-foreground">{item.service}</span>
-                        <span className="font-medium text-foreground">od {item.price}</span>
+                        <span className="font-medium text-foreground">{item.price}</span>
                       </div>
                     ))}
                   </div>
@@ -123,7 +73,7 @@ export default function CjenikPage() {
           </div>
         </section>
 
-<CtaSection />
+        <CtaSection />
       </main>
       <Footer />
     </>
