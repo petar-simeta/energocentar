@@ -91,8 +91,8 @@ File location:
 ## 6) Sitemap (Routes)
 
 - `/` – Početna
-- `/energetski-certifikat`
-- `/procjena-nekretnine`
+- `/energetski-certifikati`
+- `/procjena-nekretnina`
 - `/etaziranje`
 - `/faq`
 - `/cjenik`
@@ -104,7 +104,7 @@ File location:
 
 ---
 
-## Navigation Requirements
+## 7) Navigation Requirements
 
 ### Desktop navigation
 
@@ -112,7 +112,7 @@ File location:
 - Keep menu compact; must fit in one row
 - Allowed to use a dropdown if needed
 
-Recommended structure:
+Implemented structure:
 
 - Usluge (dropdown):
   - Energetski certifikati
@@ -126,18 +126,53 @@ Recommended structure:
 ### Mobile navigation
 
 - Hamburger menu
-- Opens a full-screen overlay panel
-- Contains the same items as desktop navigation:
-  - Usluge (expandable section or list)
-  - FAQ
-  - Cjenik
-  - O nama
-  - Kontakt
+- Opens a full-screen overlay panel (Sheet component)
+- Contains the same items as desktop navigation
 - Clear close button and accessible focus handling
 
 ---
 
-## 7) Global Requirements (All Pages)
+## 8) Content Management (TypeScript Data Files)
+
+Goal: make page copy easy to update without editing React component JSX directly.
+
+Approach:
+
+- Store page content in TypeScript files under `/content/`
+- Content is typed, easy to edit, and imported directly into pages
+- No Markdown parsing needed - plain TS objects
+
+Content files:
+
+```
+/content/
+├── faq.ts                           # FAQ groups and questions
+├── cjenik.ts                        # Pricing tables and price factors
+├── o-nama.ts                        # About page content (mission, values, services)
+└── services/
+    ├── energetski-certifikati.ts    # Energy certificate service content
+    ├── procjena-nekretnina.ts       # Property valuation service content
+    └── etaziranje.ts                # Condominium division service content
+```
+
+Each service content file contains:
+- `meta` - SEO metadata (title, description, keywords)
+- `hero` - Hero section (title, description, image)
+- `whatIs` - What is section (title, content paragraphs, highlights)
+- `processSteps` - Process steps (iconName, title, description)
+- `deliverables` - What client receives (title, description, items, image)
+- `faqs` - Service-specific FAQs (question, answer)
+
+Pages import content like:
+```typescript
+import { energetskiCertifikati } from "@/content/services/energetski-certifikati"
+```
+
+Site-wide constants (NAP) are in `/lib/config/site.ts`.
+
+---
+
+## 9) Global Requirements (All Pages)
 
 - Mobile-first, responsive
 - Fast loading, optimized images
@@ -156,9 +191,7 @@ Recommended structure:
 - Primary navigation (compact, must fit in one row on desktop)
 - One CTA link/button on the right: "Kontakt" (accent color)
 - Header must NOT display phone/email (keep header clean)
-- Header must use the full logo (icon + text) from `/public/brand/logo.svg`
-- Icon-only logo (`logo-icon.svg`) must NOT be used in the header
-- Icon-only logo may be used in other contexts if needed (e.g. mobile menu toggle), but not as the primary header logo
+- Header must use the full logo from `/public/brand/logo.svg`
 
 ### Footer
 
@@ -174,129 +207,76 @@ No contact form anywhere.
 
 ---
 
-## 8) Content Management (Editable Markdown Per Page)
+## 10) Homepage Structure
 
-Goal: make page copy easy to update by non-developers without editing React components.
-
-Approach:
-
-- Store page text content in human-readable Markdown files.
-- One file per page under `/content/pages/`.
-
-Required files:
-
-- `/content/pages/home.md`
-- `/content/pages/energetski-certifikat.md`
-- `/content/pages/procjena-nekretnine.md`
-- `/content/pages/etaziranje.md`
-- `/content/pages/faq.md`
-- `/content/pages/cjenik.md`
-- `/content/pages/o-nama.md`
-- `/content/pages/kontakt.md`
-- `/content/pages/privatnost.md`
-- `/content/pages/kolacici.md`
-- `/content/pages/uvjeti.md`
-
-Implementation:
-
-- Pages load Markdown on the server and render it (SEO-friendly).
-- Keep layout/sections in React, but page copy (headings/paragraphs/bullets) comes from Markdown wherever practical.
-- Avoid complex MDX components for now; keep it simple Markdown.
-- Provide helper `getPageContent(slug)` to read and parse markdown.
+1. Sticky Header (Logo + Navigation + "Kontakt" CTA)
+2. Hero (H1) with background image, CTA buttons (phone/email)
+3. Services Overview (3 cards linking to service pages)
+4. How it works (4 steps)
+5. Trust Indicators (experience, expertise, certifications)
+6. Local SEO Block (Zagreb + okolica + Hrvatska)
+7. CTA Block (phone/email)
+8. Footer (NAP + legal links)
 
 ---
 
-## 9) Homepage Structure
+## 11) Service Pages
 
-1. Sticky Header
+Three service pages with identical structure:
+- `/energetski-certifikati`
+- `/procjena-nekretnina`
+- `/etaziranje`
 
-   - Logo (links to homepage)
-   - Navigation
-   - CTA: "Kontakt"
+Content loaded from `/content/services/*.ts` files.
 
-2) Hero (H1)
+Sections (in order):
+1. **ServiceHero** - H1, description, background image
+2. **ServiceWhatIs** - What it is, why needed, bullet highlights
+3. **ServiceProcess** - 4-step process with icons
+4. **ServiceDeliverables** - What client receives (list + image)
+5. **ServiceFaqTeaser** - 4 FAQs specific to service
+6. **CtaSection** - Phone/email CTA
 
-   - Clear promise + short supporting copy
-   - Primary CTA: “Nazovi” + secondary “Pošalji email” (no form)
-
-3) Services Overview (3 cards)
-
-   - Energetski certifikati
-   - Procjena vrijednosti nekretnina
-   - Etažiranje
-
-4) How it works (3–4 steps)
-
-5) Trust Indicators
-
-   - Iskustvo, stručnost, ovlaštenja (placeholder)
-
-6) Local SEO Block
-
-   - Zagreb + okolica + Hrvatska
-
-7) CTA Block
-
-8) Footer
-   - ENERGOCENTAR d.o.o., OIB
-   - phone/email with copy icons
-   - legal links
+Components used:
+- `ServiceHero`, `ServiceWhatIs`, `ServiceProcess`, `ServiceDeliverables`, `ServiceFaqTeaser`, `CtaSection`
 
 ---
 
-## 10) Service Pages (Template)
+## 12) FAQ Page
 
-Applies to:
-
-- Energetski certifikat
-- Procjena nekretnine
-- Etažiranje
-
-Sections:
-
-1. Service hero (H1 + CTA via phone/email)
-2. What it is
-3. Why it’s needed
-4. Process steps
-5. What client receives
-6. FAQ teaser + link
-7. CTA block
-
-Tone: professional but approachable.
+- Groups FAQs by topic (Energetski certifikati, Procjena nekretnina, Etažiranje)
+- Uses Accordion component for expandable Q&A
+- Content loaded from `/content/faq.ts`
+- FAQPage JSON-LD structured data for Google rich results
+- Ends with CtaSection
 
 ---
 
-## 11) FAQ Page
+## 13) Pricing Page (Cjenik)
 
-- Group by topic
-- Plain Croatian answers
-- CTA at end
-- Add FAQ structured data JSON-LD
-
----
-
-## 12) Pricing (Cjenik)
-
-- Show ranges / “od”
-- Explain what affects price
-- CTA to request a quote via phone/email
+- Three pricing tables (one per service)
+- Shows "od X €" pricing with "Po dogovoru" for complex cases
+- Content loaded from `/content/cjenik.ts`
+- Price factors section explaining what affects pricing
+- Ends with CtaSection
 
 ---
 
-## 13) Contact Page
+## 14) Contact Page (Kontakt)
 
 No contact form.
 
-Required:
-
-- Phone (click-to-call): tel:+385992265707
-- Email (mailto): certifikati@energocentar.com
-- Copy-to-clipboard icons next to both
-- Mention Zagreb + okolica + Hrvatska
+Contains:
+- Phone (click-to-call) with copy button
+- Email (mailto) with copy button
+- Working hours
+- Service area (Zagreb + okolica + Hrvatska)
+- "How to get a quote" steps
+- Company info (name, OIB)
 
 ---
 
-## 14) SEO & Technical SEO
+## 15) SEO & Technical SEO
 
 - Per-route `metadata` in Next.js
 - XML sitemap + robots.txt
@@ -305,44 +285,48 @@ Required:
 - Lighthouse/performance oriented setup
 
 Structured data:
-
 - LocalBusiness JSON-LD on homepage (`/app/page.tsx`)
 - FAQPage JSON-LD on `/faq`
 
-Local SEO:
+Analytics:
+- Vercel Analytics (cookieless, always active)
+- Google Analytics (loads only after cookie consent)
 
-- Mention Zagreb naturally (not spammy)
-- Keep NAP consistent everywhere
-
-LocalBusiness JSON-LD (minimum, no address yet):
-{
-"@context":"https://schema.org",
-"@type":"LocalBusiness",
-"name":"ENERGOCENTAR d.o.o.",
-"telephone":"+385992265707",
-"email":"certifikati@energocentar.com",
-"areaServed":["Zagreb","Zagrebačka županija","Hrvatska"],
-"url":"https://www.energocentar.com"
-}
+Cookie consent:
+- Minimal banner in bottom-left corner
+- Stores choice in localStorage
+- GA loads only if accepted
 
 ---
 
-## 15) Non-goals
+## 16) Non-goals
 
 - No blog
 - No CMS/admin
 - No database
 - No auth
 - No heavy animations
+- No contact forms
 
 ---
 
-## 16) Code Organization Rules
+## 17) Code Organization
 
-- `/app` for routes
-- `/components` for reusable components
-- `/components/ui` for shadcn/ui
-- `/content/pages` contains editable page copy (Markdown)
-- Create server-side content loader in `/src/lib/content.ts`
-- Create site config constants in `/src/config/site.ts` (NAP/contact)
-- Tailwind preferred, minimal custom CSS
+```
+/app                    # Next.js App Router pages
+/components             # React components
+  /ui                   # shadcn/ui components
+/content                # Content data files (TypeScript)
+  /services             # Service page content
+/lib
+  /config/site.ts       # NAP and site-wide constants
+  /utils.ts             # Utility functions (cn)
+/public
+  /brand                # Logo SVGs
+```
+
+Key patterns:
+- Pages import content from `/content/*.ts`
+- All NAP data comes from `/lib/config/site.ts`
+- Icons referenced by string name in content, mapped to Lucide components in pages
+- shadcn/ui components in `/components/ui`

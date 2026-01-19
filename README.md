@@ -1,219 +1,198 @@
 # ENERGOCENTAR d.o.o. - Web stranica
 
-Web stranica za tvrtku ENERGOCENTAR d.o.o. koja nudi usluge izrade energetskih certifikata, procjene nekretnina i etažiranja.
+Marketing website za tvrtku koja nudi energetske certifikate, procjene nekretnina i etažiranje u Zagrebu i cijeloj Hrvatskoj.
 
-## O projektu
-
-- **Tehnologije:** Next.js, React, TypeScript, Tailwind CSS
-- **Hosting:** Vercel
-- **URL:** https://www.energocentar.com
-
-### Struktura projekta
-
-```
-energocentar/
-├── app/                    # Stranice (svaki folder = jedna stranica)
-├── components/             # React komponente
-├── content/pages/          # Markdown datoteke s tekstom stranica
-├── lib/                    # Pomoćne funkcije i konfiguracija
-├── public/                 # Slike i drugi statički sadržaj
-└── package.json            # Popis dependency-a
-```
+**Live:** https://www.energocentar.com
+**Stack:** Next.js 16, TypeScript, Tailwind CSS, shadcn/ui
+**Hosting:** Vercel
 
 ---
 
-## Kako promijeniti tekst na stranici
-
-Većina tekstova nalazi se u **Markdown datotekama** unutar foldera `content/pages/`. To su obične tekstualne datoteke koje možeš uređivati.
-
-### Popis datoteka s tekstom:
-
-| Datoteka | Stranica |
-|----------|----------|
-| `content/pages/home.md` | Početna stranica |
-| `content/pages/energetski-certifikat.md` | Energetski certifikati |
-| `content/pages/procjena-nekretnine.md` | Procjena nekretnina |
-| `content/pages/etaziranje.md` | Etažiranje |
-| `content/pages/faq.md` | Česta pitanja |
-| `content/pages/cjenik.md` | Cjenik |
-| `content/pages/o-nama.md` | O nama |
-| `content/pages/kontakt.md` | Kontakt |
-| `content/pages/privatnost.md` | Politika privatnosti |
-| `content/pages/kolacici.md` | Politika kolačića |
-| `content/pages/uvjeti.md` | Uvjeti korištenja |
-
-### Korak po korak: Kako promijeniti tekst
-
-1. **Otvori datoteku** koju želiš urediti (npr. `content/pages/o-nama.md`)
-2. **Uredi tekst** - datoteka koristi Markdown format:
-   - `# Naslov` = veliki naslov
-   - `## Podnaslov` = manji naslov
-   - `**podebljano**` = podebljani tekst
-   - Obični tekst = obični paragraf
-3. **Spremi datoteku**
-4. **Commitaj i pushaj promjene** (vidi upute za Git ispod)
-
-### Primjer Markdown datoteke:
-
-```markdown
----
-title: "Naslov stranice"
-description: "Opis za Google"
----
-
-# Glavni naslov
-
-Ovo je paragraf teksta. Možeš pisati **podebljano** ili *kurziv*.
-
-## Podnaslov
-
-- Prva stavka liste
-- Druga stavka liste
-- Treća stavka liste
-```
-
-### Gdje promijeniti kontakt podatke?
-
-Kontakt podaci (telefon, email, OIB) nalaze se na jednom mjestu:
-**`lib/config/site.ts`**
-
-```typescript
-export const siteConfig = {
-  name: "ENERGOCENTAR d.o.o.",
-  oib: "33876995825",
-  phone: {
-    display: "099 2265 707",
-    href: "+385992265707",
-  },
-  email: "certifikati@energocentar.com",
-  // ...
-}
-```
-
----
-
-## Postavljanje projekta (za početnike)
-
-### Preduvjeti
-
-Trebaš instalirati:
-1. **Node.js** - https://nodejs.org (preuzmi LTS verziju)
-2. **Git** - https://git-scm.com/downloads
-3. **VS Code** (preporučeno) - https://code.visualstudio.com
-
-### Korak 1: Kloniraj projekt
-
-Otvori Terminal (Mac) ili Command Prompt (Windows) i upiši:
-
-```bash
-cd ~/Desktop
-git clone https://github.com/petar-simeta/energocentar.git
-cd energocentar
-```
-
-### Korak 2: Instaliraj dependencies
+## Quick Start
 
 ```bash
 npm install
-```
-
-### Korak 3: Pokreni lokalni server
-
-```bash
-npm run dev
-```
-
-Otvori browser i idi na: **http://localhost:3000**
-
-Sada možeš vidjeti stranicu lokalno. Kad napraviš promjene u kodu, stranica će se automatski osvježiti.
-
-### Korak 4: Zaustavi server
-
-Pritisni `Ctrl + C` u terminalu.
-
----
-
-## Rad s Gitom (za početnike)
-
-Git je sustav za verzioniranje koda. Omogućuje ti da:
-- Spremaš promjene (commit)
-- Šalješ promjene na server (push)
-- Vraćaš se na prethodne verzije ako nešto pođe po zlu
-
-### Osnovni Git workflow
-
-#### 1. Provjeri status (što je promijenjeno)
-
-```bash
-git status
-```
-
-#### 2. Dodaj sve promjene
-
-```bash
-git add .
-```
-
-#### 3. Spremi promjene (commit)
-
-```bash
-git commit -m "Opis što si promijenio"
-```
-
-Primjeri dobrih poruka:
-- `"Ažuriran tekst na stranici O nama"`
-- `"Promijenjen broj telefona"`
-- `"Dodana nova slika na početnu stranicu"`
-
-#### 4. Pošalji na server (push)
-
-```bash
-git push
-```
-
-### Sve u jednoj naredbi
-
-Ako želiš brzo commitati i pushati sve promjene:
-
-```bash
-git add . && git commit -m "Opis promjene" && git push
-```
-
-### Ako dobiješ grešku prilikom pusha
-
-Možda netko drugi napravio promjene. Prvo povuci najnoviju verziju:
-
-```bash
-git pull
-```
-
-Pa onda opet:
-
-```bash
-git push
+npm run dev        # http://localhost:3000
+npm run build      # Production build
 ```
 
 ---
 
-## Deployment (objava na internet)
+## Project Overview
 
-Stranica se automatski objavljuje na Vercel kada pushamo promjene na `main` branch.
-
-1. Napravi promjene lokalno
-2. Commitaj i pushaj (`git add . && git commit -m "..." && git push`)
-3. Vercel automatski detektira promjene i objavljuje novu verziju
-4. Za 1-2 minute nova verzija je live na https://www.energocentar.com
-
----
-
-## Korisni linkovi
-
-- **Vercel Dashboard:** https://vercel.com/dashboard
-- **GitHub Repo:** https://github.com/petar-simeta/energocentar
-- **Markdown Guide:** https://www.markdownguide.org/basic-syntax/
+| Aspekt | Detalji |
+|--------|---------|
+| Tip | Static marketing site, SEO-first |
+| Stranice | 11 ruta (home, 3 usluge, FAQ, cjenik, o-nama, kontakt, 3 legal) |
+| CMS | Nema - sadržaj u TypeScript fajlovima |
+| Database | Nema |
+| Auth | Nema |
+| Forms | Nema - samo phone/email CTA |
+| Analytics | Vercel (cookieless) + GA (nakon pristanka) |
 
 ---
 
-## Pomoć
+## File Structure
 
-Ako zapneš ili trebaš pomoć, javi se na email ili pogledaj SPEC.md datoteku za detaljnu specifikaciju projekta.
+```
+energocentar/
+├── app/                          # Next.js App Router
+│   ├── layout.tsx                # Root layout (fonts, analytics, cookie banner)
+│   ├── page.tsx                  # Homepage
+│   ├── energetski-certifikati/   # Service page
+│   ├── procjena-nekretnina/      # Service page
+│   ├── etaziranje/               # Service page
+│   ├── faq/                      # FAQ page
+│   ├── cjenik/                   # Pricing page
+│   ├── o-nama/                   # About page
+│   ├── kontakt/                  # Contact page
+│   ├── privatnost/               # Privacy policy
+│   ├── kolacici/                 # Cookie policy
+│   └── uvjeti/                   # Terms of use
+│
+├── components/
+│   ├── header.tsx                # Sticky header + navigation
+│   ├── footer.tsx                # Footer with NAP
+│   ├── hero-section.tsx          # Homepage hero
+│   ├── cta-section.tsx           # Reusable CTA block
+│   ├── cookie-banner.tsx         # Cookie consent (client component)
+│   ├── copy-button.tsx           # Copy to clipboard (client component)
+│   ├── service-*.tsx             # Service page section components
+│   └── ui/                       # shadcn/ui components
+│
+├── content/                      # Editable content (TypeScript)
+│   ├── faq.ts                    # FAQ questions grouped by topic
+│   ├── cjenik.ts                 # Pricing tables
+│   ├── o-nama.ts                 # About page content
+│   └── services/
+│       ├── energetski-certifikati.ts
+│       ├── procjena-nekretnina.ts
+│       └── etaziranje.ts
+│
+├── lib/
+│   ├── config/site.ts            # Company info (NAP), contact details
+│   └── utils.ts                  # cn() helper
+│
+├── public/
+│   └── brand/                    # Logo SVGs
+│
+├── SPEC.md                       # Full project specification
+├── ARCHITECTURE.md               # Technical architecture details
+└── .env.example                  # Environment variables template
+```
+
+---
+
+## Key Files Reference
+
+### Content (što se najčešće mijenja)
+
+| File | Sadržaj |
+|------|---------|
+| `lib/config/site.ts` | NAP podaci (ime, OIB, telefon, email) |
+| `content/services/*.ts` | Sadržaj stranica usluga (hero, FAQ, process steps) |
+| `content/faq.ts` | Pitanja i odgovori za FAQ stranicu |
+| `content/cjenik.ts` | Tablice cijena i faktori cijene |
+| `content/o-nama.ts` | Misija, vrijednosti, popis usluga |
+
+### Components (main)
+
+| Component | Opis | Client? |
+|-----------|------|---------|
+| `header.tsx` | Sticky nav, dropdown, mobile menu | Partial (Sheet) |
+| `footer.tsx` | NAP, legal links, copy buttons | No |
+| `cta-section.tsx` | Phone/email CTA block | No |
+| `cookie-banner.tsx` | Cookie consent | Yes |
+| `copy-button.tsx` | Copy to clipboard + toast | Yes |
+
+### Pages with special logic
+
+| Page | Special |
+|------|---------|
+| `app/page.tsx` | LocalBusiness JSON-LD |
+| `app/faq/page.tsx` | FAQPage JSON-LD, Accordion |
+| `app/layout.tsx` | Fonts, Vercel Analytics, Toaster, CookieBanner |
+
+---
+
+## Content Editing Patterns
+
+### Editing service content
+
+```typescript
+// content/services/energetski-certifikati.ts
+export const energetskiCertifikati = {
+  meta: { title, description, keywords },
+  hero: { title, description, image },
+  whatIs: { title, content: string[], highlights: string[] },
+  processSteps: [{ iconName, title, description }],
+  deliverables: { title, description, items: string[], image },
+  faqs: [{ question, answer }]
+}
+```
+
+Icons are strings (`"Phone"`, `"FileText"`) mapped to Lucide icons in page files.
+
+### Editing FAQ
+
+```typescript
+// content/faq.ts
+export const faqGroups = [
+  {
+    title: "Energetski certifikati",
+    faqs: [{ question: "...", answer: "..." }]
+  }
+]
+```
+
+### Editing pricing
+
+```typescript
+// content/cjenik.ts
+export const pricingTables = [
+  {
+    title: "Energetski certifikati",
+    items: [{ service: "Stan do 50 m²", price: "od 80 €" }],
+    note: "Optional note"
+  }
+]
+```
+
+---
+
+## Environment Variables
+
+```bash
+# .env.local (create from .env.example)
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX  # Optional, GA loads only after consent
+```
+
+---
+
+## Design System
+
+| Element | Value |
+|---------|-------|
+| Primary | `#2E6E3E` (green) |
+| Background | `#F6F6E6` (cream) |
+| Accent | `#C45C3E` (orange-red for CTAs) |
+| Heading font | Bricolage Grotesque |
+| Body font | Inter |
+
+---
+
+## Deployment
+
+Auto-deploy on push to `main` via Vercel.
+
+```bash
+git add -A && git commit -m "message" && git push
+```
+
+---
+
+## Related Docs
+
+- `SPEC.md` - Full project specification
+- `ARCHITECTURE.md` - Technical architecture details
+- `CLAUDE.md` - AI assistant instructions
