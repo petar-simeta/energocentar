@@ -330,3 +330,18 @@ Key patterns:
 - All NAP data comes from `/lib/config/site.ts`
 - Icons referenced by string name in content, mapped to Lucide components in pages
 - shadcn/ui components in `/components/ui`
+
+---
+
+## 18) Maintenance Notes
+
+- Source of truth:
+  - Content lives in `content/` files.
+  - NAP data lives in `lib/config/site.ts`.
+  - UI patterns and constraints live in `ARCHITECTURE.md`.
+- Language rules:
+  - Documentation, code comments, class names, and identifiers are in English.
+  - Website content remains in Croatian.
+- If a change affects scope (e.g., forms, CMS, SSR), update this spec and architecture docs.
+- Keep diffs small and focused; avoid refactors unrelated to the task.
+- Use `npm run lint` before shipping changes that touch UI or content structure.

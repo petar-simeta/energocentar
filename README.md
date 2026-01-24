@@ -1,6 +1,6 @@
-# ENERGOCENTAR d.o.o. - Web stranica
+# ENERGOCENTAR d.o.o. - Website
 
-Marketing website za tvrtku koja nudi energetske certifikate, procjene nekretnina i etažiranje u Zagrebu i cijeloj Hrvatskoj.
+Marketing website for a company offering energy certificates, property valuation, and condominium division in Zagreb and across Croatia.
 
 **Live:** https://www.energocentar.com
 **Stack:** Next.js 16, TypeScript, Tailwind CSS, shadcn/ui
@@ -16,19 +16,28 @@ npm run dev        # http://localhost:3000
 npm run build      # Production build
 ```
 
+### Scripts
+
+| Script | Description |
+|--------|-------------|
+| `npm run dev` | Local dev server |
+| `npm run build` | Production build |
+| `npm run start` | Start production server |
+| `npm run lint` | ESLint check |
+
 ---
 
 ## Project Overview
 
-| Aspekt | Detalji |
+| Aspect | Details |
 |--------|---------|
-| Tip | Static marketing site, SEO-first |
-| Stranice | 11 ruta (home, 3 usluge, FAQ, cjenik, o-nama, kontakt, 3 legal) |
-| CMS | Nema - sadržaj u TypeScript fajlovima |
-| Database | Nema |
-| Auth | Nema |
-| Forms | Nema - samo phone/email CTA |
-| Analytics | Vercel (cookieless) + GA (nakon pristanka) |
+| Type | Static marketing site, SEO-first |
+| Pages | 11 routes (home, 3 services, FAQ, pricing, about, contact, 3 legal) |
+| CMS | None - content in TypeScript files |
+| Database | None |
+| Auth | None |
+| Forms | None - phone/email CTA only |
+| Analytics | Vercel (cookieless) + GA (after consent) |
 
 ---
 
@@ -85,20 +94,20 @@ energocentar/
 
 ## Key Files Reference
 
-### Content (što se najčešće mijenja)
+### Content (most frequently edited)
 
-| File | Sadržaj |
+| File | Content |
 |------|---------|
-| `lib/config/site.ts` | NAP podaci (ime, OIB, telefon, email) |
-| `content/services/*.ts` | Sadržaj stranica usluga (hero, FAQ, process steps) |
-| `content/faq.ts` | Pitanja i odgovori za FAQ stranicu |
-| `content/cjenik.ts` | Tablice cijena i faktori cijene |
-| `content/o-nama.ts` | Misija, vrijednosti, popis usluga |
+| `lib/config/site.ts` | NAP data (name, tax ID, phone, email) |
+| `content/services/*.ts` | Service page content (hero, FAQ, process steps) |
+| `content/faq.ts` | Questions and answers for FAQ page |
+| `content/cjenik.ts` | Pricing tables and price factors |
+| `content/o-nama.ts` | Mission, values, list of services |
 
 ### Components (main)
 
-| Component | Opis | Client? |
-|-----------|------|---------|
+| Component | Description | Client? |
+|-----------|-------------|---------|
 | `header.tsx` | Sticky nav, dropdown, mobile menu | Partial (Sheet) |
 | `footer.tsx` | NAP, legal links, copy buttons | No |
 | `cta-section.tsx` | Phone/email CTA block | No |
@@ -196,3 +205,17 @@ git add -A && git commit -m "message" && git push
 - `SPEC.md` - Full project specification
 - `ARCHITECTURE.md` - Technical architecture details
 - `CLAUDE.md` - AI assistant instructions
+- `CODEX.md` - Codex assistant instructions
+
+---
+
+## Language and Collaboration (Claude Code + Codex)
+
+Guidelines for future development with AI assistants:
+- All documentation, code comments, class names, and identifiers must be in English.
+- Website content stays in Croatian (copy, headings, and UI text in `content/`).
+- Read `README.md`, `ARCHITECTURE.md`, `SPEC.md`, then `CLAUDE.md` and `CODEX.md`.
+- Follow the existing content system (`content/`) and NAP source of truth (`lib/config/site.ts`).
+- Avoid refactors and new dependencies unless clearly justified.
+- Do not change marketing copy unless explicitly requested.
+- Prefer small, clean changes and describe them in the task summary.

@@ -27,6 +27,13 @@ All pages are **statically generated (SSG)** at build time:
 - Content baked into HTML at build
 - Fast TTFB, excellent Core Web Vitals
 
+### Guardrails for Future Changes
+- Keep routes statically rendered unless there is a strong reason.
+- Avoid adding client components; keep interactivity scoped and intentional.
+- Do not introduce forms or backend dependencies without updating `SPEC.md`.
+- Preserve JSON-LD coverage for homepage and FAQ.
+- Keep documentation, comments, class names, and identifiers in English (website content remains Croatian).
+
 ---
 
 ## Component Architecture
