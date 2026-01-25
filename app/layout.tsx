@@ -1,8 +1,8 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Inter, Bricolage_Grotesque } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
 import { Toaster } from "sonner"
+import { AnalyticsConsent } from "@/components/analytics-consent"
 import { CookieBanner } from "@/components/cookie-banner"
 import "./globals.css"
 
@@ -43,7 +43,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${bricolage.variable} font-sans antialiased`}>
         {children}
         <Toaster position="bottom-center" richColors />
-        <Analytics />
+        <AnalyticsConsent />
         <CookieBanner />
       </body>
     </html>

@@ -13,8 +13,8 @@ export function ServiceWhatIs({ title, content, highlights }: ServiceWhatIsProps
           <div>
             <h2 className="font-serif text-3xl font-bold text-foreground sm:text-4xl text-balance">{title}</h2>
             <div className="mt-6 space-y-4">
-              {content.map((paragraph, index) => (
-                <p key={index} className="text-lg leading-relaxed text-muted-foreground">
+              {content.map((paragraph) => (
+                <p key={paragraph} className="text-lg leading-relaxed text-muted-foreground">
                   {paragraph}
                 </p>
               ))}
@@ -26,7 +26,7 @@ export function ServiceWhatIs({ title, content, highlights }: ServiceWhatIsProps
             <h3 className="font-serif text-xl font-semibold text-foreground">Kada vam je potrebno?</h3>
             <ul className="mt-6 space-y-4">
               {highlights.map((highlight, index) => (
-                <li key={index} className="flex gap-4">
+                <li key={highlight} className="flex gap-4">
                   <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-semibold text-primary-foreground">
                     {index + 1}
                   </span>

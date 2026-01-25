@@ -35,12 +35,12 @@ export default function CjenikPage() {
         <section className="py-16 sm:py-24">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-12 lg:grid-cols-3">
-              {pricingTables.map((table, index) => (
-                <div key={index} className="rounded-2xl border border-border bg-card p-6">
+              {pricingTables.map((table) => (
+                <div key={table.title} className="rounded-2xl border border-border bg-card p-6">
                   <h2 className="font-serif text-xl font-bold text-foreground">{table.title}</h2>
                   <div className="mt-6 space-y-4">
-                    {table.items.map((item, itemIndex) => (
-                      <div key={itemIndex} className="flex items-center justify-between border-b border-border pb-3">
+                    {table.items.map((item) => (
+                      <div key={item.service} className="flex items-center justify-between border-b border-border pb-3">
                         <span className="text-sm text-muted-foreground">{item.service}</span>
                         <span className="font-medium text-foreground">{item.price}</span>
                       </div>
@@ -63,8 +63,8 @@ export default function CjenikPage() {
               </p>
             </div>
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {priceFactors.map((factor, index) => (
-                <div key={index} className="rounded-xl border border-border bg-background p-6">
+              {priceFactors.map((factor) => (
+                <div key={factor.title} className="rounded-xl border border-border bg-background p-6">
                   <h3 className="font-medium text-foreground">{factor.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{factor.description}</p>
                 </div>

@@ -1,7 +1,7 @@
 "use client"
 
 import { Copy, Check } from "lucide-react"
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import { toast } from "sonner"
 
 interface CopyButtonProps {
@@ -12,13 +12,25 @@ interface CopyButtonProps {
 
 export function CopyButton({ value, label, className = "" }: CopyButtonProps) {
   const [copied, setCopied] = useState(false)
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+      }
+    }
+  }, [])
 
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(value)
       setCopied(true)
       toast.success(label ? `${label} kopirano` : "Kopirano")
-      setTimeout(() => setCopied(false), 2000)
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+      }
+      timeoutRef.current = setTimeout(() => setCopied(false), 2000)
     } catch {
       toast.error("Kopiranje nije uspjelo")
     }

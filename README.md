@@ -37,7 +37,7 @@ npm run build      # Production build
 | Database | None |
 | Auth | None |
 | Forms | None - phone/email CTA only |
-| Analytics | Vercel (cookieless) + GA (after consent) |
+| Analytics | Vercel (cookieless, consent-gated) + GA (after consent) |
 
 ---
 
@@ -65,6 +65,7 @@ energocentar/
 │   ├── hero-section.tsx          # Homepage hero
 │   ├── cta-section.tsx           # Reusable CTA block
 │   ├── cookie-banner.tsx         # Cookie consent (client component)
+│   ├── analytics-consent.tsx     # Gates analytics by consent (client component)
 │   ├── copy-button.tsx           # Copy to clipboard (client component)
 │   ├── service-*.tsx             # Service page section components
 │   └── ui/                       # shadcn/ui components
@@ -120,7 +121,7 @@ energocentar/
 |------|---------|
 | `app/page.tsx` | LocalBusiness JSON-LD |
 | `app/faq/page.tsx` | FAQPage JSON-LD, Accordion |
-| `app/layout.tsx` | Fonts, Vercel Analytics, Toaster, CookieBanner |
+| `app/layout.tsx` | Fonts, AnalyticsConsent, Toaster, CookieBanner |
 
 ---
 

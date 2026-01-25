@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { ArrowRight, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { siteConfig } from "@/lib/config/site"
@@ -7,10 +8,12 @@ export function HeroSection() {
     <section className="relative overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 -z-10">
-        <img
+        <Image
           src="/modern-zagreb-architecture-building-aerial-view-pr.jpg"
           alt="Moderna arhitektura u Zagrebu"
-          className="h-full w-full object-cover opacity-30"
+          fill
+          priority
+          className="object-cover opacity-30"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
       </div>

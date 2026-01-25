@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, FileCheck, Building2, Layers } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
@@ -46,11 +47,12 @@ export function ServicesSection() {
               key={service.title}
               className="group overflow-hidden border-border bg-card transition-shadow hover:shadow-lg"
             >
-              <div className="aspect-[4/3] overflow-hidden">
-                <img
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
                   src={service.image || "/placeholder.svg"}
                   alt={service.title}
-                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
               <CardContent className="p-6">

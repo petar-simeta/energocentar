@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { Phone, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import type { LucideIcon } from "lucide-react"
@@ -14,7 +15,7 @@ export function ServiceHero({ icon: Icon, title, description, image }: ServiceHe
     <section className="relative overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 -z-10">
-        <img src={image || "/placeholder.svg"} alt={title} className="h-full w-full object-cover opacity-15" />
+        <Image src={image || "/placeholder.svg"} alt={title} fill priority className="object-cover opacity-15" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/90 to-background" />
       </div>
 

@@ -57,12 +57,12 @@ export default function FaqPage() {
         <section className="py-16 sm:py-24">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <div className="space-y-16">
-              {faqGroups.map((group, groupIndex) => (
-                <div key={groupIndex}>
+              {faqGroups.map((group) => (
+                <div key={group.title}>
                   <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">{group.title}</h2>
                   <Accordion type="single" collapsible className="mt-6 w-full">
-                    {group.faqs.map((faq, faqIndex) => (
-                      <AccordionItem key={faqIndex} value={`${groupIndex}-${faqIndex}`} className="border-border">
+                    {group.faqs.map((faq) => (
+                      <AccordionItem key={faq.question} value={faq.question} className="border-border">
                         <AccordionTrigger className="text-left font-medium text-foreground hover:text-primary hover:no-underline">
                           {faq.question}
                         </AccordionTrigger>

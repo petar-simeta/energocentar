@@ -38,8 +38,8 @@ export function ServiceFaqTeaser({ faqs }: ServiceFaqTeaserProps) {
           {/* FAQs */}
           <div className="lg:col-span-3">
             <Accordion type="single" collapsible className="w-full">
-              {faqs.map((faq, index) => (
-                <AccordionItem key={index} value={`item-${index}`} className="border-border">
+              {faqs.map((faq) => (
+                <AccordionItem key={faq.question} value={faq.question} className="border-border">
                   <AccordionTrigger className="text-left font-medium text-foreground hover:text-primary hover:no-underline">
                     {faq.question}
                   </AccordionTrigger>

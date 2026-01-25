@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { CheckCircle } from "lucide-react"
 
 interface ServiceDeliverablesProps {
@@ -28,7 +29,7 @@ export function ServiceDeliverables({ title, description, items, image }: Servic
 
           {/* Image */}
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-            <img src={image || "/placeholder.svg"} alt={title} className="h-full w-full object-cover" />
+            <Image src={image || "/placeholder.svg"} alt={title} fill className="object-cover" />
           </div>
         </div>
       </div>

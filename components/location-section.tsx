@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { MapPin, CheckCircle } from "lucide-react"
 
 const areas = [
@@ -18,7 +19,7 @@ export function LocationSection() {
         <div className="grid items-center gap-12 lg:grid-cols-2">
           {/* Image */}
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-            <img src="/zagreb-city-panorama-aerial-view-modern-architectu.jpg" alt="Panorama Zagreba" className="h-full w-full object-cover" />
+            <Image src="/zagreb-city-panorama-aerial-view-modern-architectu.jpg" alt="Panorama Zagreba" fill className="object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6">
               <div className="flex items-center gap-2 text-primary-foreground">

@@ -1,35 +1,50 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useEffect, useSyncExternalStore } from "react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
 const CONSENT_KEY = "cookie-consent"
+const CONSENT_EVENT = "analytics-consent"
+
+function subscribe(onStoreChange: () => void) {
+  if (typeof window === "undefined") return () => undefined
+  window.addEventListener(CONSENT_EVENT, onStoreChange)
+  return () => window.removeEventListener(CONSENT_EVENT, onStoreChange)
+}
+
+function getSnapshot(): "accepted" | "declined" | null {
+  if (typeof window === "undefined") return null
+  const consent = localStorage.getItem(CONSENT_KEY)
+  return consent === "accepted" || consent === "declined" ? consent : null
+}
+
+function getServerSnapshot() {
+  return null
+}
 
 export function CookieBanner() {
-  const [showBanner, setShowBanner] = useState(false)
+  const consent = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)
 
   useEffect(() => {
-    const consent = localStorage.getItem(CONSENT_KEY)
-    if (consent === null) {
-      setShowBanner(true)
-    } else if (consent === "accepted") {
+    if (consent === "accepted") {
       loadGoogleAnalytics()
+    } else if (consent === "declined") {
+      disableGoogleAnalytics()
     }
-  }, [])
+  }, [consent])
 
   const acceptCookies = () => {
     localStorage.setItem(CONSENT_KEY, "accepted")
-    setShowBanner(false)
-    loadGoogleAnalytics()
+    notifyConsent("accepted")
   }
 
   const declineCookies = () => {
     localStorage.setItem(CONSENT_KEY, "declined")
-    setShowBanner(false)
+    notifyConsent("declined")
   }
 
-  if (!showBanner) return null
+  if (consent !== null) return null
 
   return (
     <div className="fixed bottom-4 left-4 z-50 max-w-sm rounded-xl border border-border bg-card p-4 shadow-lg">
@@ -54,6 +69,7 @@ export function CookieBanner() {
 function loadGoogleAnalytics() {
   const GA_ID = process.env.NEXT_PUBLIC_GA_ID
   if (!GA_ID || typeof window === "undefined") return
+  ;(window as unknown as Record<string, unknown>)[`ga-disable-${GA_ID}`] = false
   if (document.getElementById("ga-script")) return
 
   // Load gtag.js
@@ -70,6 +86,22 @@ function loadGoogleAnalytics() {
   }
   gtag("js", new Date())
   gtag("config", GA_ID)
+}
+
+function disableGoogleAnalytics() {
+  const GA_ID = process.env.NEXT_PUBLIC_GA_ID
+  if (!GA_ID || typeof window === "undefined") return
+  ;(window as unknown as Record<string, unknown>)[`ga-disable-${GA_ID}`] = true
+  const script = document.getElementById("ga-script")
+  if (script?.parentNode) {
+    script.parentNode.removeChild(script)
+  }
+  window.dataLayer = []
+}
+
+function notifyConsent(consent: "accepted" | "declined") {
+  if (typeof window === "undefined") return
+  window.dispatchEvent(new CustomEvent(CONSENT_EVENT, { detail: { consent } }))
 }
 
 // Type declaration for gtag

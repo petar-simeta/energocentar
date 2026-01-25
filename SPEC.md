@@ -289,7 +289,7 @@ Structured data:
 - FAQPage JSON-LD on `/faq`
 
 Analytics:
-- Vercel Analytics (cookieless, always active)
+- Vercel Analytics (cookieless, enabled after consent)
 - Google Analytics (loads only after cookie consent)
 
 Cookie consent:

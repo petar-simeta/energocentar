@@ -51,6 +51,7 @@ Server Components (default):
 └── Most UI components
 
 Client Components ("use client"):
+├── analytics-consent.tsx  # gates analytics by consent
 ├── cookie-banner.tsx      # localStorage, dynamic script loading
 ├── copy-button.tsx        # navigator.clipboard, toast
 ├── ui/accordion.tsx       # Radix interactive
@@ -64,7 +65,7 @@ Client Components ("use client"):
 layout.tsx
 ├── {children} (pages)
 ├── Toaster (sonner)
-├── Analytics (vercel)
+├── AnalyticsConsent (vercel)
 └── CookieBanner
 
 page.tsx (example: service page)
@@ -246,8 +247,7 @@ export const metadata: Metadata = {
 
 ### Vercel Analytics
 - Cookieless, GDPR-compliant
-- Always active
-- No consent required
+- Enabled after consent (paired with CookieBanner)
 
 ### Google Analytics
 - Loads only after cookie consent

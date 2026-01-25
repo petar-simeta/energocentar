@@ -39,8 +39,8 @@ export default function ONamaPage() {
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl">
               <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">{mission.title}</h2>
-              {mission.paragraphs.map((paragraph, index) => (
-                <p key={index} className="mt-4 text-lg text-muted-foreground">
+              {mission.paragraphs.map((paragraph) => (
+                <p key={paragraph} className="mt-4 text-lg text-muted-foreground">
                   {paragraph}
                 </p>
               ))}
@@ -55,10 +55,10 @@ export default function ONamaPage() {
               <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">Što nas izdvaja</h2>
             </div>
             <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-              {values.map((value, index) => {
+              {values.map((value) => {
                 const Icon = iconMap[value.iconName]
                 return (
-                  <div key={index} className="text-center">
+                  <div key={value.title} className="text-center">
                     <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10">
                       {Icon && <Icon className="h-7 w-7 text-primary" />}
                     </div>
@@ -79,8 +79,8 @@ export default function ONamaPage() {
               <p className="mt-4 text-muted-foreground">Sve što trebate za vašu nekretninu na jednom mjestu.</p>
             </div>
             <div className="mt-12 grid gap-6 sm:grid-cols-3">
-              {servicesList.map((service, index) => (
-                <div key={index} className="rounded-2xl border border-border bg-card p-6 text-center">
+              {servicesList.map((service) => (
+                <div key={service.title} className="rounded-2xl border border-border bg-card p-6 text-center">
                   <h3 className="font-serif text-lg font-semibold text-foreground">{service.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{service.description}</p>
                 </div>
