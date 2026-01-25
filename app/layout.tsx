@@ -22,6 +22,9 @@ export const metadata: Metadata = {
     "Stručna izrada energetskih certifikata za stanove, kuće i poslovne prostore u Zagrebu i cijeloj Hrvatskoj. Brzo, pouzdano i po pristupačnim cijenama.",
   keywords:
     "energetski certifikat zagreb, energetski certifikat cijena, procjena nekretnina, etažiranje, energetski certifikat stan, energetski certifikat kuća",
+  alternates: {
+    canonical: "https://www.energocentar.com",
+  },
   openGraph: {
     title: "ENERGOCENTAR d.o.o. | Energetski certifikati, Procjene i Etažiranje",
     description:
@@ -29,6 +32,12 @@ export const metadata: Metadata = {
     locale: "hr_HR",
     type: "website",
     url: "https://www.energocentar.com",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ENERGOCENTAR d.o.o. | Energetski certifikati, Procjene i Etažiranje",
+    description:
+      "Stručna izrada energetskih certifikata za stanove, kuće i poslovne prostore u Zagrebu i cijeloj Hrvatskoj.",
   },
   metadataBase: new URL("https://www.energocentar.com"),
 }
@@ -41,6 +50,12 @@ export default function RootLayout({
   return (
     <html lang="hr">
       <body className={`${inter.variable} ${bricolage.variable} font-sans antialiased`}>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground focus:outline-none"
+        >
+          Preskoči na glavni sadržaj
+        </a>
         {children}
         <Toaster position="bottom-center" richColors />
         <AnalyticsConsent />

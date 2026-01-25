@@ -3,25 +3,7 @@ import Image from "next/image"
 import { Phone, Mail } from "lucide-react"
 import { CopyButton } from "@/components/copy-button"
 import { siteConfig } from "@/lib/config/site"
-
-const services = [
-  { name: "Energetski certifikati", href: "/energetski-certifikati" },
-  { name: "Procjena nekretnina", href: "/procjena-nekretnina" },
-  { name: "Etažiranje", href: "/etaziranje" },
-]
-
-const legal = [
-  { name: "Uvjeti korištenja", href: "/uvjeti" },
-  { name: "Privatnost", href: "/privatnost" },
-  { name: "Kolačići", href: "/kolacici" },
-]
-
-const company = [
-  { name: "O nama", href: "/o-nama" },
-  { name: "Kontakt", href: "/kontakt" },
-  { name: "FAQ", href: "/faq" },
-  { name: "Cjenik", href: "/cjenik" },
-]
+import { services, company, legal } from "@/lib/config/navigation"
 
 export function Footer() {
   return (

@@ -35,7 +35,7 @@ export function CtaSection() {
             </Button>
           </div>
 
-          <p className="mt-6 text-sm text-muted-foreground">Radnim danom od 8:00 do 18:00 · Subotom od 9:00 do 13:00</p>
+          <p className="mt-6 text-sm text-muted-foreground">{siteConfig.workingHours.display}</p>
         </div>
       </div>
     </section>

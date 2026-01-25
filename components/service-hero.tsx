@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { Phone, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { siteConfig } from "@/lib/config/site"
 import type { LucideIcon } from "lucide-react"
 
 interface ServiceHeroProps {
@@ -37,7 +38,7 @@ export function ServiceHero({ icon: Icon, title, description, image }: ServiceHe
           {/* CTAs */}
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
-              <a href="tel:+385912345678" className="flex items-center gap-2">
+              <a href={`tel:${siteConfig.phone.href}`} className="flex items-center gap-2">
                 <Phone className="h-5 w-5" />
                 Zatražite ponudu
               </a>

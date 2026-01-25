@@ -12,18 +12,7 @@ import {
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu"
 import { Sheet, SheetTrigger, SheetContent, SheetTitle } from "@/components/ui/sheet"
-
-const services = [
-  { name: "Energetski certifikati", href: "/energetski-certifikati" },
-  { name: "Procjena nekretnina", href: "/procjena-nekretnina" },
-  { name: "Etažiranje", href: "/etaziranje" },
-]
-
-const navigation = [
-  { name: "FAQ", href: "/faq" },
-  { name: "Cjenik", href: "/cjenik" },
-  { name: "O nama", href: "/o-nama" },
-]
+import { services, navigation } from "@/lib/config/navigation"
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -49,12 +38,16 @@ export function Header() {
           {/* Usluge Dropdown */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <button className="flex items-center gap-1 rounded-md px-3 py-2 font-serif text-base font-extrabold text-muted-foreground transition-colors hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+              <button
+                className="flex items-center gap-1 rounded-md px-3 py-2 font-serif text-base font-extrabold text-muted-foreground transition-colors hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                aria-haspopup="menu"
+                aria-controls="services-menu"
+              >
                 Usluge
                 <ChevronDown className="h-4 w-4" />
               </button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="start">
+            <DropdownMenuContent align="start" id="services-menu">
               {services.map((service) => (
                 <DropdownMenuItem key={service.href} asChild>
                   <Link href={service.href} className="w-full">

@@ -1,7 +1,7 @@
-import type { LucideIcon } from "lucide-react"
+import { CircleDot, type LucideIcon } from "lucide-react"
 
 interface ProcessStep {
-  icon: LucideIcon
+  icon?: LucideIcon
   title: string
   description: string
 }
@@ -22,7 +22,9 @@ export function ServiceProcess({ steps }: ServiceProcessProps) {
         </div>
 
         <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {steps.map((step, index) => (
+          {steps.map((step, index) => {
+            const Icon = step.icon ?? CircleDot
+            return (
             <div key={step.title} className="relative">
               {/* Connector */}
               {index < steps.length - 1 && (
@@ -31,7 +33,7 @@ export function ServiceProcess({ steps }: ServiceProcessProps) {
 
               <div className="relative flex flex-col items-center text-center">
                 <div className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-primary-foreground/30 bg-primary-foreground/10">
-                  <step.icon className="h-9 w-9 text-primary-foreground" />
+                  <Icon className="h-9 w-9 text-primary-foreground" />
                 </div>
                 <span className="mt-4 font-serif text-sm font-semibold text-primary-foreground/60">
                   Korak {index + 1}
@@ -40,7 +42,8 @@ export function ServiceProcess({ steps }: ServiceProcessProps) {
                 <p className="mt-2 text-sm leading-relaxed text-primary-foreground/70">{step.description}</p>
               </div>
             </div>
-          ))}
+          )}
+          )}
         </div>
       </div>
     </section>

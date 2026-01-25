@@ -66,10 +66,14 @@ export function CookieBanner() {
   )
 }
 
+function isValidGA4Id(id: string): boolean {
+  return /^G-[A-Z0-9]+$/.test(id)
+}
+
 function loadGoogleAnalytics() {
   const GA_ID = process.env.NEXT_PUBLIC_GA_ID
-  if (!GA_ID || typeof window === "undefined") return
-  ;(window as unknown as Record<string, unknown>)[`ga-disable-${GA_ID}`] = false
+  if (!GA_ID || typeof window === "undefined" || !isValidGA4Id(GA_ID)) return
+  window[`ga-disable-${GA_ID}`] = false
   if (document.getElementById("ga-script")) return
 
   // Load gtag.js
@@ -90,8 +94,8 @@ function loadGoogleAnalytics() {
 
 function disableGoogleAnalytics() {
   const GA_ID = process.env.NEXT_PUBLIC_GA_ID
-  if (!GA_ID || typeof window === "undefined") return
-  ;(window as unknown as Record<string, unknown>)[`ga-disable-${GA_ID}`] = true
+  if (!GA_ID || typeof window === "undefined" || !isValidGA4Id(GA_ID)) return
+  window[`ga-disable-${GA_ID}`] = true
   const script = document.getElementById("ga-script")
   if (script?.parentNode) {
     script.parentNode.removeChild(script)
@@ -104,9 +108,10 @@ function notifyConsent(consent: "accepted" | "declined") {
   window.dispatchEvent(new CustomEvent(CONSENT_EVENT, { detail: { consent } }))
 }
 
-// Type declaration for gtag
+// Type declaration for gtag and GA disable flags
 declare global {
   interface Window {
     dataLayer: unknown[]
+    [key: `ga-disable-${string}`]: boolean
   }
 }
