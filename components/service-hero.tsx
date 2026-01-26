@@ -37,7 +37,7 @@ export function ServiceHero({ icon: Icon, title, description, image }: ServiceHe
 
           {/* CTAs */}
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent-hover">
               <a href={`tel:${siteConfig.phone.href}`} className="flex items-center gap-2">
                 <Phone className="h-5 w-5" />
                 Zatražite ponudu

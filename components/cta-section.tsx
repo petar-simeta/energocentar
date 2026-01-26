@@ -15,7 +15,7 @@ export function CtaSection() {
           </p>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button asChild size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 sm:w-auto">
+            <Button asChild size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent-hover sm:w-auto">
               <a href={`tel:${siteConfig.phone.href}`} className="flex items-center justify-center gap-2">
                 <Phone className="h-5 w-5" />
                 {siteConfig.phone.display}

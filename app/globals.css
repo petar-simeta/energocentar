@@ -17,7 +17,8 @@
   --secondary-foreground: oklch(0.2 0.04 145);
   --muted: oklch(0.9 0.01 100);
   --muted-foreground: oklch(0.45 0.03 145);
-  --accent: oklch(0.52 0.18 28); /* ~#d33822 higher contrast red */
+  --accent: oklch(0.47 0.17 36); /* LAB 47,56,40 - topla narančasta */
+  --accent-hover: oklch(0.38 0.19 34); /* tamnija za hover */
   --accent-foreground: oklch(0.98 0.005 100);
   --destructive: oklch(0.55 0.2 27);
   --destructive-foreground: oklch(0.98 0.005 100);
@@ -95,6 +96,7 @@
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
@@ -134,4 +136,23 @@
 /* Smooth scroll */
 html {
   scroll-behavior: smooth;
+}
+
+/* Nav link animated underline */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+  left: 0;
 }

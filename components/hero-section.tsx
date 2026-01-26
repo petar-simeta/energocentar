@@ -47,7 +47,7 @@ export function HeroSection() {
               <Button
                 asChild
                 size="lg"
-                className="bg-accent text-accent-foreground hover:bg-accent/90"
+                className="bg-accent text-accent-foreground hover:bg-accent-hover"
               >
                 <a
                   href={`tel:${siteConfig.phone.href}`}

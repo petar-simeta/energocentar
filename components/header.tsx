@@ -19,7 +19,7 @@ export function Header() {
   const [servicesExpanded, setServicesExpanded] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+    <header className="sticky top-0 z-50 w-full border-b border-foreground/15 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="mx-auto flex h-16 max-w-[1400px] items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center">
@@ -34,12 +34,12 @@ export function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav className="hidden items-center gap-6 lg:flex">
           {/* Usluge Dropdown */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <button
-                className="flex items-center gap-1 rounded-md px-3 py-2 font-serif text-base font-extrabold text-muted-foreground transition-colors hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className="nav-link flex cursor-pointer items-center gap-1 rounded-md px-3 py-2 font-serif text-lg font-bold tracking-wide text-foreground transition-colors focus:outline-none"
                 aria-haspopup="menu"
                 aria-controls="services-menu"
               >
@@ -63,7 +63,7 @@ export function Header() {
             <Link
               key={item.name}
               href={item.href}
-              className="rounded-md px-3 py-2 font-serif text-base font-extrabold text-muted-foreground transition-colors hover:text-foreground"
+              className="nav-link rounded-md px-3 py-2 font-serif text-lg font-bold tracking-wide text-foreground transition-colors"
             >
               {item.name}
             </Link>
@@ -73,7 +73,7 @@ export function Header() {
         {/* Right Side */}
         <div className="flex items-center gap-2">
           {/* Desktop CTA */}
-          <Button asChild className="hidden bg-accent text-accent-foreground hover:bg-accent/90 sm:inline-flex">
+          <Button asChild className="hidden bg-accent text-base font-medium text-accent-foreground hover:bg-accent-hover sm:inline-flex">
             <Link href="/kontakt">Kontakt</Link>
           </Button>
 
@@ -87,8 +87,8 @@ export function Header() {
             <SheetContent>
               <SheetTitle className="sr-only">Navigacija</SheetTitle>
               <div className="flex h-full flex-col">
-                {/* Mobile Logo */}
-                <div className="mb-8 mt-4">
+                {/* Mobile Logo - aligned with header */}
+                <div className="-mx-2 -mt-2 mb-8 flex h-16 items-center">
                   <Link href="/" onClick={() => setMobileMenuOpen(false)}>
                     <Image
                       src="/brand/logo.svg"
@@ -106,7 +106,7 @@ export function Header() {
                   <div>
                     <button
                       onClick={() => setServicesExpanded(!servicesExpanded)}
-                      className="flex w-full items-center justify-between rounded-md px-3 py-3 text-lg font-medium text-foreground transition-colors hover:bg-muted"
+                      className="flex w-full items-center justify-between rounded-md px-3 py-3 font-serif text-lg font-bold text-foreground transition-colors hover:bg-muted"
                       aria-expanded={servicesExpanded}
                     >
                       Usluge
@@ -121,7 +121,7 @@ export function Header() {
                             key={service.href}
                             href={service.href}
                             onClick={() => setMobileMenuOpen(false)}
-                            className="rounded-md px-3 py-2 text-base text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                            className="rounded-md px-3 py-2 font-serif text-base text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
                           >
                             {service.name}
                           </Link>
@@ -136,7 +136,7 @@ export function Header() {
                       key={item.name}
                       href={item.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="rounded-md px-3 py-3 text-lg font-medium text-foreground transition-colors hover:bg-muted"
+                      className="rounded-md px-3 py-3 font-serif text-lg font-bold text-foreground transition-colors hover:bg-muted"
                     >
                       {item.name}
                     </Link>
@@ -147,7 +147,7 @@ export function Header() {
                 <div className="mt-auto pb-8 pt-6">
                   <Button
                     asChild
-                    className="w-full bg-accent text-accent-foreground hover:bg-accent/90"
+                    className="w-full bg-accent text-xl font-medium text-accent-foreground hover:bg-accent-hover"
                     size="lg"
                   >
                     <Link href="/kontakt" onClick={() => setMobileMenuOpen(false)}>
