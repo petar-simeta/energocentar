@@ -20,7 +20,7 @@ export function ServiceHero({ icon: Icon, title, description, image }: ServiceHe
         <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/90 to-background" />
       </div>
 
-      <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+      <div className="mx-auto max-w-[1400px] px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
         <div className="max-w-3xl">
           {/* Icon Badge */}
           <div className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10">

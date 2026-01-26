@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/config/site"
 export function CtaSection() {
   return (
     <section className="border-t border-border bg-card py-20 sm:py-28">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-serif text-3xl font-bold text-foreground sm:text-4xl text-balance">
             Zatrebate energetski certifikat ili procjenu?

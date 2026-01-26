@@ -11,7 +11,7 @@ interface ServiceDeliverablesProps {
 export function ServiceDeliverables({ title, description, items, image }: ServiceDeliverablesProps) {
   return (
     <section className="py-20 sm:py-28">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Content */}
           <div>

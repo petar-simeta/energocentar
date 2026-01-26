@@ -26,7 +26,7 @@ export default function ONamaPage() {
       <main>
         {/* Hero */}
         <section className="border-b border-border bg-background py-16 sm:py-24">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
               <h1 className="font-serif text-4xl font-bold text-foreground sm:text-5xl">O nama</h1>
               <p className="mt-6 text-lg text-muted-foreground">{siteConfig.description}</p>
@@ -36,7 +36,7 @@ export default function ONamaPage() {
 
         {/* Mission */}
         <section className="py-16 sm:py-24">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl">
               <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">{mission.title}</h2>
               {mission.paragraphs.map((paragraph) => (
@@ -50,7 +50,7 @@ export default function ONamaPage() {
 
         {/* Values */}
         <section className="border-t border-border bg-card py-16 sm:py-24">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">Što nas izdvaja</h2>
             </div>
@@ -73,7 +73,7 @@ export default function ONamaPage() {
 
         {/* Services */}
         <section className="py-16 sm:py-24">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">Naše usluge</h2>
               <p className="mt-4 text-muted-foreground">Sve što trebate za vašu nekretninu na jednom mjestu.</p>
@@ -91,7 +91,7 @@ export default function ONamaPage() {
 
         {/* Company Info */}
         <section className="border-t border-border bg-card py-16 sm:py-24">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">Podaci o tvrtki</h2>
               <div className="mt-8 space-y-2 text-muted-foreground">

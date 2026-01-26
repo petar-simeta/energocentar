@@ -26,7 +26,7 @@ const stats = [
 export function TrustSection() {
   return (
     <section className="border-y border-border bg-card py-16">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="font-serif text-2xl font-semibold text-foreground sm:text-3xl">Zašto odabrati nas?</h2>
           <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">

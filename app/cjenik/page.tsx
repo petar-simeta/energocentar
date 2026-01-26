@@ -18,7 +18,7 @@ export default function CjenikPage() {
       <main>
         {/* Hero */}
         <section className="border-b border-border bg-background py-16 sm:py-24">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
               <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10">
                 <Banknote className="h-7 w-7 text-primary" />
@@ -33,7 +33,7 @@ export default function CjenikPage() {
 
         {/* Pricing Tables */}
         <section className="py-16 sm:py-24">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
             <div className="grid gap-12 lg:grid-cols-3">
               {pricingTables.map((table) => (
                 <div key={table.title} className="rounded-2xl border border-border bg-card p-6">
@@ -55,7 +55,7 @@ export default function CjenikPage() {
 
         {/* Price Factors */}
         <section className="border-t border-border bg-card py-16 sm:py-24">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">Što utječe na cijenu?</h2>
               <p className="mt-4 text-muted-foreground">

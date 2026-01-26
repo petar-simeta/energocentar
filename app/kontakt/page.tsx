@@ -41,7 +41,7 @@ export default function KontaktPage() {
       <main>
         {/* Hero */}
         <section className="border-b border-border bg-background py-16 sm:py-24">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
               <h1 className="font-serif text-4xl font-bold text-foreground sm:text-5xl">Kontakt</h1>
               <p className="mt-4 text-lg text-muted-foreground">
@@ -53,7 +53,7 @@ export default function KontaktPage() {
 
         {/* Contact Info */}
         <section className="py-16 sm:py-24">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
             <div className="grid gap-12 lg:grid-cols-2">
               {/* Contact Details */}
               <div>
@@ -159,7 +159,7 @@ export default function KontaktPage() {
 
         {/* Company Info */}
         <section className="border-t border-border bg-card py-16 sm:py-20">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">Podaci o tvrtki</h2>
               <div className="mt-6 space-y-1 text-muted-foreground">
