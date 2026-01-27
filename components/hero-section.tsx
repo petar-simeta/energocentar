@@ -38,8 +38,8 @@ export function HeroSection() {
             {/* Subheadline */}
             <p className="mt-4 text-muted-foreground text-pretty">
               Brza i stručna izrada energetskih certifikata za stanove, kuće i
-              poslovne prostore. Certificirani stručnjaci s višegodišnjim
-              iskustvom u Zagrebu i okolici.
+              poslovne prostore te ovlaštena procjena nekretnina za prodaju,
+              najam i kredit. Radimo u Zagrebu, okolici i cijeloj Hrvatskoj.
             </p>
 
             {/* CTAs */}
