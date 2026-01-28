@@ -32,14 +32,21 @@ export const metadata: Metadata = {
     siteName: "ENERGOCENTAR",
     locale: "hr_HR",
     type: "website",
-    // images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "ENERGOCENTAR - Energetski certifikati i procjene" }],
+    images: [
+      {
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "ENERGOCENTAR - Energetski certifikati i procjene",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Energetski certifikati i procjena nekretnina | ENERGOCENTAR Zagreb",
     description:
       "Energetski certifikati, procjena vrijednosti nekretnina i etažiranje u Zagrebu, okolici i cijeloj Hrvatskoj.",
-    // images: ["/og.jpg"],
+    images: ["/og.jpg"],
   },
 };
 
