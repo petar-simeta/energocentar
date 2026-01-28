@@ -1,20 +1,28 @@
-import Link from "next/link"
-import Image from "next/image"
-import { Phone, Mail } from "lucide-react"
-import { CopyButton } from "@/components/copy-button"
-import { siteConfig } from "@/lib/config/site"
-import { services, company, legal } from "@/lib/config/navigation"
+import Link from "next/link";
+import Image from "next/image";
+import { Phone, Mail } from "lucide-react";
+import { CopyButton } from "@/components/copy-button";
+import { siteConfig } from "@/lib/config/site";
+import { services, company, legal } from "@/lib/config/navigation";
 
 export function Footer() {
   return (
     <footer className="border-t border-border bg-primary text-primary-foreground">
-      <div className="mx-auto max-w-[1400px] px-4 py-16 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-350 px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Company Info */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2">
-              <Image src="/brand/logo-icon.svg" alt="" width={40} height={40} className="h-10 w-10 brightness-0 invert" />
-              <span className="font-serif text-xl font-semibold">{siteConfig.shortName}</span>
+              <Image
+                src="/brand/logo-icon.svg"
+                alt=""
+                width={40}
+                height={40}
+                className="h-10 w-10 brightness-0 invert"
+              />
+              <span className="font-serif text-xl font-semibold">
+                {siteConfig.shortName}
+              </span>
             </Link>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-primary-foreground/80">
               {siteConfig.description}
@@ -87,7 +95,9 @@ export function Footer() {
 
           {/* Legal */}
           <div>
-            <h3 className="font-serif text-lg font-semibold">Pravne informacije</h3>
+            <h3 className="font-serif text-lg font-semibold">
+              Pravne informacije
+            </h3>
             <ul className="mt-4 space-y-3">
               {legal.map((item) => (
                 <li key={item.name}>
@@ -107,12 +117,15 @@ export function Footer() {
         <div className="mt-12 border-t border-primary-foreground/20 pt-8">
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
             <p className="text-sm text-primary-foreground/70">
-              © {new Date().getFullYear()} {siteConfig.name}. Sva prava pridržana.
+              © {new Date().getFullYear()} {siteConfig.name}. Sva prava
+              pridržana.
             </p>
-            <p className="text-sm text-primary-foreground/70">OIB: {siteConfig.oib}</p>
+            <p className="text-sm text-primary-foreground/70">
+              OIB: {siteConfig.oib}
+            </p>
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }

@@ -5,6 +5,7 @@ import { TrustSection } from "@/components/trust-section"
 import { ServicesSection } from "@/components/services-section"
 import { ProcessSection } from "@/components/process-section"
 import { LocationSection } from "@/components/location-section"
+import { AboutTextSection } from "@/components/about-text-section"
 import { CtaSection } from "@/components/cta-section"
 import { siteConfig } from "@/lib/config/site"
 
@@ -29,6 +30,7 @@ export default function HomePage() {
         <ServicesSection />
         <ProcessSection />
         <LocationSection />
+        <AboutTextSection />
         <CtaSection />
       </main>
       <Footer />
