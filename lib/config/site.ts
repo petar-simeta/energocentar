@@ -7,6 +7,11 @@ export const siteConfig = {
     href: "+385992265707",
   },
   email: "certifikati@energocentar.com",
+  address: {
+    street: "Ulica Petra Kružića 6",
+    city: "Zagreb",
+    display: "Ulica Petra Kružića 6, Zagreb",
+  },
   url: "https://www.energocentar.com",
   areaServed: ["Zagreb", "Zagrebačka županija", "Hrvatska"],
   description:

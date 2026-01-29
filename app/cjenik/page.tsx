@@ -23,7 +23,7 @@ export default function CjenikPage() {
               <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10">
                 <Banknote className="h-7 w-7 text-primary" />
               </div>
-              <h1 className="mt-6 font-serif text-4xl font-bold text-foreground sm:text-5xl">Cjenik usluga</h1>
+              <h1 className="mt-6 font-sans text-4xl font-bold text-foreground sm:text-5xl">Cjenik usluga</h1>
               <p className="mt-4 text-lg text-muted-foreground">
                 Transparentne cijene bez skrivenih troškova. Sve cijene su izražene u eurima i uključuju PDV.
               </p>
@@ -37,7 +37,7 @@ export default function CjenikPage() {
             <div className="grid gap-12 lg:grid-cols-3">
               {pricingTables.map((table) => (
                 <div key={table.title} className="rounded-2xl border border-border bg-card p-6">
-                  <h2 className="font-serif text-xl font-bold text-foreground">{table.title}</h2>
+                  <h2 className="font-sans text-xl font-bold text-foreground">{table.title}</h2>
                   <div className="mt-6 space-y-4">
                     {table.items.map((item) => (
                       <div key={item.service} className="flex items-center justify-between border-b border-border pb-3">
@@ -57,7 +57,7 @@ export default function CjenikPage() {
         <section className="border-t border-border bg-card py-16 sm:py-24">
           <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
-              <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">Što utječe na cijenu?</h2>
+              <h2 className="font-sans text-2xl font-bold text-foreground sm:text-3xl">Što utječe na cijenu?</h2>
               <p className="mt-4 text-muted-foreground">
                 Konačna cijena ovisi o nekoliko faktora. Za točnu ponudu, kontaktirajte nas s podacima o nekretnini.
               </p>

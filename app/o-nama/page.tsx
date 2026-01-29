@@ -28,7 +28,7 @@ export default function ONamaPage() {
         <section className="border-b border-border bg-background py-16 sm:py-24">
           <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
-              <h1 className="font-serif text-4xl font-bold text-foreground sm:text-5xl">O nama</h1>
+              <h1 className="font-sans text-4xl font-bold text-foreground sm:text-5xl">O nama</h1>
               <p className="mt-6 text-lg text-muted-foreground">{siteConfig.description}</p>
             </div>
           </div>
@@ -38,7 +38,7 @@ export default function ONamaPage() {
         <section className="py-16 sm:py-24">
           <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl">
-              <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">{mission.title}</h2>
+              <h2 className="font-sans text-2xl font-bold text-foreground sm:text-3xl">{mission.title}</h2>
               {mission.paragraphs.map((paragraph) => (
                 <p key={paragraph} className="mt-4 text-lg text-muted-foreground">
                   {paragraph}
@@ -52,7 +52,7 @@ export default function ONamaPage() {
         <section className="border-t border-border bg-card py-16 sm:py-24">
           <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
-              <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">Što nas izdvaja</h2>
+              <h2 className="font-sans text-2xl font-bold text-foreground sm:text-3xl">Što nas izdvaja</h2>
             </div>
             <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
               {values.map((value) => {
@@ -62,7 +62,7 @@ export default function ONamaPage() {
                     <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10">
                       {Icon && <Icon className="h-7 w-7 text-primary" />}
                     </div>
-                    <h3 className="mt-4 font-serif text-lg font-semibold text-foreground">{value.title}</h3>
+                    <h3 className="mt-4 font-sans text-lg font-semibold text-foreground">{value.title}</h3>
                     <p className="mt-2 text-sm text-muted-foreground">{value.description}</p>
                   </div>
                 )
@@ -75,13 +75,13 @@ export default function ONamaPage() {
         <section className="py-16 sm:py-24">
           <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
-              <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">Naše usluge</h2>
+              <h2 className="font-sans text-2xl font-bold text-foreground sm:text-3xl">Naše usluge</h2>
               <p className="mt-4 text-muted-foreground">Sve što trebate za vašu nekretninu na jednom mjestu.</p>
             </div>
             <div className="mt-12 grid gap-6 sm:grid-cols-3">
               {servicesList.map((service) => (
                 <div key={service.title} className="rounded-2xl border border-border bg-card p-6 text-center">
-                  <h3 className="font-serif text-lg font-semibold text-foreground">{service.title}</h3>
+                  <h3 className="font-sans text-lg font-semibold text-foreground">{service.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{service.description}</p>
                 </div>
               ))}
@@ -93,7 +93,7 @@ export default function ONamaPage() {
         <section className="border-t border-border bg-card py-16 sm:py-24">
           <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
-              <h2 className="font-serif text-2xl font-bold text-foreground sm:text-3xl">Podaci o tvrtki</h2>
+              <h2 className="font-sans text-2xl font-bold text-foreground sm:text-3xl">Podaci o tvrtki</h2>
               <div className="mt-8 space-y-2 text-muted-foreground">
                 <p>
                   <strong className="text-foreground">{siteConfig.name}</strong>

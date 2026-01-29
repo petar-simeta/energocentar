@@ -20,7 +20,7 @@ export function ServiceDeliverables({
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Content */}
           <div>
-            <h2 className="font-serif text-3xl font-bold text-foreground sm:text-4xl text-balance">
+            <h2 className="font-sans text-3xl font-bold text-foreground sm:text-4xl text-balance">
               {title}
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">{description}</p>

@@ -20,7 +20,7 @@ export default function Error({ error, reset }: ErrorProps) {
         <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-destructive/10">
           <AlertTriangle className="h-7 w-7 text-destructive" />
         </div>
-        <h1 className="mt-6 font-serif text-2xl font-bold text-foreground sm:text-3xl">
+        <h1 className="mt-6 font-sans text-2xl font-bold text-foreground sm:text-3xl">
           Došlo je do pogreške
         </h1>
         <p className="mt-4 text-muted-foreground">

@@ -39,7 +39,7 @@ export function Header() {
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <button
-                className="nav-link flex cursor-pointer items-center gap-1 rounded-md px-3 py-2 font-serif text-lg font-bold tracking-wide text-foreground transition-colors focus:outline-none"
+                className="nav-link flex cursor-pointer items-center gap-1 rounded-md px-3 py-2 font-sans text-lg font-bold tracking-wide text-foreground transition-colors focus:outline-none"
                 aria-haspopup="menu"
                 aria-controls="services-menu"
               >
@@ -63,7 +63,7 @@ export function Header() {
             <Link
               key={item.name}
               href={item.href}
-              className="nav-link rounded-md px-3 py-2 font-serif text-lg font-bold tracking-wide text-foreground transition-colors"
+              className="nav-link rounded-md px-3 py-2 font-sans text-lg font-bold tracking-wide text-foreground transition-colors"
             >
               {item.name}
             </Link>
@@ -106,7 +106,7 @@ export function Header() {
                   <div>
                     <button
                       onClick={() => setServicesExpanded(!servicesExpanded)}
-                      className="flex w-full items-center justify-between rounded-md px-3 py-3 font-serif text-lg font-bold text-foreground transition-colors hover:bg-muted"
+                      className="flex w-full items-center justify-between rounded-md px-3 py-3 font-sans text-lg font-bold text-foreground transition-colors hover:bg-muted"
                       aria-expanded={servicesExpanded}
                     >
                       Usluge
@@ -121,7 +121,7 @@ export function Header() {
                             key={service.href}
                             href={service.href}
                             onClick={() => setMobileMenuOpen(false)}
-                            className="rounded-md px-3 py-2 font-serif text-base text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                            className="rounded-md px-3 py-2 font-sans text-base text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
                           >
                             {service.name}
                           </Link>
@@ -136,7 +136,7 @@ export function Header() {
                       key={item.name}
                       href={item.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="rounded-md px-3 py-3 font-serif text-lg font-bold text-foreground transition-colors hover:bg-muted"
+                      className="rounded-md px-3 py-3 font-sans text-lg font-bold text-foreground transition-colors hover:bg-muted"
                     >
                       {item.name}
                     </Link>

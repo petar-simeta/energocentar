@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Mail } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 import { CopyButton } from "@/components/copy-button";
 import { siteConfig } from "@/lib/config/site";
 import { services, company, legal } from "@/lib/config/navigation";
@@ -20,7 +20,7 @@ export function Footer() {
                 height={40}
                 className="h-10 w-10 brightness-0 invert"
               />
-              <span className="font-serif text-xl font-semibold">
+              <span className="font-sans text-xl font-semibold">
                 {siteConfig.shortName}
               </span>
             </Link>
@@ -56,12 +56,16 @@ export function Footer() {
                   className="text-primary-foreground/70 hover:bg-primary-foreground/10"
                 />
               </div>
+              <div className="flex items-center gap-3 text-sm">
+                <MapPin className="h-4 w-4" />
+                {siteConfig.address.display}
+              </div>
             </div>
           </div>
 
           {/* Services */}
           <div>
-            <h3 className="font-serif text-lg font-semibold">Usluge</h3>
+            <h3 className="font-sans text-lg font-semibold">Usluge</h3>
             <ul className="mt-4 space-y-3">
               {services.map((item) => (
                 <li key={item.name}>
@@ -78,7 +82,7 @@ export function Footer() {
 
           {/* Company Links */}
           <div>
-            <h3 className="font-serif text-lg font-semibold">Tvrtka</h3>
+            <h3 className="font-sans text-lg font-semibold">Tvrtka</h3>
             <ul className="mt-4 space-y-3">
               {company.map((item) => (
                 <li key={item.name}>
@@ -95,7 +99,7 @@ export function Footer() {
 
           {/* Legal */}
           <div>
-            <h3 className="font-serif text-lg font-semibold">
+            <h3 className="font-sans text-lg font-semibold">
               Pravne informacije
             </h3>
             <ul className="mt-4 space-y-3">

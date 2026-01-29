@@ -28,7 +28,7 @@ export function ServiceHero({ icon: Icon, title, description, image }: ServiceHe
           </div>
 
           {/* Title */}
-          <h1 className="mt-6 font-serif text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl text-balance">
+          <h1 className="mt-6 font-sans text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl text-balance">
             {title}
           </h1>
 

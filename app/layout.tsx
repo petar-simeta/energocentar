@@ -1,19 +1,14 @@
 import type React from "react";
 import type { Metadata } from "next";
-import { Inter, Bricolage_Grotesque } from "next/font/google";
+import { Jost } from "next/font/google";
 import { Toaster } from "sonner";
 import { AnalyticsConsent } from "@/components/analytics-consent";
 import { CookieBanner } from "@/components/cookie-banner";
 import "./globals.css";
 
-const inter = Inter({
+const jost = Jost({
   subsets: ["latin", "latin-ext"],
-  variable: "--font-inter",
-});
-
-const bricolage = Bricolage_Grotesque({
-  subsets: ["latin", "latin-ext"],
-  variable: "--font-bricolage",
+  variable: "--font-jost",
 });
 
 export const metadata: Metadata = {
@@ -58,7 +53,7 @@ export default function RootLayout({
   return (
     <html lang="hr">
       <body
-        className={`${inter.variable} ${bricolage.variable} font-sans antialiased`}
+        className={`${jost.variable} font-sans antialiased`}
       >
         <a
           href="#main-content"

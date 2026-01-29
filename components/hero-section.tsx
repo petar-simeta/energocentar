@@ -22,7 +22,7 @@ export function HeroSection() {
         <div className="grid lg:grid-cols-[2fr_1fr] lg:gap-16 lg:items-center">
           {/* Left Column: Title (first on mobile too) */}
           <div>
-            <h1 className="font-serif text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-6xl lg:text-7xl text-balance">
+            <h1 className="font-sans text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-6xl lg:text-7xl text-balance">
               Energetski certifikati i procjene nekretnina
             </h1>
           </div>
