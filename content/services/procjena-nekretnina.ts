@@ -66,24 +66,4 @@ export const procjenaNekretnina = {
     image: "/property-valuation-report-documents-professional-r.jpg",
   },
 
-  faqs: [
-    {
-      question: "Zašto mi treba procjena nekretnine?",
-      answer:
-        "Procjena je potrebna za bankovne kredite, sudske postupke (nasljedstvo, razvod), porezne potrebe, osiguranje, ili jednostavno za informativne svrhe prije prodaje.",
-    },
-    {
-      question: "Koliko dugo traje izrada procjene?",
-      answer: "Standardna izrada traje 5-7 radnih dana. Hitne procjene možemo izraditi u roku od 48-72 sata uz doplatu.",
-    },
-    {
-      question: "Je li vaša procjena važeća za banku?",
-      answer: "Da, naši procjenitelji su ovlašteni i naše procjene prihvaćaju sve banke u Hrvatskoj.",
-    },
-    {
-      question: "Što utječe na vrijednost nekretnine?",
-      answer:
-        "Lokacija, površina, stanje nekretnine, kat, orijentacija, parking, energetski razred i brojni drugi faktori utječu na konačnu vrijednost.",
-    },
-  ],
 }

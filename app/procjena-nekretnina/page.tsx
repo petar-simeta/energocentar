@@ -9,6 +9,7 @@ import { ServiceDeliverables } from "@/components/service-deliverables"
 import { ServiceFaqTeaser } from "@/components/service-faq-teaser"
 import { CtaSection } from "@/components/cta-section"
 import { procjenaNekretnina } from "@/content/services/procjena-nekretnina"
+import { getServiceFaqs } from "@/content/faq"
 
 export const metadata: Metadata = {
   title: procjenaNekretnina.meta.title,
@@ -56,7 +57,7 @@ export default function PropertyValuationPage() {
           image={procjenaNekretnina.deliverables.image}
         />
 
-        <ServiceFaqTeaser faqs={procjenaNekretnina.faqs} />
+        <ServiceFaqTeaser faqs={getServiceFaqs("procjena-nekretnina")} />
 
         <CtaSection />
       </main>

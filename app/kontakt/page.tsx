@@ -4,35 +4,13 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { CopyButton } from "@/components/copy-button"
 import { siteConfig } from "@/lib/config/site"
+import { kontakt } from "@/content/kontakt"
 
 export const metadata: Metadata = {
   title: "Kontakt | ENERGOCENTAR d.o.o.",
   description:
     "Kontaktirajte ENERGOCENTAR d.o.o. za energetske certifikate, procjene nekretnina i etažiranje. Nazovite ili pošaljite email.",
 }
-
-const steps = [
-  {
-    number: "1",
-    title: "Nazovite nas ili pošaljite email",
-    description: "Javite nam se s osnovnim podacima o nekretnini (vrsta, površina, lokacija).",
-  },
-  {
-    number: "2",
-    title: "Dobit ćete ponudu istog dana",
-    description: "Pripremit ćemo vam ponudu s cijenom i procijenjenim vremenom izrade.",
-  },
-  {
-    number: "3",
-    title: "Dogovorimo termin pregleda",
-    description: "Izlazimo na teren u vrijeme koje vama odgovara - radnim danom ili vikendom.",
-  },
-  {
-    number: "4",
-    title: "Izrada dokumenta u dogovorenom roku",
-    description: "Certifikat ili procjenu izrađujemo brzo i kvalitetno.",
-  },
-]
 
 export default function KontaktPage() {
   return (
@@ -43,9 +21,9 @@ export default function KontaktPage() {
         <section className="border-b border-border bg-background py-16 sm:py-24">
           <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
-              <h1 className="font-sans text-4xl font-bold text-foreground sm:text-5xl">Kontakt</h1>
+              <h1 className="font-sans text-4xl font-bold text-foreground sm:text-5xl">{kontakt.hero.title}</h1>
               <p className="mt-4 text-lg text-muted-foreground">
-                Javite nam se za besplatnu ponudu ili bilo kakva pitanja. Stojimo vam na raspolaganju.
+                {kontakt.hero.description}
               </p>
             </div>
           </div>
@@ -110,9 +88,9 @@ export default function KontaktPage() {
                     <div>
                       <h3 className="font-medium text-foreground">Radno vrijeme</h3>
                       <div className="mt-1 space-y-1 text-muted-foreground">
-                        <p>Ponedjeljak - Petak: 8:00 - 18:00</p>
-                        <p>Subota: 9:00 - 13:00</p>
-                        <p>Nedjelja: zatvoreno</p>
+                        {kontakt.workingHours.map((wh) => (
+                          <p key={wh.label}>{wh.label}: {wh.value}</p>
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -136,9 +114,9 @@ export default function KontaktPage() {
                     <div>
                       <h3 className="font-medium text-foreground">Područje djelovanja</h3>
                       <div className="mt-1 space-y-1 text-muted-foreground">
-                        <p>Zagreb</p>
-                        <p>Zagrebačka županija</p>
-                        <p>Cijela Hrvatska</p>
+                        {kontakt.areas.map((area) => (
+                          <p key={area}>{area}</p>
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -151,7 +129,7 @@ export default function KontaktPage() {
                 <p className="mt-4 text-muted-foreground">Ponuda je besplatna i bez obveze.</p>
 
                 <div className="mt-8 space-y-6">
-                  {steps.map((step) => (
+                  {kontakt.steps.map((step) => (
                     <div key={step.number} className="flex gap-4">
                       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground font-semibold">
                         {step.number}

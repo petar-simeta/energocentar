@@ -1,6 +1,18 @@
-export const faqGroups = [
+interface FaqItem {
+  question: string
+  answer: string
+}
+
+interface FaqGroup {
+  title: string
+  slug: string
+  faqs: FaqItem[]
+}
+
+export const faqGroups: FaqGroup[] = [
   {
     title: "Energetski certifikati",
+    slug: "energetski-certifikati",
     faqs: [
       {
         question: "Koliko vrijedi energetski certifikat u Hrvatskoj?",
@@ -53,6 +65,7 @@ export const faqGroups = [
 
   {
     title: "Procjena vrijednosti nekretnina",
+    slug: "procjena-nekretnina",
     faqs: [
       {
         question: "Kada je potrebna procjena vrijednosti nekretnine?",
@@ -94,6 +107,7 @@ export const faqGroups = [
 
   {
     title: "Etažiranje",
+    slug: "etaziranje",
     faqs: [
       {
         question: "Što je etažiranje nekretnine?",
@@ -133,3 +147,8 @@ export const faqGroups = [
     ],
   },
 ];
+
+export function getServiceFaqs(slug: string) {
+  const group = faqGroups.find((g) => g.slug === slug)
+  return group?.faqs ?? []
+}

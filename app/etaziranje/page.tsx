@@ -9,6 +9,7 @@ import { ServiceDeliverables } from "@/components/service-deliverables"
 import { ServiceFaqTeaser } from "@/components/service-faq-teaser"
 import { CtaSection } from "@/components/cta-section"
 import { etaziranje } from "@/content/services/etaziranje"
+import { getServiceFaqs } from "@/content/faq"
 
 export const metadata: Metadata = {
   title: etaziranje.meta.title,
@@ -56,7 +57,7 @@ export default function CondominiumPage() {
           image={etaziranje.deliverables.image}
         />
 
-        <ServiceFaqTeaser faqs={etaziranje.faqs} />
+        <ServiceFaqTeaser faqs={getServiceFaqs("etaziranje")} />
 
         <CtaSection />
       </main>

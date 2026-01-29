@@ -65,26 +65,4 @@ export const etaziranje = {
     image: "/floor-plan-technical-drawing-apartment-layout-prof.jpg",
   },
 
-  faqs: [
-    {
-      question: "Što je etažiranje?",
-      answer:
-        "Etažiranje je postupak utvrđivanja posebnih dijelova zgrade (stanova, poslovnih prostora, garaža) i njihov upis u zemljišne knjige kao samostalnih vlasničkih jedinica.",
-    },
-    {
-      question: "Kada je potrebno etažiranje?",
-      answer:
-        "Etažiranje je potrebno kad želite prodati stan u zgradi koja nije etažirana, prilikom legalizacije, ili kod razdvajanja vlasništva među suvlasnicima.",
-    },
-    {
-      question: "Koliko traje postupak etažiranja?",
-      answer:
-        "Izrada elaborata traje 7-14 dana. Ukupno vrijeme ovisi i o zemljišnoknjižnom sudu — cijeli postupak može trajati od 1 do 3 mjeseca.",
-    },
-    {
-      question: "Koji dokumenti su potrebni?",
-      answer:
-        "Potrebni su izvadak iz zemljišne knjige, građevinska dozvola ili potvrda o legalizaciji, uporabna dozvola i eventualno postojeće tlocrte.",
-    },
-  ],
 }

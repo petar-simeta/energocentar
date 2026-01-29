@@ -9,6 +9,7 @@ import { ServiceDeliverables } from "@/components/service-deliverables"
 import { ServiceFaqTeaser } from "@/components/service-faq-teaser"
 import { CtaSection } from "@/components/cta-section"
 import { energetskiCertifikati } from "@/content/services/energetski-certifikati"
+import { getServiceFaqs } from "@/content/faq"
 
 export const metadata: Metadata = {
   title: energetskiCertifikati.meta.title,
@@ -56,7 +57,7 @@ export default function EnergyCertificatePage() {
           image={energetskiCertifikati.deliverables.image}
         />
 
-        <ServiceFaqTeaser faqs={energetskiCertifikati.faqs} />
+        <ServiceFaqTeaser faqs={getServiceFaqs("energetski-certifikati")} />
 
         <CtaSection />
       </main>

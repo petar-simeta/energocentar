@@ -1,20 +1,29 @@
 interface ServiceWhatIsProps {
-  title: string
-  content: string[]
-  highlights: string[]
+  title: string;
+  content: string[];
+  highlights: string[];
 }
 
-export function ServiceWhatIs({ title, content, highlights }: ServiceWhatIsProps) {
+export function ServiceWhatIs({
+  title,
+  content,
+  highlights,
+}: ServiceWhatIsProps) {
   return (
     <section className="py-20 sm:py-28">
-      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-350 px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Content */}
           <div>
-            <h2 className="font-sans text-3xl font-bold text-foreground sm:text-4xl text-balance">{title}</h2>
+            <h2 className="font-sans text-3xl font-bold text-foreground sm:text-4xl text-balance">
+              {title}
+            </h2>
             <div className="mt-6 space-y-4">
               {content.map((paragraph) => (
-                <p key={paragraph} className="text-lg leading-relaxed text-muted-foreground">
+                <p
+                  key={paragraph}
+                  className="text-lg leading-relaxed text-muted-foreground"
+                >
                   {paragraph}
                 </p>
               ))}
@@ -23,7 +32,9 @@ export function ServiceWhatIs({ title, content, highlights }: ServiceWhatIsProps
 
           {/* Highlights */}
           <div className="rounded-2xl border border-border bg-card p-8">
-            <h3 className="font-sans text-xl font-semibold text-foreground">Kada vam je potrebno?</h3>
+            <h3 className="font-sans text-xl font-semibold text-foreground">
+              Kada vam je potrebno?
+            </h3>
             <ul className="mt-6 space-y-4">
               {highlights.map((highlight, index) => (
                 <li key={highlight} className="flex gap-4">
@@ -38,5 +49,5 @@ export function ServiceWhatIs({ title, content, highlights }: ServiceWhatIsProps
         </div>
       </div>
     </section>
-  )
+  );
 }
