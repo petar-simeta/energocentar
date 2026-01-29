@@ -10,8 +10,10 @@ export const energetskiCertifikati = {
 
   hero: {
     title: "Energetski certifikati u Zagrebu i Hrvatskoj",
-    description:
-      "Izrađujemo energetske certifikate (energetske iskaznice) za stanove, kuće, zgrade i poslovne prostore. Certifikat je obavezan pri prodaji i iznajmljivanju nekretnine — izlazimo na teren, odradimo pregled i isporučujemo dokument u roku od 24–48 sati.",
+    description: [
+      "Izrađujemo energetske certifikate (energetske iskaznice) za stanove, kuće, zgrade i poslovne prostore u Zagrebu i cijeloj Hrvatskoj.",
+      "Certifikat je obavezan pri prodaji i iznajmljivanju nekretnine — izlazimo na teren, obavljamo energetski pregled i isporučujemo dokument u roku od 24–48 sati.",
+    ],
     image: "/modern-apartment-building-energy-efficiency-therma.jpg",
   },
 
@@ -19,7 +21,7 @@ export const energetskiCertifikati = {
     title: "Što je energetski certifikat i kada je potreban?",
     content: [
       "Energetski certifikat (energetska iskaznica) je službeni dokument koji prikazuje energetsku učinkovitost zgrade ili njezinog dijela (npr. stana). U certifikatu se određuje energetski razred (od A+ do G) te se navode ključni pokazatelji potrošnje energije.",
-      "U Hrvatskoj je energetski certifikat u pravilu obavezan pri prodaji ili iznajmljivanju nekretnine. Bez certifikata se nekretnina ne bi trebala oglašavati kao prodaja ili najam, a kupci i najmoprimci imaju pravo dobiti informaciju o energetskom razredu.",
+      "U Hrvatskoj je energetski certifikat u pravilu obavezan pri prodaji ili iznajmljivanju nekretnine. Bez certifikata se nekretnina ne bi trebala oglašavati kao prodaja ili najam, a kupci i najmoprimci imaju pravo dobiti informaciju o energetskom razredu. Obveza proizlazi iz Pravilnika o energetskom certificiranju zgrada i Zakona o gradnji te se primjenjuje na većinu nekretnina koje se prodaju ili iznajmljuju.",
       "Ako želite točnu ponudu, najbrže je da nam pošaljete osnovne podatke (vrsta nekretnine, površina, lokacija) — odgovorimo isti dan.",
     ],
     highlightsTitle: "Kada vam je potrebno?",
@@ -33,7 +35,7 @@ export const energetskiCertifikati = {
     preparation: {
       title: "Što je potrebno za izradu energetskog certifikata?",
       items: [
-        "Osnovni podaci o nekretnini (adresa, površina, godina gradnje)",
+        "Osnovni podaci o nekretnini (adresa, površina, godina gradnje i vrsta objekta)",
         "Pristup svim prostorijama tijekom pregleda",
         "Podaci o sustavu grijanja i hlađenja (ako postoje)",
         "Građevinska dokumentacija – ako je dostupna (nije obavezna)",
@@ -79,6 +81,8 @@ export const energetskiCertifikati = {
       "Preporuke za poboljšanje energetske učinkovitosti (gdje je primjenjivo)",
       "Dokument spreman za potrebe prodaje ili iznajmljivanja",
     ],
+    note:
+      "Energetski certifikat vrijedi 10 godina, osim ako se na nekretnini ne izvedu značajne energetske rekonstrukcije.",
     image: "/energy-certificate-document-official-stamp-profess.jpg",
   },
 };

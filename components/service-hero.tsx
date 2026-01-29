@@ -7,11 +7,13 @@ import type { LucideIcon } from "lucide-react"
 interface ServiceHeroProps {
   icon: LucideIcon
   title: string
-  description: string
+  description: string | string[]
   image: string
 }
 
 export function ServiceHero({ icon: Icon, title, description, image }: ServiceHeroProps) {
+  const paragraphs = Array.isArray(description) ? description : [description]
+
   return (
     <section className="relative overflow-hidden">
       {/* Background Image */}
@@ -33,7 +35,13 @@ export function ServiceHero({ icon: Icon, title, description, image }: ServiceHe
           </h1>
 
           {/* Description */}
-          <p className="mt-6 text-lg leading-relaxed text-muted-foreground sm:text-xl text-pretty">{description}</p>
+          <div className="mt-6 space-y-4">
+            {paragraphs.map((text, index) => (
+              <p key={`${index}-${text.slice(0, 20)}`} className="text-lg leading-relaxed text-muted-foreground sm:text-xl text-pretty">
+                {text}
+              </p>
+            ))}
+          </div>
 
           {/* CTAs */}
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">

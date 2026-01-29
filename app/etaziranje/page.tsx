@@ -8,6 +8,7 @@ import { ServiceProcess } from "@/components/service-process"
 import { ServiceDeliverables } from "@/components/service-deliverables"
 import { ServiceFaqTeaser } from "@/components/service-faq-teaser"
 import { CtaSection } from "@/components/cta-section"
+import { FaqJsonLd } from "@/components/seo/FaqJsonLd"
 import { etaziranje } from "@/content/services/etaziranje"
 import { getServiceFaqs } from "@/content/faq"
 
@@ -31,8 +32,11 @@ const processSteps = etaziranje.processSteps.map((step) => ({
 }))
 
 export default function CondominiumPage() {
+  const faqs = getServiceFaqs("etaziranje")
+
   return (
     <>
+      <FaqJsonLd faqs={faqs} />
       <Header />
       <main>
         <ServiceHero
@@ -58,7 +62,7 @@ export default function CondominiumPage() {
           image={etaziranje.deliverables.image}
         />
 
-        <ServiceFaqTeaser faqs={getServiceFaqs("etaziranje")} />
+        <ServiceFaqTeaser faqs={faqs} />
 
         <CtaSection />
       </main>

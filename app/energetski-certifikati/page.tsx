@@ -8,6 +8,7 @@ import { ServiceProcess } from "@/components/service-process"
 import { ServiceDeliverables } from "@/components/service-deliverables"
 import { ServiceFaqTeaser } from "@/components/service-faq-teaser"
 import { CtaSection } from "@/components/cta-section"
+import { FaqJsonLd } from "@/components/seo/FaqJsonLd"
 import { energetskiCertifikati } from "@/content/services/energetski-certifikati"
 import { getServiceFaqs } from "@/content/faq"
 
@@ -31,8 +32,11 @@ const processSteps = energetskiCertifikati.processSteps.map((step) => ({
 }))
 
 export default function EnergyCertificatePage() {
+  const faqs = getServiceFaqs("energetski-certifikati")
+
   return (
     <>
+      <FaqJsonLd faqs={faqs} />
       <Header />
       <main>
         <ServiceHero
@@ -56,10 +60,11 @@ export default function EnergyCertificatePage() {
           title={energetskiCertifikati.deliverables.title}
           description={energetskiCertifikati.deliverables.description}
           items={energetskiCertifikati.deliverables.items}
+          note={energetskiCertifikati.deliverables.note}
           image={energetskiCertifikati.deliverables.image}
         />
 
-        <ServiceFaqTeaser faqs={getServiceFaqs("energetski-certifikati")} />
+        <ServiceFaqTeaser faqs={faqs} />
 
         <CtaSection />
       </main>

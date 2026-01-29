@@ -5,6 +5,7 @@ interface ServiceDeliverablesProps {
   title: string;
   description: string;
   items: string[];
+  note?: string;
   image: string;
 }
 
@@ -12,6 +13,7 @@ export function ServiceDeliverables({
   title,
   description,
   items,
+  note,
   image,
 }: ServiceDeliverablesProps) {
   return (
@@ -32,6 +34,11 @@ export function ServiceDeliverables({
                 </li>
               ))}
             </ul>
+            {note ? (
+              <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
+                {note}
+              </p>
+            ) : null}
           </div>
 
           {/* Image */}

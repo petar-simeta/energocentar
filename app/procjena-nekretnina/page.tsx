@@ -8,6 +8,7 @@ import { ServiceProcess } from "@/components/service-process"
 import { ServiceDeliverables } from "@/components/service-deliverables"
 import { ServiceFaqTeaser } from "@/components/service-faq-teaser"
 import { CtaSection } from "@/components/cta-section"
+import { FaqJsonLd } from "@/components/seo/FaqJsonLd"
 import { procjenaNekretnina } from "@/content/services/procjena-nekretnina"
 import { getServiceFaqs } from "@/content/faq"
 
@@ -31,8 +32,11 @@ const processSteps = procjenaNekretnina.processSteps.map((step) => ({
 }))
 
 export default function PropertyValuationPage() {
+  const faqs = getServiceFaqs("procjena-nekretnina")
+
   return (
     <>
+      <FaqJsonLd faqs={faqs} />
       <Header />
       <main>
         <ServiceHero
@@ -58,7 +62,7 @@ export default function PropertyValuationPage() {
           image={procjenaNekretnina.deliverables.image}
         />
 
-        <ServiceFaqTeaser faqs={getServiceFaqs("procjena-nekretnina")} />
+        <ServiceFaqTeaser faqs={faqs} />
 
         <CtaSection />
       </main>
