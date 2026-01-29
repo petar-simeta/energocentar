@@ -1,70 +1,85 @@
 export const procjenaNekretnina = {
   meta: {
-    title: "Procjena vrijednosti nekretnina Zagreb | Ovlašteni procjenitelj",
+    title:
+      "Procjena vrijednosti nekretnina Zagreb | Procjena za banku, sud i prodaju",
     description:
-      "Stručna procjena tržišne vrijednosti nekretnina od ovlaštenih procjenitelja u Zagrebu. Za banke, sudove, porezne potrebe. Brza izrada. Nazovite!",
+      "Ovlaštena procjena tržišne vrijednosti nekretnina u Zagrebu i okolici. Elaborat procjene za banke (kredit/hipoteka), sud, ostavinu, podjelu imovine i porezne potrebe. Rok izrade najčešće 3–5 radnih dana.",
     keywords:
-      "procjena nekretnina zagreb, procjena vrijednosti stana, procjena kuće, sudski vještak nekretnine, procjena za banku",
+      "procjena nekretnina zagreb, procjena vrijednosti nekretnine, procjena stana zagreb, procjena kuće, procjena nekretnine za banku, procjena za kredit, sudski vještak nekretnine, ovlašteni procjenitelj",
   },
 
   hero: {
-    title: "Procjena vrijednosti nekretnina",
+    title: "Procjena vrijednosti nekretnina u Zagrebu i Hrvatskoj",
     description:
-      "Stručna i objektivna procjena tržišne vrijednosti vaše nekretnine od ovlaštenih procjenitelja. Izrađujemo elaborat priznat od svih banaka, sudova i državnih institucija.",
+      "Izrađujemo procjenu tržišne vrijednosti nekretnina (stanova, kuća, poslovnih prostora i zemljišta) za kredit, sud, ostavinu, podjelu imovine i porezne potrebe. Elaborat potpisuje ovlašteni procjenitelj, a dokument je prihvatljiv za banke i nadležne institucije.",
     image: "/luxury-apartment-interior-real-estate-valuation-pr.jpg",
   },
 
   whatIs: {
-    title: "Što je procjena nekretnine i kada vam treba?",
+    title: "Što je procjena vrijednosti nekretnine i kada je potrebna?",
     content: [
-      "Procjena vrijednosti nekretnine je stručna analiza kojom ovlašteni procjenitelj utvrđuje tržišnu vrijednost nekretnine na temelju niza faktora — lokacije, površine, stanja, usporedivih prodaja i tržišnih trendova.",
-      "Procjenu izrađuju ovlašteni sudski vještaci i procjenitelji s licencom, a elaborat je priznat u svim pravnim i bankarskim postupcima u Hrvatskoj.",
+      "Procjena vrijednosti nekretnine je stručna analiza kojom ovlašteni procjenitelj utvrđuje tržišnu vrijednost nekretnine na određeni datum. U obzir se uzimaju lokacija, površina, stanje, pravni status, usporedive prodaje te trenutni tržišni uvjeti.",
+      "Procjenu izrađuje ovlašteni procjenitelj (s licencom), a rezultat je elaborat procjene koji se koristi u bankarskim, sudskim i upravnim postupcima. Najčešći razlog izrade je kredit (hipoteka), ali i ostavina, razvod, porez ili informativna procjena prije prodaje.",
     ],
     highlightsTitle: "Kada vam je potrebno?",
     highlights: [
-      "Zahtjev banke za hipotekarni kredit",
-      "Ostavinski postupak (nasljedstvo)",
-      "Brakorazvodna parnica i podjela imovine",
-      "Porezne potrebe i osiguranje",
-      "Informativna procjena prije prodaje",
+      "Procjena za banku (kredit / hipoteka)",
+      "Ostavinski postupak i nasljeđivanje",
+      "Brakorazvod i podjela imovine",
+      "Sudski postupci i vještačenje (po potrebi)",
+      "Porezne potrebe, osiguranje i imovinsko-pravni postupci",
+      "Informativna procjena prije prodaje ili kupnje",
     ],
+    preparation: {
+      title: "Što je potrebno za izradu procjene vrijednosti nekretnine?",
+      items: [
+        "Osnovni podaci o nekretnini (adresa, površina, vrsta nekretnine i namjena)",
+        "Podaci o vlasništvu (vlasnički list ili izvadak iz zemljišnih knjiga – ako je dostupan)",
+        "Tlocrt ili podatak o ukupnoj površini nekretnine (ako postoji)",
+        "Pristup nekretnini radi pregleda i fotografiranja",
+        "Svrha procjene (kredit, sudski postupak, ostavina, prodaja, porezne potrebe)",
+      ],
+    },
   },
 
   processSteps: [
     {
       iconName: "Phone",
       title: "Upit i dogovor",
-      description: "Kontaktirate nas s osnovnim podacima — definiramo svrhu i opseg procjene.",
+      description:
+        "Pošaljite osnovne informacije (vrsta nekretnine, lokacija, površina i svrha procjene). Povratno dogovaramo korake i potrebnu dokumentaciju.",
     },
     {
       iconName: "Search",
       title: "Pregled nekretnine",
-      description: "Naš procjenitelj obavlja detaljan pregled i fotografiranje nekretnine.",
+      description:
+        "Procjenitelj obavlja pregled na terenu, fotografira i prikuplja relevantne podatke (stanje, opremljenost, posebnosti i sl.).",
     },
     {
       iconName: "Calculator",
       title: "Analiza i izračun",
-      description: "Analiziramo tržište, usporedive prodaje i specifičnosti vaše nekretnine.",
+      description:
+        "Analiziramo tržište i usporedive transakcije te primjenjujemo odgovarajuću metodologiju procjene prema svrsi elaborata.",
     },
     {
       iconName: "FileText",
       title: "Elaborat procjene",
-      description: "Izrađujemo detaljan elaborat s obrazloženjem procijenjene vrijednosti.",
+      description:
+        "Isporučujemo elaborat procjene s obrazloženjem i zaključkom o tržišnoj vrijednosti. Rok izrade je najčešće 3–5 radnih dana (ovisno o predmetu i dokumentaciji).",
     },
   ],
 
   deliverables: {
     title: "Što dobivate?",
     description:
-      "Izrađujemo detaljan elaborat procjene koji je priznat od svih relevantnih institucija — banaka, sudova i poreznih uprava.",
+      "Dobivate elaborat procjene tržišne vrijednosti s jasno obrazloženim zaključkom, pripremljen za potrebe banke, suda ili drugih postupaka.",
     items: [
-      "Detaljan elaborat procjene s obrazloženjem",
-      "Procijenjena tržišna vrijednost nekretnine",
-      "Fotografska dokumentacija",
-      "Analiza usporedivih prodaja na tržištu",
-      "Ovjera ovlaštenog procjenitelja",
+      "Elaborat procjene s obrazloženjem i zaključkom o vrijednosti",
+      "Procijenjena tržišna vrijednost na određeni datum",
+      "Fotografska i opisna dokumentacija nekretnine",
+      "Analiza tržišta i usporedivih prodaja (gdje je primjenjivo)",
+      "Potpis/ovjera ovlaštenog procjenitelja",
     ],
     image: "/property-valuation-report-documents-professional-r.jpg",
   },
-
-}
+};

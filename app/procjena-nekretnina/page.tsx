@@ -1,38 +1,45 @@
-import type { Metadata } from "next"
-import { Building2, Phone, Search, Calculator, FileText, type LucideIcon } from "lucide-react"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { ServiceHero } from "@/components/service-hero"
-import { ServiceWhatIs } from "@/components/service-what-is"
-import { ServiceProcess } from "@/components/service-process"
-import { ServiceDeliverables } from "@/components/service-deliverables"
-import { ServiceFaqTeaser } from "@/components/service-faq-teaser"
-import { CtaSection } from "@/components/cta-section"
-import { FaqJsonLd } from "@/components/seo/FaqJsonLd"
-import { procjenaNekretnina } from "@/content/services/procjena-nekretnina"
-import { getServiceFaqs } from "@/content/faq"
+import type { Metadata } from "next";
+import {
+  Building2,
+  Phone,
+  Search,
+  Calculator,
+  FileText,
+  type LucideIcon,
+} from "lucide-react";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { ServiceHero } from "@/components/service-hero";
+import { ServiceWhatIs } from "@/components/service-what-is";
+import { ServiceProcess } from "@/components/service-process";
+import { ServiceDeliverables } from "@/components/service-deliverables";
+import { ServiceFaqTeaser } from "@/components/service-faq-teaser";
+import { CtaSection } from "@/components/cta-section";
+import { FaqJsonLd } from "@/components/seo/FaqJsonLd";
+import { procjenaNekretnina } from "@/content/services/procjena-nekretnina";
+import { getServiceFaqs } from "@/content/faq";
 
 export const metadata: Metadata = {
   title: procjenaNekretnina.meta.title,
   description: procjenaNekretnina.meta.description,
   keywords: procjenaNekretnina.meta.keywords,
-}
+};
 
 const iconMap: Record<string, LucideIcon> = {
   Phone,
   Search,
   Calculator,
   FileText,
-}
+};
 
 const processSteps = procjenaNekretnina.processSteps.map((step) => ({
   icon: iconMap[step.iconName],
   title: step.title,
   description: step.description,
-}))
+}));
 
 export default function PropertyValuationPage() {
-  const faqs = getServiceFaqs("procjena-nekretnina")
+  const faqs = getServiceFaqs("procjena-nekretnina");
 
   return (
     <>
@@ -51,6 +58,7 @@ export default function PropertyValuationPage() {
           content={procjenaNekretnina.whatIs.content}
           highlightsTitle={procjenaNekretnina.whatIs.highlightsTitle}
           highlights={procjenaNekretnina.whatIs.highlights}
+          preparation={procjenaNekretnina.whatIs.preparation}
         />
 
         <ServiceProcess steps={processSteps} />
@@ -68,5 +76,5 @@ export default function PropertyValuationPage() {
       </main>
       <Footer />
     </>
-  )
+  );
 }
