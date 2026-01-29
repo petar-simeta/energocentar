@@ -45,7 +45,9 @@ export default function EnergyCertificatePage() {
         <ServiceWhatIs
           title={energetskiCertifikati.whatIs.title}
           content={energetskiCertifikati.whatIs.content}
+          highlightsTitle={energetskiCertifikati.whatIs.highlightsTitle}
           highlights={energetskiCertifikati.whatIs.highlights}
+          preparation={energetskiCertifikati.whatIs.preparation}
         />
 
         <ServiceProcess steps={processSteps} />

@@ -19,6 +19,7 @@ export const etaziranje = {
       "Etažiranje je postupak kojim se zgrada dijeli na posebne dijelove — stanove, poslovne prostore, garaže, spremišta — koji se zatim mogu upisati u zemljišne knjige kao samostalne vlasničke jedinice.",
       "Bez provedenog etažiranja, stan u zgradi ne možete prodati ili opteretiti hipotekom kao samostalnu jedinicu. Etažiranje je preduvjet za svaku pravnu transakciju s nekretninom u višestambenoj zgradi.",
     ],
+    highlightsTitle: "Kada vam je potrebno?",
     highlights: [
       "Prodaja stana u neetažiranoj zgradi",
       "Dobivanje hipotekarnog kredita",

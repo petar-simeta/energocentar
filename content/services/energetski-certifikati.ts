@@ -22,6 +22,7 @@ export const energetskiCertifikati = {
       "U Hrvatskoj je energetski certifikat u pravilu obavezan pri prodaji ili iznajmljivanju nekretnine. Bez certifikata se nekretnina ne bi trebala oglašavati kao prodaja ili najam, a kupci i najmoprimci imaju pravo dobiti informaciju o energetskom razredu.",
       "Ako želite točnu ponudu, najbrže je da nam pošaljete osnovne podatke (vrsta nekretnine, površina, lokacija) — odgovorimo isti dan.",
     ],
+    highlightsTitle: "Kada vam je potrebno?",
     highlights: [
       "Prodaja stana, kuće ili poslovnog prostora (obavezno)",
       "Iznajmljivanje nekretnine (dugoročni ili kratkoročni najam)",
@@ -29,6 +30,15 @@ export const energetskiCertifikati = {
       "Refinanciranje ili hipoteka (kada je dokumentacija potrebna u postupku)",
       "Kupnja nekretnine – informativno za usporedbu potrošnje i troškova",
     ],
+    preparation: {
+      title: "Što je potrebno za izradu energetskog certifikata?",
+      items: [
+        "Osnovni podaci o nekretnini (adresa, površina, godina gradnje)",
+        "Pristup svim prostorijama tijekom pregleda",
+        "Podaci o sustavu grijanja i hlađenja (ako postoje)",
+        "Građevinska dokumentacija – ako je dostupna (nije obavezna)",
+      ],
+    },
   },
 
   processSteps: [

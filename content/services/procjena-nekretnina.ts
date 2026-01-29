@@ -20,6 +20,7 @@ export const procjenaNekretnina = {
       "Procjena vrijednosti nekretnine je stručna analiza kojom ovlašteni procjenitelj utvrđuje tržišnu vrijednost nekretnine na temelju niza faktora — lokacije, površine, stanja, usporedivih prodaja i tržišnih trendova.",
       "Procjenu izrađuju ovlašteni sudski vještaci i procjenitelji s licencom, a elaborat je priznat u svim pravnim i bankarskim postupcima u Hrvatskoj.",
     ],
+    highlightsTitle: "Kada vam je potrebno?",
     highlights: [
       "Zahtjev banke za hipotekarni kredit",
       "Ostavinski postupak (nasljedstvo)",

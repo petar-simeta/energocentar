@@ -45,6 +45,7 @@ export default function PropertyValuationPage() {
         <ServiceWhatIs
           title={procjenaNekretnina.whatIs.title}
           content={procjenaNekretnina.whatIs.content}
+          highlightsTitle={procjenaNekretnina.whatIs.highlightsTitle}
           highlights={procjenaNekretnina.whatIs.highlights}
         />
 

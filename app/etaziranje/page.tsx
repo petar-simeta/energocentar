@@ -45,6 +45,7 @@ export default function CondominiumPage() {
         <ServiceWhatIs
           title={etaziranje.whatIs.title}
           content={etaziranje.whatIs.content}
+          highlightsTitle={etaziranje.whatIs.highlightsTitle}
           highlights={etaziranje.whatIs.highlights}
         />
 
