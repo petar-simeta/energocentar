@@ -18,11 +18,39 @@ import { CtaSection } from "@/components/cta-section";
 import { FaqJsonLd } from "@/components/seo/FaqJsonLd";
 import { etaziranje } from "@/content/services/etaziranje";
 import { getServiceFaqs } from "@/content/faq";
+import { siteConfig } from "@/lib/config/site";
+
+const canonical = `${siteConfig.url}/etaziranje`;
 
 export const metadata: Metadata = {
   title: etaziranje.meta.title,
   description: etaziranje.meta.description,
   keywords: etaziranje.meta.keywords,
+  alternates: {
+    canonical,
+  },
+  openGraph: {
+    title: etaziranje.meta.title,
+    description: etaziranje.meta.description,
+    url: canonical,
+    siteName: siteConfig.shortName,
+    locale: "hr_HR",
+    type: "website",
+    images: [
+      {
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "ENERGOCENTAR - Energetski certifikati i procjene",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: etaziranje.meta.title,
+    description: etaziranje.meta.description,
+    images: ["/og.jpg"],
+  },
 };
 
 const iconMap: Record<string, LucideIcon> = {

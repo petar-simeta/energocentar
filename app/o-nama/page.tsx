@@ -6,10 +6,39 @@ import { CtaSection } from "@/components/cta-section"
 import { siteConfig } from "@/lib/config/site"
 import { mission, values, servicesList } from "@/content/o-nama"
 
+const canonical = `${siteConfig.url}/o-nama`
+
 export const metadata: Metadata = {
   title: "O nama | ENERGOCENTAR d.o.o.",
   description:
     "Saznajte više o tvrtki ENERGOCENTAR d.o.o. - vašem pouzdanom partneru za energetske certifikate, procjene nekretnina i etažiranje.",
+  alternates: {
+    canonical,
+  },
+  openGraph: {
+    title: "O nama | ENERGOCENTAR d.o.o.",
+    description:
+      "Saznajte više o tvrtki ENERGOCENTAR d.o.o. - vašem pouzdanom partneru za energetske certifikate, procjene nekretnina i etažiranje.",
+    url: canonical,
+    siteName: siteConfig.shortName,
+    locale: "hr_HR",
+    type: "website",
+    images: [
+      {
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "ENERGOCENTAR - Energetski certifikati i procjene",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "O nama | ENERGOCENTAR d.o.o.",
+    description:
+      "Saznajte više o tvrtki ENERGOCENTAR d.o.o. - vašem pouzdanom partneru za energetske certifikate, procjene nekretnina i etažiranje.",
+    images: ["/og.jpg"],
+  },
 }
 
 const iconMap: Record<string, LucideIcon> = {

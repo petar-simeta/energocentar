@@ -18,11 +18,39 @@ import { CtaSection } from "@/components/cta-section";
 import { FaqJsonLd } from "@/components/seo/FaqJsonLd";
 import { procjenaNekretnina } from "@/content/services/procjena-nekretnina";
 import { getServiceFaqs } from "@/content/faq";
+import { siteConfig } from "@/lib/config/site";
+
+const canonical = `${siteConfig.url}/procjena-nekretnina`;
 
 export const metadata: Metadata = {
   title: procjenaNekretnina.meta.title,
   description: procjenaNekretnina.meta.description,
   keywords: procjenaNekretnina.meta.keywords,
+  alternates: {
+    canonical,
+  },
+  openGraph: {
+    title: procjenaNekretnina.meta.title,
+    description: procjenaNekretnina.meta.description,
+    url: canonical,
+    siteName: siteConfig.shortName,
+    locale: "hr_HR",
+    type: "website",
+    images: [
+      {
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "ENERGOCENTAR - Energetski certifikati i procjene",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: procjenaNekretnina.meta.title,
+    description: procjenaNekretnina.meta.description,
+    images: ["/og.jpg"],
+  },
 };
 
 const iconMap: Record<string, LucideIcon> = {

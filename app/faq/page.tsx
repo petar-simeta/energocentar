@@ -5,11 +5,41 @@ import { Footer } from "@/components/footer"
 import { CtaSection } from "@/components/cta-section"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { faqGroups } from "@/content/faq"
+import { siteConfig } from "@/lib/config/site"
+
+const canonical = `${siteConfig.url}/faq`
 
 export const metadata: Metadata = {
   title: "Česta pitanja (FAQ) | ENERGOCENTAR d.o.o.",
   description:
     "Odgovori na najčešća pitanja o energetskim certifikatima, procjenama nekretnina i etažiranju. Saznajte sve što vas zanima.",
+  alternates: {
+    canonical,
+  },
+  openGraph: {
+    title: "Česta pitanja (FAQ) | ENERGOCENTAR d.o.o.",
+    description:
+      "Odgovori na najčešća pitanja o energetskim certifikatima, procjenama nekretnina i etažiranju. Saznajte sve što vas zanima.",
+    url: canonical,
+    siteName: siteConfig.shortName,
+    locale: "hr_HR",
+    type: "website",
+    images: [
+      {
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "ENERGOCENTAR - Energetski certifikati i procjene",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Česta pitanja (FAQ) | ENERGOCENTAR d.o.o.",
+    description:
+      "Odgovori na najčešća pitanja o energetskim certifikatima, procjenama nekretnina i etažiranju. Saznajte sve što vas zanima.",
+    images: ["/og.jpg"],
+  },
 }
 
 // Generate JSON-LD for FAQ page

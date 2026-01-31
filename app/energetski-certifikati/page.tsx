@@ -11,11 +11,39 @@ import { CtaSection } from "@/components/cta-section"
 import { FaqJsonLd } from "@/components/seo/FaqJsonLd"
 import { energetskiCertifikati } from "@/content/services/energetski-certifikati"
 import { getServiceFaqs } from "@/content/faq"
+import { siteConfig } from "@/lib/config/site"
+
+const canonical = `${siteConfig.url}/energetski-certifikati`
 
 export const metadata: Metadata = {
   title: energetskiCertifikati.meta.title,
   description: energetskiCertifikati.meta.description,
   keywords: energetskiCertifikati.meta.keywords,
+  alternates: {
+    canonical,
+  },
+  openGraph: {
+    title: energetskiCertifikati.meta.title,
+    description: energetskiCertifikati.meta.description,
+    url: canonical,
+    siteName: siteConfig.shortName,
+    locale: "hr_HR",
+    type: "website",
+    images: [
+      {
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "ENERGOCENTAR - Energetski certifikati i procjene",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: energetskiCertifikati.meta.title,
+    description: energetskiCertifikati.meta.description,
+    images: ["/og.jpg"],
+  },
 }
 
 const iconMap: Record<string, LucideIcon> = {

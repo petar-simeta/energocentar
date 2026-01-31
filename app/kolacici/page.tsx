@@ -4,9 +4,38 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { siteConfig } from "@/lib/config/site"
 
+const canonical = `${siteConfig.url}/kolacici`
+
 export const metadata: Metadata = {
   title: "Politika kolačića | ENERGOCENTAR d.o.o.",
   description: "Politika korištenja kolačića na web stranici ENERGOCENTAR d.o.o. Saznajte koje kolačiće koristimo i zašto.",
+  alternates: {
+    canonical,
+  },
+  openGraph: {
+    title: "Politika kolačića | ENERGOCENTAR d.o.o.",
+    description:
+      "Politika korištenja kolačića na web stranici ENERGOCENTAR d.o.o. Saznajte koje kolačiće koristimo i zašto.",
+    url: canonical,
+    siteName: siteConfig.shortName,
+    locale: "hr_HR",
+    type: "website",
+    images: [
+      {
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "ENERGOCENTAR - Energetski certifikati i procjene",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Politika kolačića | ENERGOCENTAR d.o.o.",
+    description:
+      "Politika korištenja kolačića na web stranici ENERGOCENTAR d.o.o. Saznajte koje kolačiće koristimo i zašto.",
+    images: ["/og.jpg"],
+  },
 }
 
 export default function KolaciciPage() {

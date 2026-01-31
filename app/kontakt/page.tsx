@@ -6,10 +6,39 @@ import { CopyButton } from "@/components/copy-button"
 import { siteConfig } from "@/lib/config/site"
 import { kontakt } from "@/content/kontakt"
 
+const canonical = `${siteConfig.url}/kontakt`
+
 export const metadata: Metadata = {
   title: "Kontakt | ENERGOCENTAR d.o.o.",
   description:
     "Kontaktirajte ENERGOCENTAR d.o.o. za energetske certifikate, procjene nekretnina i etažiranje. Nazovite ili pošaljite email.",
+  alternates: {
+    canonical,
+  },
+  openGraph: {
+    title: "Kontakt | ENERGOCENTAR d.o.o.",
+    description:
+      "Kontaktirajte ENERGOCENTAR d.o.o. za energetske certifikate, procjene nekretnina i etažiranje. Nazovite ili pošaljite email.",
+    url: canonical,
+    siteName: siteConfig.shortName,
+    locale: "hr_HR",
+    type: "website",
+    images: [
+      {
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "ENERGOCENTAR - Energetski certifikati i procjene",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kontakt | ENERGOCENTAR d.o.o.",
+    description:
+      "Kontaktirajte ENERGOCENTAR d.o.o. za energetske certifikate, procjene nekretnina i etažiranje. Nazovite ili pošaljite email.",
+    images: ["/og.jpg"],
+  },
 }
 
 export default function KontaktPage() {

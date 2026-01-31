@@ -12,37 +12,7 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
-  title: "Energetski certifikati i procjena nekretnina | ENERGOCENTAR Zagreb",
-  description:
-    "Energetski certifikati, procjena vrijednosti nekretnina i etažiranje u Zagrebu, okolici i cijeloj Hrvatskoj. Stručno, brzo i uz jasne rokove.",
   metadataBase: new URL("https://www.energocentar.com"),
-  alternates: {
-    canonical: "https://www.energocentar.com",
-  },
-  openGraph: {
-    title: "Energetski certifikati i procjena nekretnina | ENERGOCENTAR Zagreb",
-    description:
-      "Energetski certifikati, procjena vrijednosti nekretnina i etažiranje u Zagrebu, okolici i cijeloj Hrvatskoj.",
-    url: "https://www.energocentar.com",
-    siteName: "ENERGOCENTAR",
-    locale: "hr_HR",
-    type: "website",
-    images: [
-      {
-        url: "/og.jpg",
-        width: 1200,
-        height: 630,
-        alt: "ENERGOCENTAR - Energetski certifikati i procjene",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Energetski certifikati i procjena nekretnina | ENERGOCENTAR Zagreb",
-    description:
-      "Energetski certifikati, procjena vrijednosti nekretnina i etažiranje u Zagrebu, okolici i cijeloj Hrvatskoj.",
-    images: ["/og.jpg"],
-  },
 };
 
 export default function RootLayout({

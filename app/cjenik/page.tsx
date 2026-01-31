@@ -4,11 +4,41 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { CtaSection } from "@/components/cta-section"
 import { pricingTables, priceFactors } from "@/content/cjenik"
+import { siteConfig } from "@/lib/config/site"
+
+const canonical = `${siteConfig.url}/cjenik`
 
 export const metadata: Metadata = {
   title: "Cjenik usluga | ENERGOCENTAR d.o.o.",
   description:
     "Cjenik energetskih certifikata, procjena nekretnina i etažiranja. Transparentne cijene bez skrivenih troškova.",
+  alternates: {
+    canonical,
+  },
+  openGraph: {
+    title: "Cjenik usluga | ENERGOCENTAR d.o.o.",
+    description:
+      "Cjenik energetskih certifikata, procjena nekretnina i etažiranja. Transparentne cijene bez skrivenih troškova.",
+    url: canonical,
+    siteName: siteConfig.shortName,
+    locale: "hr_HR",
+    type: "website",
+    images: [
+      {
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "ENERGOCENTAR - Energetski certifikati i procjene",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cjenik usluga | ENERGOCENTAR d.o.o.",
+    description:
+      "Cjenik energetskih certifikata, procjena nekretnina i etažiranja. Transparentne cijene bez skrivenih troškova.",
+    images: ["/og.jpg"],
+  },
 }
 
 export default function CjenikPage() {
