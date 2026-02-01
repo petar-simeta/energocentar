@@ -39,8 +39,6 @@ npm run build      # Production build
 | Forms | None - phone/email CTA only |
 | Analytics | Vercel (cookieless, consent-gated) + GA (after consent) |
 
----
-
 ## File Structure
 
 ```

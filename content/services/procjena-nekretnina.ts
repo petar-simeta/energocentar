@@ -1,9 +1,8 @@
 export const procjenaNekretnina = {
   meta: {
-    title:
-      "Procjena vrijednosti nekretnina Zagreb | Procjena za banku, sud i prodaju",
+    title: "Procjena nekretnina Zagreb | Za banku, sud i prodaju",
     description:
-      "Ovlaštena procjena tržišne vrijednosti nekretnina u Zagrebu i okolici. Elaborat procjene za banke (kredit/hipoteka), sud, ostavinu, podjelu imovine i porezne potrebe. Rok izrade najčešće 3–5 radnih dana.",
+      "Ovlaštena procjena tržišne vrijednosti nekretnina u Zagrebu i okolici. Elaborat za banke, sud, ostavinu i porezne potrebe. Rok 3–5 dana.",
     keywords:
       "procjena nekretnina zagreb, procjena vrijednosti nekretnine, procjena stana zagreb, procjena kuće, procjena nekretnine za banku, procjena za kredit, sudski vještak nekretnine, ovlašteni procjenitelj",
   },

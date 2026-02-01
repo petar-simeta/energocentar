@@ -1,8 +1,8 @@
 export const etaziranje = {
   meta: {
-    title: "Etažiranje Zagreb | Elaborat etažiranja i upis u zemljišne knjige",
+    title: "Etažiranje Zagreb | Elaborat i upis u zemljišne knjige",
     description:
-      "Izrada elaborata etažiranja (etažni elaborat) za upis posebnih dijelova nekretnine u zemljišne knjige (gruntovnicu). Etažiranje stanova i zgrada u Zagrebu i okolici — vodimo vas kroz cijeli postupak do upisa.",
+      "Izrada elaborata etažiranja za upis posebnih dijelova u zemljišne knjige. Etažiranje stanova i zgrada u Zagrebu i okolici uz vođenje kroz postupak.",
     keywords:
       "etažiranje zagreb, elaborat etažiranja, etažni elaborat, etažno vlasništvo, upis u zemljišne knjige, gruntovnica, etažiranje stana, etažiranje zgrade",
   },
