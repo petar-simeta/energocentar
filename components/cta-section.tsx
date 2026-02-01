@@ -46,9 +46,6 @@ export function CtaSection() {
             </Button>
           </div>
 
-          <p className="mt-6 text-sm text-muted-foreground">
-            {siteConfig.workingHours.display}
-          </p>
         </div>
       </div>
     </section>
