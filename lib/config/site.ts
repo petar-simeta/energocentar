@@ -10,6 +10,8 @@ export const siteConfig = {
   address: {
     street: "Ulica Petra Kružića 6",
     city: "Zagreb",
+    postalCode: "10000",
+    country: "Hrvatska",
     display: "Ulica Petra Kružića 6, Zagreb",
   },
   url: "https://www.energocentar.com",

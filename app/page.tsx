@@ -46,12 +46,30 @@ export const metadata: Metadata = {
 
 const localBusinessJsonLd = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "ProfessionalService",
+  "@id": `${siteConfig.url}/#business`,
   name: siteConfig.name,
   telephone: siteConfig.phone.href,
   email: siteConfig.email,
-  areaServed: siteConfig.areaServed,
   url: siteConfig.url,
+  description: siteConfig.description,
+  logo: `${siteConfig.url}/brand/logo.svg`,
+  image: `${siteConfig.url}/og.jpg`,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: siteConfig.address.street,
+    addressLocality: siteConfig.address.city,
+    postalCode: siteConfig.address.postalCode,
+    addressCountry: siteConfig.address.country,
+  },
+  areaServed: siteConfig.areaServed,
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      description: "Po dogovoru",
+      byAppointment: true,
+    },
+  ],
 }
 
 export default function HomePage() {

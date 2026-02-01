@@ -1,7 +1,6 @@
 # TODO (remove each item from this list as it gets resolved)
 
 ## High Priority
-- Expand LocalBusiness schema with address, openingHours, geo, priceRange, sameAs, etc. (use `lib/config/site.ts`).
 - Add Service/ContactPoint/Breadcrumb schema where appropriate.
 - Stabilize sitemap `lastModified` values (avoid `new Date()` for all URLs in `app/sitemap.ts`).
 
