@@ -3,6 +3,7 @@ import { Banknote } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { CtaSection } from "@/components/cta-section"
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd"
 import { pricingTables, priceFactors } from "@/content/cjenik"
 import { siteConfig } from "@/lib/config/site"
 
@@ -44,6 +45,12 @@ export const metadata: Metadata = {
 export default function CjenikPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Početna", path: "/" },
+          { name: "Cjenik", path: "/cjenik" },
+        ]}
+      />
       <Header />
       <main>
         {/* Hero */}

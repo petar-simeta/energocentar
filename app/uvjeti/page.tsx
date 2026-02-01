@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { FileText } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd"
 import { siteConfig } from "@/lib/config/site"
 
 const canonical = `${siteConfig.url}/uvjeti`
@@ -39,6 +40,12 @@ export const metadata: Metadata = {
 export default function UvjetiPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Početna", path: "/" },
+          { name: "Uvjeti korištenja", path: "/uvjeti" },
+        ]}
+      />
       <Header />
       <main>
         {/* Hero */}

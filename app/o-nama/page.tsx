@@ -3,6 +3,7 @@ import { Building2, Award, Clock, MapPin, type LucideIcon } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { CtaSection } from "@/components/cta-section"
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd"
 import { siteConfig } from "@/lib/config/site"
 import { mission, values, servicesList } from "@/content/o-nama"
 
@@ -51,6 +52,12 @@ const iconMap: Record<string, LucideIcon> = {
 export default function ONamaPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Početna", path: "/" },
+          { name: "O nama", path: "/o-nama" },
+        ]}
+      />
       <Header />
       <main>
         {/* Hero */}

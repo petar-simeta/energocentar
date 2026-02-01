@@ -4,6 +4,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { CtaSection } from "@/components/cta-section"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd"
 import { faqGroups } from "@/content/faq"
 import { siteConfig } from "@/lib/config/site"
 
@@ -64,6 +65,12 @@ export default function FaqPage() {
 
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Početna", path: "/" },
+          { name: "Česta pitanja", path: "/faq" },
+        ]}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Header />
       <main>

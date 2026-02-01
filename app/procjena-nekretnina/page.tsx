@@ -16,6 +16,8 @@ import { ServiceDeliverables } from "@/components/service-deliverables";
 import { ServiceFaqTeaser } from "@/components/service-faq-teaser";
 import { CtaSection } from "@/components/cta-section";
 import { FaqJsonLd } from "@/components/seo/FaqJsonLd";
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
+import { ServiceJsonLd } from "@/components/seo/ServiceJsonLd";
 import { procjenaNekretnina } from "@/content/services/procjena-nekretnina";
 import { getServiceFaqs } from "@/content/faq";
 import { siteConfig } from "@/lib/config/site";
@@ -71,6 +73,18 @@ export default function PropertyValuationPage() {
 
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Početna", path: "/" },
+          { name: "Procjena nekretnina", path: "/procjena-nekretnina" },
+        ]}
+      />
+      <ServiceJsonLd
+        name="Procjena vrijednosti nekretnina"
+        description={procjenaNekretnina.meta.description}
+        path="/procjena-nekretnina"
+        serviceType="Procjena vrijednosti nekretnina"
+      />
       <FaqJsonLd faqs={faqs} />
       <Header />
       <main>

@@ -16,6 +16,8 @@ import { ServiceDeliverables } from "@/components/service-deliverables";
 import { ServiceFaqTeaser } from "@/components/service-faq-teaser";
 import { CtaSection } from "@/components/cta-section";
 import { FaqJsonLd } from "@/components/seo/FaqJsonLd";
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
+import { ServiceJsonLd } from "@/components/seo/ServiceJsonLd";
 import { etaziranje } from "@/content/services/etaziranje";
 import { getServiceFaqs } from "@/content/faq";
 import { siteConfig } from "@/lib/config/site";
@@ -71,6 +73,18 @@ export default function CondominiumPage() {
 
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Početna", path: "/" },
+          { name: "Etažiranje", path: "/etaziranje" },
+        ]}
+      />
+      <ServiceJsonLd
+        name="Etažiranje"
+        description={etaziranje.meta.description}
+        path="/etaziranje"
+        serviceType="Etažiranje"
+      />
       <FaqJsonLd faqs={faqs} />
       <Header />
       <main>

@@ -1,7 +1,6 @@
 # TODO (remove each item from this list as it gets resolved)
 
 ## High Priority
-- Add Service/ContactPoint/Breadcrumb schema where appropriate.
 - Stabilize sitemap `lastModified` values (avoid `new Date()` for all URLs in `app/sitemap.ts`).
 
 ## Content / E-E-A-T

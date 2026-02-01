@@ -62,6 +62,16 @@ const localBusinessJsonLd = {
     postalCode: siteConfig.address.postalCode,
     addressCountry: siteConfig.address.country,
   },
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      contactType: "customer service",
+      telephone: siteConfig.phone.href,
+      email: siteConfig.email,
+      areaServed: siteConfig.areaServed,
+      availableLanguage: ["hr"],
+    },
+  ],
   areaServed: siteConfig.areaServed,
   openingHoursSpecification: [
     {

@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Shield } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd"
 import { siteConfig } from "@/lib/config/site"
 
 const canonical = `${siteConfig.url}/privatnost`
@@ -42,6 +43,12 @@ export const metadata: Metadata = {
 export default function PrivatnostPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Početna", path: "/" },
+          { name: "Politika privatnosti", path: "/privatnost" },
+        ]}
+      />
       <Header />
       <main>
         {/* Hero */}

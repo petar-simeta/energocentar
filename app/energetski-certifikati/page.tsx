@@ -9,6 +9,8 @@ import { ServiceDeliverables } from "@/components/service-deliverables"
 import { ServiceFaqTeaser } from "@/components/service-faq-teaser"
 import { CtaSection } from "@/components/cta-section"
 import { FaqJsonLd } from "@/components/seo/FaqJsonLd"
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd"
+import { ServiceJsonLd } from "@/components/seo/ServiceJsonLd"
 import { energetskiCertifikati } from "@/content/services/energetski-certifikati"
 import { getServiceFaqs } from "@/content/faq"
 import { siteConfig } from "@/lib/config/site"
@@ -64,6 +66,18 @@ export default function EnergyCertificatePage() {
 
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Početna", path: "/" },
+          { name: "Energetski certifikati", path: "/energetski-certifikati" },
+        ]}
+      />
+      <ServiceJsonLd
+        name="Energetski certifikati"
+        description={energetskiCertifikati.meta.description}
+        path="/energetski-certifikati"
+        serviceType="Energetsko certificiranje"
+      />
       <FaqJsonLd faqs={faqs} />
       <Header />
       <main>

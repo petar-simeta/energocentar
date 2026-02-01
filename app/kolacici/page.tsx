@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Cookie } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd"
 import { siteConfig } from "@/lib/config/site"
 
 const canonical = `${siteConfig.url}/kolacici`
@@ -41,6 +42,12 @@ export const metadata: Metadata = {
 export default function KolaciciPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Početna", path: "/" },
+          { name: "Politika kolačića", path: "/kolacici" },
+        ]}
+      />
       <Header />
       <main>
         {/* Hero */}

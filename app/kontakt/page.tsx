@@ -3,6 +3,7 @@ import { Phone, Mail, Clock, MapPin } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { CopyButton } from "@/components/copy-button"
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd"
 import { siteConfig } from "@/lib/config/site"
 import { kontakt } from "@/content/kontakt"
 
@@ -44,6 +45,12 @@ export const metadata: Metadata = {
 export default function KontaktPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Početna", path: "/" },
+          { name: "Kontakt", path: "/kontakt" },
+        ]}
+      />
       <Header />
       <main>
         {/* Hero */}
