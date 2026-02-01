@@ -3,71 +3,72 @@ import { siteConfig } from "@/lib/config/site"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.url
+  const lastModified = new Date("2026-02-01")
 
   return [
     {
       url: baseUrl,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: "weekly",
       priority: 1,
     },
     {
       url: `${baseUrl}/energetski-certifikati`,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/procjena-nekretnina`,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/etaziranje`,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/cjenik`,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/faq`,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
       url: `${baseUrl}/o-nama`,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: "monthly",
       priority: 0.6,
     },
     {
       url: `${baseUrl}/kontakt`,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: "monthly",
       priority: 0.6,
     },
     {
       url: `${baseUrl}/uvjeti`,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: "yearly",
       priority: 0.3,
     },
     {
       url: `${baseUrl}/privatnost`,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: "yearly",
       priority: 0.3,
     },
     {
       url: `${baseUrl}/kolacici`,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: "yearly",
       priority: 0.3,
     },

@@ -1,7 +1,6 @@
 # TODO (remove each item from this list as it gets resolved)
 
 ## High Priority
-- Stabilize sitemap `lastModified` values (avoid `new Date()` for all URLs in `app/sitemap.ts`).
 
 ## Content / E-E-A-T
 - Add expert credentials (licenses, author info, proof of expertise) to About/Service pages.
