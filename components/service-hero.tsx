@@ -18,11 +18,17 @@ export function ServiceHero({ icon: Icon, title, description, image }: ServiceHe
     <section className="relative overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 -z-10">
-        <Image src={image || "/placeholder.svg"} alt={title} fill priority className="object-cover opacity-15" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/90 to-background" />
+        <Image
+          src={image || "/placeholder.svg"}
+          alt={title}
+          fill
+          priority
+          className="object-cover object-bottom opacity-50"
+        />
+        <div className="absolute inset-0 bg-linear-to-t from-light-green/60 via-background/40 to-background/90" />
       </div>
 
-      <div className="mx-auto max-w-[1400px] px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+      <div className="mx-auto max-w-[1400px] px-4 pt-10 pb-16 sm:px-6 sm:pt-14 sm:pb-24 lg:px-8">
         <div className="max-w-3xl">
           {/* Icon Badge */}
           <div className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10">
@@ -30,7 +36,7 @@ export function ServiceHero({ icon: Icon, title, description, image }: ServiceHe
           </div>
 
           {/* Title */}
-          <h1 className="mt-6 font-sans text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl text-balance">
+          <h1 className="mt-6 font-sans text-5xl font-bold leading-tight tracking-tight text-foreground sm:text-6xl text-balance">
             {title}
           </h1>
 
@@ -55,7 +61,7 @@ export function ServiceHero({ icon: Icon, title, description, image }: ServiceHe
               asChild
               variant="outline"
               size="lg"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
+              className="border-light-green bg-light-green text-white hover:bg-primary hover:text-primary-foreground hover:border-primary"
             >
               <a href="#proces" className="flex items-center gap-2">
                 Kako funkcionira
