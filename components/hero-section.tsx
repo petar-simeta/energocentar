@@ -61,7 +61,7 @@ export function HeroSection() {
                 asChild
                 variant="outline"
                 size="lg"
-                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
+                className="border-light-green bg-light-green text-white hover:bg-primary hover:text-primary-foreground hover:border-primary"
               >
                 <a href="#usluge" className="flex items-center gap-2">
                   Pogledajte usluge

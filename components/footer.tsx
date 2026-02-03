@@ -1,17 +1,21 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, ExternalLink } from "lucide-react";
 import { CopyButton } from "@/components/copy-button";
 import { siteConfig } from "@/lib/config/site";
 import { services, company, legal } from "@/lib/config/navigation";
 
 export function Footer() {
+  const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+    `${siteConfig.address.street}, ${siteConfig.address.city} ${siteConfig.address.postalCode}`
+  )}`;
+
   return (
     <footer className="border-t border-border bg-primary text-primary-foreground">
       <div className="mx-auto max-w-350 px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-12 grid-cols-1 md:grid-cols-3 lg:grid-cols-[2fr_1fr_1fr_1fr]">
           {/* Company Info */}
-          <div className="lg:col-span-1">
+          <div className="md:col-span-3 lg:col-span-1">
             <Link href="/" className="flex items-center gap-2">
               <Image
                 src="/brand/logo-icon.svg"
@@ -39,7 +43,7 @@ export function Footer() {
                 <CopyButton
                   value={siteConfig.phone.href.replace("+385", "0")}
                   label="Telefonski broj"
-                  className="text-primary-foreground/70 hover:bg-primary-foreground/10"
+                  className="text-primary-foreground/80 hover:bg-primary-foreground/10 hover:text-primary-foreground focus-visible:ring-primary-foreground/30"
                 />
               </div>
               <div className="flex items-center gap-2">
@@ -53,15 +57,25 @@ export function Footer() {
                 <CopyButton
                   value={siteConfig.email}
                   label="E-mail adresa"
-                  className="text-primary-foreground/70 hover:bg-primary-foreground/10"
+                  className="text-primary-foreground/80 hover:bg-primary-foreground/10 hover:text-primary-foreground focus-visible:ring-primary-foreground/30"
                 />
               </div>
-              <div className="flex items-center gap-3 text-sm">
+              <div className="flex flex-wrap items-center gap-3 text-sm">
                 <MapPin className="h-4 w-4" />
-                {siteConfig.address.display}
+                <span>{siteConfig.address.display}</span>
+                <a
+                  href={mapsHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-7 w-7 items-center justify-center rounded-md text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground/30"
+                  aria-label="Otvori Google Maps"
+                >
+                  <ExternalLink className="h-3.5 w-3.5" />
+                </a>
               </div>
             </div>
           </div>
+
 
           {/* Services */}
           <div>

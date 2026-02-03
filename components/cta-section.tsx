@@ -33,7 +33,7 @@ export function CtaSection() {
               asChild
               variant="outline"
               size="lg"
-              className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground sm:w-auto bg-transparent"
+              className="w-full border-light-green bg-light-green text-white hover:bg-primary hover:text-primary-foreground hover:border-primary sm:w-auto"
             >
               <a
                 href={`mailto:${siteConfig.email}`}

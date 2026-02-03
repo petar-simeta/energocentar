@@ -91,7 +91,7 @@ export default function KontaktPage() {
                         <CopyButton
                           value={siteConfig.phone.href.replace("+385", "0")}
                           label="Telefonski broj"
-                          className="text-muted-foreground"
+                          className="text-muted-foreground hover:bg-primary/10 hover:text-primary focus-visible:ring-primary/30"
                         />
                       </div>
                     </div>
@@ -111,7 +111,11 @@ export default function KontaktPage() {
                         >
                           {siteConfig.email}
                         </a>
-                        <CopyButton value={siteConfig.email} label="E-mail adresa" className="text-muted-foreground" />
+                        <CopyButton
+                          value={siteConfig.email}
+                          label="E-mail adresa"
+                          className="text-muted-foreground hover:bg-primary/10 hover:text-primary focus-visible:ring-primary/30"
+                        />
                       </div>
                     </div>
                   </div>
