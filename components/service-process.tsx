@@ -28,7 +28,7 @@ export function ServiceProcess({ steps }: ServiceProcessProps) {
             <div key={step.title} className="relative">
               {/* Connector */}
               {index < steps.length - 1 && (
-                <div className="absolute right-0 top-10 hidden h-px w-full translate-x-1/2 bg-primary-foreground/20 lg:block" />
+                <div className="absolute top-10 hidden h-[2px] w-[calc(100%-4rem)] bg-primary-foreground/20 lg:block left-[calc(50%+3rem)]" />
               )}
 
               <div className="relative flex flex-col items-center text-center">

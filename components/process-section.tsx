@@ -49,7 +49,7 @@ export function ProcessSection() {
             <div key={step.title} className="relative">
               {/* Connector line */}
               {index < steps.length - 1 && (
-                <div className="absolute right-0 top-8 hidden h-px w-full translate-x-1/2 bg-primary-foreground/20 lg:block" />
+                <div className="absolute top-8 hidden h-[2px] w-[calc(100%-3rem)] bg-primary-foreground/20 lg:block left-[calc(50%+2.5rem)]" />
               )}
 
               <div className="relative flex flex-col items-center text-center">
