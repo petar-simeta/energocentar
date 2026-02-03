@@ -28,7 +28,7 @@ export function ServiceHero({
           alt={title}
           fill
           priority
-          className="object-cover object-bottom opacity-50"
+          className="object-cover object-center opacity-50"
         />
         <div className="absolute inset-0 bg-[linear-gradient(70deg,color-mix(in_srgb,var(--color-light-green)_80%,transparent)_0%,color-mix(in_srgb,var(--color-background)_90%,transparent)_15%,color-mix(in_srgb,var(--color-background)_30%,transparent)_100%)]" />
       </div>

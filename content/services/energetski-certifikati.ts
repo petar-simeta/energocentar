@@ -13,7 +13,7 @@ export const energetskiCertifikati = {
       "Izrađujemo energetske certifikate (energetske iskaznice) za stanove, kuće, zgrade i poslovne prostore u Zagrebu i cijeloj Hrvatskoj.",
       "Certifikat je obavezan pri prodaji i iznajmljivanju nekretnine — izlazimo na teren, obavljamo energetski pregled i isporučujemo dokument u roku od 24–48 sati.",
     ],
-    image: "/modern-apartment-building-energy-efficiency-therma.jpg",
+    image: "/energetski-certifikat-hero-image.jpg",
   },
 
   whatIs: {
@@ -80,8 +80,7 @@ export const energetskiCertifikati = {
       "Preporuke za poboljšanje energetske učinkovitosti (gdje je primjenjivo)",
       "Dokument spreman za potrebe prodaje ili iznajmljivanja",
     ],
-    note:
-      "Energetski certifikat vrijedi 10 godina, osim ako se na nekretnini ne izvedu značajne energetske rekonstrukcije.",
+    note: "Energetski certifikat vrijedi 10 godina, osim ako se na nekretnini ne izvedu značajne energetske rekonstrukcije.",
     image: "/energy-certificate-document-official-stamp-profess.jpg",
   },
 };
