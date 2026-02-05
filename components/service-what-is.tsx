@@ -22,7 +22,7 @@ export function ServiceWhatIs({
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Content */}
           <div>
-            <h2 className="font-sans text-3xl font-bold text-foreground sm:text-4xl text-balance">
+            <h2 className="font-display text-3xl font-bold text-foreground sm:text-4xl text-balance">
               {title}
             </h2>
             <div className="mt-6 space-y-4">
@@ -40,7 +40,7 @@ export function ServiceWhatIs({
           {/* Highlights & Preparation */}
           <div className="space-y-6">
             <div className="rounded-2xl border border-border bg-card p-8">
-              <h3 className="font-sans text-xl font-semibold text-foreground">
+              <h3 className="font-display text-xl font-semibold text-foreground">
                 {highlightsTitle}
               </h3>
               <ul className="mt-6 space-y-4">
@@ -57,7 +57,7 @@ export function ServiceWhatIs({
 
             {preparation && (
               <div className="rounded-2xl border border-border bg-card p-8">
-                <h3 className="font-sans text-xl font-semibold text-foreground">
+                <h3 className="font-display text-xl font-semibold text-foreground">
                   {preparation.title}
                 </h3>
                 <ul className="mt-6 space-y-4">

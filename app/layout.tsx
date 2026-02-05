@@ -1,6 +1,6 @@
 import type React from "react";
 import type { Metadata } from "next";
-import { Jost } from "next/font/google";
+import { Jost, DM_Sans } from "next/font/google";
 import { Toaster } from "sonner";
 import { AnalyticsConsent } from "@/components/analytics-consent";
 import { CookieBanner } from "@/components/cookie-banner";
@@ -9,6 +9,13 @@ import "./globals.css";
 const jost = Jost({
   subsets: ["latin", "latin-ext"],
   variable: "--font-jost",
+  display: "swap",
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-dm-sans",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -23,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="hr">
       <body
-        className={`${jost.variable} font-sans antialiased`}
+        className={`${jost.variable} ${dmSans.variable} font-sans antialiased`}
       >
         <a
           href="#main-content"

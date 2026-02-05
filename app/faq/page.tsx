@@ -81,7 +81,7 @@ export default function FaqPage() {
               <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10">
                 <HelpCircle className="h-7 w-7 text-primary" />
               </div>
-              <h1 className="mt-6 font-sans text-4xl font-bold text-foreground sm:text-5xl">Česta pitanja</h1>
+              <h1 className="mt-6 font-display text-4xl font-bold text-foreground sm:text-5xl">Česta pitanja</h1>
               <p className="mt-4 text-lg text-muted-foreground">
                 Ovdje ćete pronaći odgovore na najčešća pitanja o našim uslugama. Ne možete pronaći odgovor? Slobodno
                 nas kontaktirajte.
@@ -96,7 +96,7 @@ export default function FaqPage() {
             <div className="space-y-16">
               {faqGroups.map((group) => (
                 <div key={group.title}>
-                  <h2 className="font-sans text-2xl font-bold text-foreground sm:text-3xl">{group.title}</h2>
+                  <h2 className="font-display text-2xl font-bold text-foreground sm:text-3xl">{group.title}</h2>
                   <Accordion type="single" collapsible className="mt-6 w-full">
                     {group.faqs.map((faq) => (
                       <AccordionItem key={faq.question} value={faq.question} className="border-border">

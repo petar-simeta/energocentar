@@ -7,7 +7,7 @@ export function CtaSection() {
     <section className="border-t border-border bg-card py-20 sm:py-28">
       <div className="mx-auto max-w-350 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-sans text-3xl font-bold text-foreground sm:text-4xl text-balance">
+          <h2 className="font-display text-3xl font-bold text-foreground sm:text-4xl text-balance">
             Trebate energetski certifikat ili procjenu vrijednosti nekretnine?
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">

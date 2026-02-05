@@ -36,7 +36,7 @@ export function LocationSection() {
 
           {/* Content */}
           <div>
-            <h2 className="font-sans text-3xl font-bold text-foreground sm:text-4xl text-balance">
+            <h2 className="font-display text-3xl font-bold text-foreground sm:text-4xl text-balance">
               Radimo u Zagrebu, okolici i cijeloj Hrvatskoj
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-muted-foreground">

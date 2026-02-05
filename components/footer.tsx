@@ -24,7 +24,7 @@ export function Footer() {
                 height={40}
                 className="h-10 w-10 brightness-0 invert"
               />
-              <span className="font-sans text-xl font-semibold">
+              <span className="font-display text-xl font-semibold">
                 {siteConfig.shortName}
               </span>
             </Link>
@@ -79,7 +79,7 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-sans text-lg font-semibold">Usluge</h3>
+            <h3 className="font-display text-lg font-semibold">Usluge</h3>
             <ul className="mt-4 space-y-3">
               {services.map((item) => (
                 <li key={item.name}>
@@ -96,7 +96,7 @@ export function Footer() {
 
           {/* Company Links */}
           <div>
-            <h3 className="font-sans text-lg font-semibold">Tvrtka</h3>
+            <h3 className="font-display text-lg font-semibold">Tvrtka</h3>
             <ul className="mt-4 space-y-3">
               {company.map((item) => (
                 <li key={item.name}>
@@ -113,7 +113,7 @@ export function Footer() {
 
           {/* Legal */}
           <div>
-            <h3 className="font-sans text-lg font-semibold">
+            <h3 className="font-display text-lg font-semibold">
               Pravne informacije
             </h3>
             <ul className="mt-4 space-y-3">

@@ -22,7 +22,7 @@ export function ServiceFaqTeaser({ faqs }: ServiceFaqTeaserProps) {
             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
               <HelpCircle className="h-6 w-6 text-primary" />
             </div>
-            <h2 className="mt-6 font-sans text-3xl font-bold text-foreground sm:text-4xl">Česta pitanja</h2>
+            <h2 className="mt-6 font-display text-3xl font-bold text-foreground sm:text-4xl">Česta pitanja</h2>
             <p className="mt-4 text-muted-foreground">
               Odgovori na najčešća pitanja naših klijenata. Imate dodatnih pitanja? Slobodno nas kontaktirajte.
             </p>

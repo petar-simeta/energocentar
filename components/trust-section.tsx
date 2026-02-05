@@ -28,7 +28,7 @@ export function TrustSection() {
     <section className="border-y border-border bg-card py-16">
       <div className="mx-auto max-w-350 px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="font-sans text-2xl font-semibold text-foreground sm:text-3xl">
+          <h2 className="font-display text-2xl font-semibold text-foreground sm:text-3xl">
             Zašto odabrati nas?
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
@@ -44,7 +44,7 @@ export function TrustSection() {
               <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
                 <stat.icon className="h-6 w-6 text-primary" />
               </div>
-              <p className="mt-4 font-sans text-3xl font-bold text-foreground">
+              <p className="mt-4 font-display text-3xl font-bold text-foreground">
                 {stat.value}
               </p>
               <p className="mt-1 text-sm text-muted-foreground">{stat.label}</p>

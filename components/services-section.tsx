@@ -35,7 +35,7 @@ export function ServicesSection() {
     <section id="usluge" className="py-20 sm:py-28">
       <div className="mx-auto max-w-350 px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="font-sans text-3xl font-bold text-foreground sm:text-4xl text-balance">
+          <h2 className="font-display text-3xl font-bold text-foreground sm:text-4xl text-balance">
             Naše usluge
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
@@ -62,7 +62,7 @@ export function ServicesSection() {
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
                   <service.icon className="h-5 w-5 text-primary" />
                 </div>
-                <h3 className="mt-4 font-sans text-xl font-semibold text-foreground">
+                <h3 className="mt-4 font-display text-xl font-semibold text-foreground">
                   {service.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">

@@ -36,7 +36,7 @@ export function ProcessSection() {
     <section className="bg-primary py-20 sm:py-28">
       <div className="mx-auto max-w-350 px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="font-sans text-3xl font-bold text-primary-foreground sm:text-4xl">
+          <h2 className="font-display text-3xl font-bold text-primary-foreground sm:text-4xl">
             Kako funkcionira?
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-primary-foreground/80">
@@ -56,10 +56,10 @@ export function ProcessSection() {
                 <div className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-primary-foreground/30 bg-primary-foreground/10">
                   <step.icon className="h-7 w-7 text-primary-foreground" />
                 </div>
-                <span className="mt-4 font-sans text-sm font-semibold text-primary-foreground/60">
+                <span className="mt-4 font-display text-sm font-semibold text-primary-foreground/60">
                   {step.number}
                 </span>
-                <h3 className="mt-2 font-sans text-lg font-semibold text-primary-foreground">
+                <h3 className="mt-2 font-display text-lg font-semibold text-primary-foreground">
                   {step.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-primary-foreground/70">
