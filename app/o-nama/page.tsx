@@ -3,6 +3,8 @@ import { Building2, Award, Clock, MapPin, type LucideIcon } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { CtaSection } from "@/components/cta-section"
+import { PageHero } from "@/components/page-hero"
+import { EnergyBar } from "@/components/energy-bar"
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd"
 import { siteConfig } from "@/lib/config/site"
 import { mission, values, servicesList } from "@/content/o-nama"
@@ -59,24 +61,20 @@ export default function ONamaPage() {
         ]}
       />
       <Header />
-      <main>
-        {/* Hero */}
-        <section className="border-b border-border bg-background py-16 sm:py-24">
-          <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-3xl text-center">
-              <h1 className="font-display text-4xl font-bold text-foreground sm:text-5xl">O nama</h1>
-              <p className="mt-6 text-lg text-muted-foreground">{siteConfig.description}</p>
-            </div>
-          </div>
-        </section>
+      <main className="pt-[67px]">
+        <PageHero
+          title="O nama"
+          subtitle={siteConfig.description}
+        />
 
         {/* Mission */}
-        <section className="py-16 sm:py-24">
+        <section className="bg-surface-light py-16 sm:py-24">
           <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl">
               <h2 className="font-display text-2xl font-bold text-foreground sm:text-3xl">{mission.title}</h2>
+              <EnergyBar variant="green" className="mt-4 max-w-xs" />
               {mission.paragraphs.map((paragraph) => (
-                <p key={paragraph} className="mt-4 text-lg text-muted-foreground">
+                <p key={paragraph} className="mt-6 text-lg leading-relaxed text-stone-600">
                   {paragraph}
                 </p>
               ))}
@@ -84,22 +82,22 @@ export default function ONamaPage() {
           </div>
         </section>
 
-        {/* Values */}
-        <section className="border-t border-border bg-card py-16 sm:py-24">
+        {/* Values - dark surface */}
+        <section className="bg-green-900 py-16 sm:py-24">
           <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
-              <h2 className="font-display text-2xl font-bold text-foreground sm:text-3xl">Što nas izdvaja</h2>
+              <h2 className="font-display text-2xl font-bold text-white sm:text-3xl">Što nas izdvaja</h2>
             </div>
             <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
               {values.map((value) => {
                 const Icon = iconMap[value.iconName]
                 return (
-                  <div key={value.title} className="text-center">
-                    <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10">
-                      {Icon && <Icon className="h-7 w-7 text-primary" />}
+                  <div key={value.title} className="rounded-2xl border border-white/10 bg-white/5 p-6 text-center backdrop-blur-sm">
+                    <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10">
+                      {Icon && <Icon className="h-7 w-7 text-green-300" />}
                     </div>
-                    <h3 className="mt-4 font-display text-lg font-semibold text-foreground">{value.title}</h3>
-                    <p className="mt-2 text-sm text-muted-foreground">{value.description}</p>
+                    <h3 className="mt-4 font-display text-lg font-semibold text-white">{value.title}</h3>
+                    <p className="mt-2 text-sm text-white/60">{value.description}</p>
                   </div>
                 )
               })}
@@ -108,17 +106,17 @@ export default function ONamaPage() {
         </section>
 
         {/* Services */}
-        <section className="py-16 sm:py-24">
+        <section className="bg-surface-light py-16 sm:py-24">
           <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="font-display text-2xl font-bold text-foreground sm:text-3xl">Naše usluge</h2>
-              <p className="mt-4 text-muted-foreground">Sve što trebate za vašu nekretninu na jednom mjestu.</p>
+              <p className="mt-4 text-stone-600">Sve što trebate za vašu nekretninu na jednom mjestu.</p>
             </div>
             <div className="mt-12 grid gap-6 sm:grid-cols-3">
               {servicesList.map((service) => (
-                <div key={service.title} className="rounded-2xl border border-border bg-card p-6 text-center">
+                <div key={service.title} className="rounded-2xl border border-stone-200 bg-white p-6 text-center shadow-sm">
                   <h3 className="font-display text-lg font-semibold text-foreground">{service.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{service.description}</p>
+                  <p className="mt-2 text-sm text-stone-600">{service.description}</p>
                 </div>
               ))}
             </div>
@@ -126,11 +124,11 @@ export default function ONamaPage() {
         </section>
 
         {/* Company Info */}
-        <section className="border-t border-border bg-card py-16 sm:py-24">
+        <section className="bg-surface-muted py-16 sm:py-24">
           <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="font-display text-2xl font-bold text-foreground sm:text-3xl">Podaci o tvrtki</h2>
-              <div className="mt-8 space-y-2 text-muted-foreground">
+              <div className="mt-8 space-y-2 text-stone-600">
                 <p>
                   <strong className="text-foreground">{siteConfig.name}</strong>
                 </p>

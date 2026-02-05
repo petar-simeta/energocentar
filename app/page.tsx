@@ -86,7 +86,7 @@ export default function HomePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }} />
-      <Header />
+      <Header variant="transparent" />
       <main>
         <HeroSection />
         <TrustSection />

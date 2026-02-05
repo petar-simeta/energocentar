@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import { FileCheck, Phone, ClipboardCheck, Ruler, FileText, type LucideIcon } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ServiceHero } from "@/components/service-hero"
@@ -48,15 +47,8 @@ export const metadata: Metadata = {
   },
 }
 
-const iconMap: Record<string, LucideIcon> = {
-  Phone,
-  ClipboardCheck,
-  Ruler,
-  FileText,
-}
-
 const processSteps = energetskiCertifikati.processSteps.map((step) => ({
-  icon: iconMap[step.iconName],
+  iconName: step.iconName,
   title: step.title,
   description: step.description,
 }))
@@ -79,10 +71,10 @@ export default function EnergyCertificatePage() {
         serviceType="Energetsko certificiranje"
       />
       <FaqJsonLd faqs={faqs} />
-      <Header />
+      <Header variant="transparent" />
       <main>
         <ServiceHero
-          icon={FileCheck}
+          iconName="FileCheck"
           title={energetskiCertifikati.hero.title}
           description={energetskiCertifikati.hero.description}
           image={energetskiCertifikati.hero.image}

@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { FileText } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { PageHero } from "@/components/page-hero"
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd"
 import { siteConfig } from "@/lib/config/site"
 
@@ -47,117 +48,126 @@ export default function UvjetiPage() {
         ]}
       />
       <Header />
-      <main>
-        {/* Hero */}
-        <section className="border-b border-border bg-background py-16 sm:py-24">
-          <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-3xl text-center">
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10">
-                <FileText className="h-7 w-7 text-primary" />
-              </div>
-              <h1 className="mt-6 font-display text-4xl font-bold text-foreground sm:text-5xl">Uvjeti korištenja</h1>
-              <p className="mt-4 text-lg text-muted-foreground">
-                Ovi uvjeti korištenja reguliraju korištenje web stranice i usluga tvrtke {siteConfig.name}.
-              </p>
-            </div>
-          </div>
-        </section>
+      <main className="pt-[67px]">
+        <PageHero
+          icon={FileText}
+          title="Uvjeti korištenja"
+          subtitle={`Ovi uvjeti korištenja reguliraju korištenje web stranice i usluga tvrtke ${siteConfig.name}.`}
+        />
 
         {/* Content */}
-        <section className="py-16 sm:py-24">
+        <section className="bg-surface-light py-16 sm:py-24">
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-            <div className="prose prose-lg prose-gray max-w-none">
-              <h2 className="font-display text-2xl font-bold text-foreground">O tvrtki</h2>
-              <p className="text-muted-foreground">
-                <strong className="text-foreground">{siteConfig.name}</strong>
-                <br />
-                OIB: {siteConfig.oib}
-                <br />
-                Email: {siteConfig.email}
-                <br />
-                Telefon: {siteConfig.phone.display}
-              </p>
+            <div className="space-y-12">
+              <div>
+                <h2 className="font-display text-2xl font-bold text-foreground">O tvrtki</h2>
+                <p className="mt-4 text-stone-600">
+                  <strong className="text-foreground">{siteConfig.name}</strong>
+                  <br />
+                  OIB: {siteConfig.oib}
+                  <br />
+                  Email: {siteConfig.email}
+                  <br />
+                  Telefon: {siteConfig.phone.display}
+                </p>
+              </div>
 
-              <h2 className="mt-12 font-display text-2xl font-bold text-foreground">Korištenje web stranice</h2>
-              <p className="text-muted-foreground">
-                Korištenjem ove web stranice prihvaćate ove uvjete korištenja. Ako se ne slažete s uvjetima, molimo vas
-                da ne koristite stranicu.
-              </p>
+              <div>
+                <h2 className="font-display text-2xl font-bold text-foreground">Korištenje web stranice</h2>
+                <p className="mt-4 text-stone-600">
+                  Korištenjem ove web stranice prihvaćate ove uvjete korištenja. Ako se ne slažete s uvjetima, molimo vas
+                  da ne koristite stranicu.
+                </p>
 
-              <h3 className="mt-8 font-display text-xl font-semibold text-foreground">Dopušteno korištenje</h3>
-              <ul className="list-disc space-y-2 pl-6 text-muted-foreground">
-                <li>Pregledavanje informacija o našim uslugama</li>
-                <li>Kontaktiranje radi upita ili narudžbe usluga</li>
-                <li>Dijeljenje sadržaja uz navođenje izvora</li>
-              </ul>
+                <h3 className="mt-8 font-display text-xl font-semibold text-foreground">Dopušteno korištenje</h3>
+                <ul className="mt-4 space-y-2 pl-6 text-stone-600">
+                  <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600" />Pregledavanje informacija o našim uslugama</li>
+                  <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600" />Kontaktiranje radi upita ili narudžbe usluga</li>
+                  <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600" />Dijeljenje sadržaja uz navođenje izvora</li>
+                </ul>
 
-              <h3 className="mt-8 font-display text-xl font-semibold text-foreground">Zabranjeno korištenje</h3>
-              <ul className="list-disc space-y-2 pl-6 text-muted-foreground">
-                <li>Kopiranje sadržaja bez dopuštenja</li>
-                <li>Korištenje stranice za nezakonite svrhe</li>
-                <li>Pokušaji neovlaštenog pristupa</li>
-              </ul>
+                <h3 className="mt-8 font-display text-xl font-semibold text-foreground">Zabranjeno korištenje</h3>
+                <ul className="mt-4 space-y-2 pl-6 text-stone-600">
+                  <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600" />Kopiranje sadržaja bez dopuštenja</li>
+                  <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600" />Korištenje stranice za nezakonite svrhe</li>
+                  <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600" />Pokušaji neovlaštenog pristupa</li>
+                </ul>
+              </div>
 
-              <h2 className="mt-12 font-display text-2xl font-bold text-foreground">Naše usluge</h2>
+              <div>
+                <h2 className="font-display text-2xl font-bold text-foreground">Naše usluge</h2>
 
-              <h3 className="mt-8 font-display text-xl font-semibold text-foreground">Energetski certifikati</h3>
-              <p className="text-muted-foreground">
-                Izrađujemo energetske certifikate u skladu s važećim hrvatskim propisima. Certifikati se upisuju u
-                službeni registar Ministarstva graditeljstva.
-              </p>
+                <h3 className="mt-8 font-display text-xl font-semibold text-foreground">Energetski certifikati</h3>
+                <p className="mt-4 text-stone-600">
+                  Izrađujemo energetske certifikate u skladu s važećim hrvatskim propisima. Certifikati se upisuju u
+                  službeni registar Ministarstva graditeljstva.
+                </p>
 
-              <h3 className="mt-8 font-display text-xl font-semibold text-foreground">Procjena nekretnina</h3>
-              <p className="text-muted-foreground">
-                Procjene izrađuju ovlašteni procjenitelji u skladu s propisima o procjeni vrijednosti nekretnina.
-              </p>
+                <h3 className="mt-8 font-display text-xl font-semibold text-foreground">Procjena nekretnina</h3>
+                <p className="mt-4 text-stone-600">
+                  Procjene izrađuju ovlašteni procjenitelji u skladu s propisima o procjeni vrijednosti nekretnina.
+                </p>
 
-              <h3 className="mt-8 font-display text-xl font-semibold text-foreground">Etažiranje</h3>
-              <p className="text-muted-foreground">
-                Postupak etažiranja provodimo u skladu sa Zakonom o vlasništvu i drugim stvarnim pravima.
-              </p>
+                <h3 className="mt-8 font-display text-xl font-semibold text-foreground">Etažiranje</h3>
+                <p className="mt-4 text-stone-600">
+                  Postupak etažiranja provodimo u skladu sa Zakonom o vlasništvu i drugim stvarnim pravima.
+                </p>
+              </div>
 
-              <h2 className="mt-12 font-display text-2xl font-bold text-foreground">Cijene i plaćanje</h2>
-              <ul className="list-disc space-y-2 pl-6 text-muted-foreground">
-                <li>Cijene su izražene u eurima (€)</li>
-                <li>Plaćanje se vrši po isporuci usluge</li>
-                <li>Prihvaćamo gotovinu i bankovni prijenos</li>
-                <li>Izdajemo račun za svaku uslugu</li>
-              </ul>
+              <div>
+                <h2 className="font-display text-2xl font-bold text-foreground">Cijene i plaćanje</h2>
+                <ul className="mt-4 space-y-2 pl-6 text-stone-600">
+                  <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600" />Cijene su izražene u eurima (&euro;)</li>
+                  <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600" />Plaćanje se vrši po isporuci usluge</li>
+                  <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600" />Prihvaćamo gotovinu i bankovni prijenos</li>
+                  <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600" />Izdajemo račun za svaku uslugu</li>
+                </ul>
+              </div>
 
-              <h2 className="mt-12 font-display text-2xl font-bold text-foreground">Odgovornost</h2>
-              <p className="text-muted-foreground">
-                {siteConfig.name} jamči za točnost i kvalitetu izrađene dokumentacije u skladu s važećim propisima. Ne
-                odgovaramo za štetu nastalu:
-              </p>
-              <ul className="list-disc space-y-2 pl-6 text-muted-foreground">
-                <li>Davanjem netočnih podataka od strane klijenta</li>
-                <li>Korištenjem dokumentacije protivno namjeni</li>
-                <li>Višom silom ili odlukama državnih tijela</li>
-              </ul>
+              <div>
+                <h2 className="font-display text-2xl font-bold text-foreground">Odgovornost</h2>
+                <p className="mt-4 text-stone-600">
+                  {siteConfig.name} jamči za točnost i kvalitetu izrađene dokumentacije u skladu s važećim propisima. Ne
+                  odgovaramo za štetu nastalu:
+                </p>
+                <ul className="mt-4 space-y-2 pl-6 text-stone-600">
+                  <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600" />Davanjem netočnih podataka od strane klijenta</li>
+                  <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600" />Korištenjem dokumentacije protivno namjeni</li>
+                  <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600" />Višom silom ili odlukama državnih tijela</li>
+                </ul>
+              </div>
 
-              <h2 className="mt-12 font-display text-2xl font-bold text-foreground">Intelektualno vlasništvo</h2>
-              <p className="text-muted-foreground">
-                Sav sadržaj na ovoj web stranici (tekstovi, slike, logotipi) vlasništvo je tvrtke {siteConfig.name} i
-                zaštićen je autorskim pravima.
-              </p>
+              <div>
+                <h2 className="font-display text-2xl font-bold text-foreground">Intelektualno vlasništvo</h2>
+                <p className="mt-4 text-stone-600">
+                  Sav sadržaj na ovoj web stranici (tekstovi, slike, logotipi) vlasništvo je tvrtke {siteConfig.name} i
+                  zaštićen je autorskim pravima.
+                </p>
+              </div>
 
-              <h2 className="mt-12 font-display text-2xl font-bold text-foreground">Izmjene uvjeta</h2>
-              <p className="text-muted-foreground">
-                Zadržavamo pravo izmjene ovih uvjeta. Nastavkom korištenja stranice nakon izmjena smatrat će se da ste
-                prihvatili nove uvjete.
-              </p>
+              <div>
+                <h2 className="font-display text-2xl font-bold text-foreground">Izmjene uvjeta</h2>
+                <p className="mt-4 text-stone-600">
+                  Zadržavamo pravo izmjene ovih uvjeta. Nastavkom korištenja stranice nakon izmjena smatrat će se da ste
+                  prihvatili nove uvjete.
+                </p>
+              </div>
 
-              <h2 className="mt-12 font-display text-2xl font-bold text-foreground">Primjenjivo pravo</h2>
-              <p className="text-muted-foreground">
-                Na ove uvjete primjenjuje se pravo Republike Hrvatske. Za sve sporove nadležan je sud u Zagrebu.
-              </p>
+              <div>
+                <h2 className="font-display text-2xl font-bold text-foreground">Primjenjivo pravo</h2>
+                <p className="mt-4 text-stone-600">
+                  Na ove uvjete primjenjuje se pravo Republike Hrvatske. Za sve sporove nadležan je sud u Zagrebu.
+                </p>
+              </div>
 
-              <h2 className="mt-12 font-display text-2xl font-bold text-foreground">Kontakt</h2>
-              <p className="text-muted-foreground">
-                Za pitanja o uvjetima korištenja kontaktirajte nas na: {siteConfig.email}
-              </p>
+              <div>
+                <h2 className="font-display text-2xl font-bold text-foreground">Kontakt</h2>
+                <p className="mt-4 text-stone-600">
+                  Za pitanja o uvjetima korištenja kontaktirajte nas na: {siteConfig.email}
+                </p>
+              </div>
 
-              <p className="mt-8 text-sm text-muted-foreground">
+              <p className="text-sm text-stone-500">
                 <em>Posljednja izmjena: siječanj 2026.</em>
               </p>
             </div>

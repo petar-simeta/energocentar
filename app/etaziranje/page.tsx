@@ -1,12 +1,4 @@
 import type { Metadata } from "next";
-import {
-  Layers,
-  Phone,
-  FileSearch,
-  PenTool,
-  BookOpen,
-  type LucideIcon,
-} from "lucide-react";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { ServiceHero } from "@/components/service-hero";
@@ -55,15 +47,8 @@ export const metadata: Metadata = {
   },
 };
 
-const iconMap: Record<string, LucideIcon> = {
-  Phone,
-  FileSearch,
-  PenTool,
-  BookOpen,
-};
-
 const processSteps = etaziranje.processSteps.map((step) => ({
-  icon: iconMap[step.iconName],
+  iconName: step.iconName,
   title: step.title,
   description: step.description,
 }));
@@ -86,10 +71,10 @@ export default function CondominiumPage() {
         serviceType="Etažiranje"
       />
       <FaqJsonLd faqs={faqs} />
-      <Header />
+      <Header variant="transparent" />
       <main>
         <ServiceHero
-          icon={Layers}
+          iconName="Layers"
           title={etaziranje.hero.title}
           description={etaziranje.hero.description}
           image={etaziranje.hero.image}

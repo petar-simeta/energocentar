@@ -3,6 +3,7 @@ import { Phone, Mail, Clock, MapPin } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { CopyButton } from "@/components/copy-button"
+import { PageHero } from "@/components/page-hero"
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd"
 import { siteConfig } from "@/lib/config/site"
 import { kontakt } from "@/content/kontakt"
@@ -52,21 +53,15 @@ export default function KontaktPage() {
         ]}
       />
       <Header />
-      <main>
-        {/* Hero */}
-        <section className="border-b border-border bg-background py-16 sm:py-24">
-          <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-3xl text-center">
-              <h1 className="font-display text-4xl font-bold text-foreground sm:text-5xl">{kontakt.hero.title}</h1>
-              <p className="mt-4 text-lg text-muted-foreground">
-                {kontakt.hero.description}
-              </p>
-            </div>
-          </div>
-        </section>
+      <main className="pt-[67px]">
+        <PageHero
+          icon={Phone}
+          title={kontakt.hero.title}
+          subtitle={kontakt.hero.description}
+        />
 
         {/* Contact Info */}
-        <section className="py-16 sm:py-24">
+        <section className="bg-surface-light py-16 sm:py-24">
           <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
             <div className="grid gap-12 lg:grid-cols-2">
               {/* Contact Details */}
@@ -75,59 +70,59 @@ export default function KontaktPage() {
 
                 <div className="mt-8 space-y-6">
                   {/* Phone */}
-                  <div className="flex items-start gap-4">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-                      <Phone className="h-6 w-6 text-primary" />
+                  <div className="flex items-start gap-4 rounded-xl bg-green-50 p-4">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-green-100">
+                      <Phone className="h-6 w-6 text-green-700" />
                     </div>
                     <div className="flex-1">
                       <h3 className="font-medium text-foreground">Telefon</h3>
                       <div className="mt-1 flex items-center gap-2">
                         <a
                           href={`tel:${siteConfig.phone.href}`}
-                          className="text-lg font-semibold text-primary hover:underline"
+                          className="text-lg font-semibold text-green-700 hover:underline"
                         >
                           {siteConfig.phone.display}
                         </a>
                         <CopyButton
                           value={siteConfig.phone.href.replace("+385", "0")}
                           label="Telefonski broj"
-                          className="text-muted-foreground hover:bg-primary/10 hover:text-primary focus-visible:ring-primary/30"
+                          className="text-stone-500 hover:bg-green-100 hover:text-green-700 focus-visible:ring-green-300"
                         />
                       </div>
                     </div>
                   </div>
 
                   {/* Email */}
-                  <div className="flex items-start gap-4">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-                      <Mail className="h-6 w-6 text-primary" />
+                  <div className="flex items-start gap-4 rounded-xl bg-green-50 p-4">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-green-100">
+                      <Mail className="h-6 w-6 text-green-700" />
                     </div>
                     <div className="flex-1">
                       <h3 className="font-medium text-foreground">Email</h3>
                       <div className="mt-1 flex items-center gap-2">
                         <a
                           href={`mailto:${siteConfig.email}`}
-                          className="text-lg font-semibold text-primary hover:underline"
+                          className="text-lg font-semibold text-green-700 hover:underline"
                         >
                           {siteConfig.email}
                         </a>
                         <CopyButton
                           value={siteConfig.email}
                           label="E-mail adresa"
-                          className="text-muted-foreground hover:bg-primary/10 hover:text-primary focus-visible:ring-primary/30"
+                          className="text-stone-500 hover:bg-green-100 hover:text-green-700 focus-visible:ring-green-300"
                         />
                       </div>
                     </div>
                   </div>
 
                   {/* Working Hours */}
-                  <div className="flex items-start gap-4">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-                      <Clock className="h-6 w-6 text-primary" />
+                  <div className="flex items-start gap-4 rounded-xl bg-green-50 p-4">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-green-100">
+                      <Clock className="h-6 w-6 text-green-700" />
                     </div>
                     <div>
                       <h3 className="font-medium text-foreground">Radno vrijeme</h3>
-                      <div className="mt-1 space-y-1 text-muted-foreground">
+                      <div className="mt-1 space-y-1 text-stone-600">
                         {kontakt.workingHours.map((wh) => (
                           <p key={wh.label}>{wh.label}: {wh.value}</p>
                         ))}
@@ -136,24 +131,24 @@ export default function KontaktPage() {
                   </div>
 
                   {/* Address */}
-                  <div className="flex items-start gap-4">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-                      <MapPin className="h-6 w-6 text-primary" />
+                  <div className="flex items-start gap-4 rounded-xl bg-green-50 p-4">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-green-100">
+                      <MapPin className="h-6 w-6 text-green-700" />
                     </div>
                     <div>
                       <h3 className="font-medium text-foreground">Adresa</h3>
-                      <p className="mt-1 text-muted-foreground">{siteConfig.address.display}</p>
+                      <p className="mt-1 text-stone-600">{siteConfig.address.display}</p>
                     </div>
                   </div>
 
                   {/* Area */}
-                  <div className="flex items-start gap-4">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-                      <MapPin className="h-6 w-6 text-primary" />
+                  <div className="flex items-start gap-4 rounded-xl bg-green-50 p-4">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-green-100">
+                      <MapPin className="h-6 w-6 text-green-700" />
                     </div>
                     <div>
                       <h3 className="font-medium text-foreground">Područje djelovanja</h3>
-                      <div className="mt-1 space-y-1 text-muted-foreground">
+                      <div className="mt-1 space-y-1 text-stone-600">
                         {kontakt.areas.map((area) => (
                           <p key={area}>{area}</p>
                         ))}
@@ -163,20 +158,24 @@ export default function KontaktPage() {
                 </div>
               </div>
 
-              {/* How to get a quote */}
+              {/* How to get a quote - vertical timeline */}
               <div>
                 <h2 className="font-display text-2xl font-bold text-foreground sm:text-3xl">Kako do ponude?</h2>
-                <p className="mt-4 text-muted-foreground">Ponuda je besplatna i bez obveze.</p>
+                <p className="mt-4 text-stone-600">Ponuda je besplatna i bez obveze.</p>
 
-                <div className="mt-8 space-y-6">
-                  {kontakt.steps.map((step) => (
-                    <div key={step.number} className="flex gap-4">
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground font-semibold">
+                <div className="mt-8 space-y-0">
+                  {kontakt.steps.map((step, index) => (
+                    <div key={step.number} className="relative flex gap-4 pb-8 last:pb-0">
+                      {/* Vertical connector line */}
+                      {index < kontakt.steps.length - 1 && (
+                        <div className="absolute left-5 top-12 h-[calc(100%-2rem)] w-0.5 bg-green-200" />
+                      )}
+                      <div className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-green-700 text-white font-semibold">
                         {step.number}
                       </div>
                       <div>
                         <h3 className="font-medium text-foreground">{step.title}</h3>
-                        <p className="mt-1 text-sm text-muted-foreground">{step.description}</p>
+                        <p className="mt-1 text-sm text-stone-600">{step.description}</p>
                       </div>
                     </div>
                   ))}
@@ -187,11 +186,11 @@ export default function KontaktPage() {
         </section>
 
         {/* Company Info */}
-        <section className="border-t border-border bg-card py-16 sm:py-20">
+        <section className="bg-surface-muted py-16 sm:py-20">
           <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="font-display text-2xl font-bold text-foreground sm:text-3xl">Podaci o tvrtki</h2>
-              <div className="mt-6 space-y-1 text-muted-foreground">
+              <div className="mt-6 space-y-1 text-stone-600">
                 <p className="text-lg font-semibold text-foreground">{siteConfig.name}</p>
                 <p>OIB: {siteConfig.oib}</p>
               </div>

@@ -3,6 +3,8 @@ import { HelpCircle } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { CtaSection } from "@/components/cta-section"
+import { PageHero } from "@/components/page-hero"
+import { EnergyBar } from "@/components/energy-bar"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd"
 import { faqGroups } from "@/content/faq"
@@ -73,37 +75,28 @@ export default function FaqPage() {
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Header />
-      <main>
-        {/* Hero */}
-        <section className="border-b border-border bg-background py-16 sm:py-24">
-          <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-3xl text-center">
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10">
-                <HelpCircle className="h-7 w-7 text-primary" />
-              </div>
-              <h1 className="mt-6 font-display text-4xl font-bold text-foreground sm:text-5xl">Česta pitanja</h1>
-              <p className="mt-4 text-lg text-muted-foreground">
-                Ovdje ćete pronaći odgovore na najčešća pitanja o našim uslugama. Ne možete pronaći odgovor? Slobodno
-                nas kontaktirajte.
-              </p>
-            </div>
-          </div>
-        </section>
+      <main className="pt-[67px]">
+        <PageHero
+          icon={HelpCircle}
+          title="Česta pitanja"
+          subtitle="Ovdje ćete pronaći odgovore na najčešća pitanja o našim uslugama. Ne možete pronaći odgovor? Slobodno nas kontaktirajte."
+        />
 
         {/* FAQ Groups */}
-        <section className="py-16 sm:py-24">
+        <section className="bg-surface-light py-16 sm:py-24">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <div className="space-y-16">
-              {faqGroups.map((group) => (
+              {faqGroups.map((group, groupIndex) => (
                 <div key={group.title}>
+                  {groupIndex > 0 && <EnergyBar variant="green" className="mb-16" />}
                   <h2 className="font-display text-2xl font-bold text-foreground sm:text-3xl">{group.title}</h2>
                   <Accordion type="single" collapsible className="mt-6 w-full">
                     {group.faqs.map((faq) => (
-                      <AccordionItem key={faq.question} value={faq.question} className="border-border">
-                        <AccordionTrigger className="text-left font-medium text-foreground hover:text-primary hover:no-underline">
+                      <AccordionItem key={faq.question} value={faq.question} className="border-stone-300 data-[state=open]:border-l-2 data-[state=open]:border-l-green-600 data-[state=open]:pl-4">
+                        <AccordionTrigger className="text-left text-base font-medium text-foreground hover:text-green-700 hover:no-underline">
                           {faq.question}
                         </AccordionTrigger>
-                        <AccordionContent className="text-muted-foreground">{faq.answer}</AccordionContent>
+                        <AccordionContent className="text-stone-600">{faq.answer}</AccordionContent>
                       </AccordionItem>
                     ))}
                   </Accordion>

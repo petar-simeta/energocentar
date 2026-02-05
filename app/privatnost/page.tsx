@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Shield } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { PageHero } from "@/components/page-hero"
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd"
 import { siteConfig } from "@/lib/config/site"
 
@@ -50,95 +51,102 @@ export default function PrivatnostPage() {
         ]}
       />
       <Header />
-      <main>
-        {/* Hero */}
-        <section className="border-b border-border bg-background py-16 sm:py-24">
-          <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-3xl text-center">
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10">
-                <Shield className="h-7 w-7 text-primary" />
-              </div>
-              <h1 className="mt-6 font-display text-4xl font-bold text-foreground sm:text-5xl">Politika privatnosti</h1>
-              <p className="mt-4 text-lg text-muted-foreground">
-                Ova politika privatnosti opisuje kako prikupljamo, koristimo i štitimo vaše osobne podatke.
-              </p>
-            </div>
-          </div>
-        </section>
+      <main className="pt-[67px]">
+        <PageHero
+          icon={Shield}
+          title="Politika privatnosti"
+          subtitle="Ova politika privatnosti opisuje kako prikupljamo, koristimo i štitimo vaše osobne podatke."
+        />
 
         {/* Content */}
-        <section className="py-16 sm:py-24">
+        <section className="bg-surface-light py-16 sm:py-24">
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-            <div className="prose prose-lg prose-gray max-w-none">
-              <h2 className="font-display text-2xl font-bold text-foreground">Voditelj obrade podataka</h2>
-              <p className="text-muted-foreground">
-                <strong className="text-foreground">{siteConfig.name}</strong>
-                <br />
-                OIB: {siteConfig.oib}
-                <br />
-                Email: {siteConfig.email}
-                <br />
-                Telefon: {siteConfig.phone.display}
-              </p>
+            <div className="space-y-12">
+              <div>
+                <h2 className="font-display text-2xl font-bold text-foreground">Voditelj obrade podataka</h2>
+                <p className="mt-4 text-stone-600">
+                  <strong className="text-foreground">{siteConfig.name}</strong>
+                  <br />
+                  OIB: {siteConfig.oib}
+                  <br />
+                  Email: {siteConfig.email}
+                  <br />
+                  Telefon: {siteConfig.phone.display}
+                </p>
+              </div>
 
-              <h2 className="mt-12 font-display text-2xl font-bold text-foreground">Koje podatke prikupljamo</h2>
-              <p className="text-muted-foreground">Prikupljamo sljedeće osobne podatke:</p>
-              <ul className="list-disc space-y-2 pl-6 text-muted-foreground">
-                <li>Ime i prezime</li>
-                <li>Kontakt podaci (email, telefon)</li>
-                <li>Podaci o nekretnini (adresa, površina)</li>
-                <li>Dokumentacija potrebna za izradu certifikata/procjene</li>
-              </ul>
+              <div>
+                <h2 className="font-display text-2xl font-bold text-foreground">Koje podatke prikupljamo</h2>
+                <p className="mt-4 text-stone-600">Prikupljamo sljedeće osobne podatke:</p>
+                <ul className="mt-4 space-y-2 pl-6 text-stone-600">
+                  <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600" />Ime i prezime</li>
+                  <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600" />Kontakt podaci (email, telefon)</li>
+                  <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600" />Podaci o nekretnini (adresa, površina)</li>
+                  <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600" />Dokumentacija potrebna za izradu certifikata/procjene</li>
+                </ul>
+              </div>
 
-              <h2 className="mt-12 font-display text-2xl font-bold text-foreground">Svrha prikupljanja podataka</h2>
-              <p className="text-muted-foreground">Vaše podatke koristimo isključivo za:</p>
-              <ul className="list-disc space-y-2 pl-6 text-muted-foreground">
-                <li>Izradu energetskih certifikata</li>
-                <li>Izradu procjena nekretnina</li>
-                <li>Provođenje postupka etažiranja</li>
-                <li>Komunikaciju vezanu uz naše usluge</li>
-              </ul>
+              <div>
+                <h2 className="font-display text-2xl font-bold text-foreground">Svrha prikupljanja podataka</h2>
+                <p className="mt-4 text-stone-600">Vaše podatke koristimo isključivo za:</p>
+                <ul className="mt-4 space-y-2 pl-6 text-stone-600">
+                  <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600" />Izradu energetskih certifikata</li>
+                  <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600" />Izradu procjena nekretnina</li>
+                  <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600" />Provođenje postupka etažiranja</li>
+                  <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600" />Komunikaciju vezanu uz naše usluge</li>
+                </ul>
+              </div>
 
-              <h2 className="mt-12 font-display text-2xl font-bold text-foreground">Pravna osnova obrade</h2>
-              <p className="text-muted-foreground">Obrađujemo vaše podatke na temelju:</p>
-              <ul className="list-disc space-y-2 pl-6 text-muted-foreground">
-                <li>Izvršenja ugovora (pružanje usluga)</li>
-                <li>Zakonskih obveza (vođenje poslovne dokumentacije)</li>
-                <li>Legitimnog interesa (poboljšanje usluga)</li>
-              </ul>
+              <div>
+                <h2 className="font-display text-2xl font-bold text-foreground">Pravna osnova obrade</h2>
+                <p className="mt-4 text-stone-600">Obrađujemo vaše podatke na temelju:</p>
+                <ul className="mt-4 space-y-2 pl-6 text-stone-600">
+                  <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600" />Izvršenja ugovora (pružanje usluga)</li>
+                  <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600" />Zakonskih obveza (vođenje poslovne dokumentacije)</li>
+                  <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600" />Legitimnog interesa (poboljšanje usluga)</li>
+                </ul>
+              </div>
 
-              <h2 className="mt-12 font-display text-2xl font-bold text-foreground">Čuvanje podataka</h2>
-              <p className="text-muted-foreground">Vaše podatke čuvamo:</p>
-              <ul className="list-disc space-y-2 pl-6 text-muted-foreground">
-                <li>Dokumentaciju o certifikatima: 10 godina</li>
-                <li>Poslovnu dokumentaciju: prema zakonskim propisima</li>
-                <li>Komunikaciju: do 2 godine nakon završetka usluge</li>
-              </ul>
+              <div>
+                <h2 className="font-display text-2xl font-bold text-foreground">Čuvanje podataka</h2>
+                <p className="mt-4 text-stone-600">Vaše podatke čuvamo:</p>
+                <ul className="mt-4 space-y-2 pl-6 text-stone-600">
+                  <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600" />Dokumentaciju o certifikatima: 10 godina</li>
+                  <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600" />Poslovnu dokumentaciju: prema zakonskim propisima</li>
+                  <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600" />Komunikaciju: do 2 godine nakon završetka usluge</li>
+                </ul>
+              </div>
 
-              <h2 className="mt-12 font-display text-2xl font-bold text-foreground">Vaša prava</h2>
-              <p className="text-muted-foreground">Imate pravo na:</p>
-              <ul className="list-disc space-y-2 pl-6 text-muted-foreground">
-                <li>Pristup svojim podacima</li>
-                <li>Ispravak netočnih podataka</li>
-                <li>Brisanje podataka (&quot;pravo na zaborav&quot;)</li>
-                <li>Ograničenje obrade</li>
-                <li>Prenosivost podataka</li>
-                <li>Prigovor na obradu</li>
-              </ul>
+              <div>
+                <h2 className="font-display text-2xl font-bold text-foreground">Vaša prava</h2>
+                <p className="mt-4 text-stone-600">Imate pravo na:</p>
+                <ul className="mt-4 space-y-2 pl-6 text-stone-600">
+                  <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600" />Pristup svojim podacima</li>
+                  <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600" />Ispravak netočnih podataka</li>
+                  <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600" />Brisanje podataka (&quot;pravo na zaborav&quot;)</li>
+                  <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600" />Ograničenje obrade</li>
+                  <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600" />Prenosivost podataka</li>
+                  <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600" />Prigovor na obradu</li>
+                </ul>
+              </div>
 
-              <h2 className="mt-12 font-display text-2xl font-bold text-foreground">Kontakt za zaštitu podataka</h2>
-              <p className="text-muted-foreground">
-                Za sva pitanja vezana uz zaštitu osobnih podataka možete nas kontaktirati na:
-                <br />
-                Email: {siteConfig.email}
-              </p>
+              <div>
+                <h2 className="font-display text-2xl font-bold text-foreground">Kontakt za zaštitu podataka</h2>
+                <p className="mt-4 text-stone-600">
+                  Za sva pitanja vezana uz zaštitu osobnih podataka možete nas kontaktirati na:
+                  <br />
+                  Email: {siteConfig.email}
+                </p>
+              </div>
 
-              <h2 className="mt-12 font-display text-2xl font-bold text-foreground">Izmjene politike</h2>
-              <p className="text-muted-foreground">
-                Zadržavamo pravo izmjene ove politike privatnosti. Sve izmjene bit će objavljene na ovoj stranici.
-              </p>
+              <div>
+                <h2 className="font-display text-2xl font-bold text-foreground">Izmjene politike</h2>
+                <p className="mt-4 text-stone-600">
+                  Zadržavamo pravo izmjene ove politike privatnosti. Sve izmjene bit će objavljene na ovoj stranici.
+                </p>
+              </div>
 
-              <p className="mt-8 text-sm text-muted-foreground">
+              <p className="text-sm text-stone-500">
                 <em>Posljednja izmjena: siječanj 2026.</em>
               </p>
             </div>

@@ -1,49 +1,52 @@
-import Image from "next/image";
+"use client";
+
 import { ArrowRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/config/site";
+import { ParallaxImage } from "@/components/motion/parallax-image";
+import { FadeIn } from "@/components/motion/fade-in";
+import { Counter } from "@/components/motion/counter";
+import { EnergyBarReveal } from "@/components/motion/energy-bar-reveal";
+
+const stats = [
+  { value: "500+", label: "certifikata" },
+  { value: "48h", label: "prosječna izrada" },
+  { value: "10+", label: "godina iskustva" },
+];
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden">
-      {/* Background Image */}
+    <section className="relative min-h-svh flex items-end overflow-hidden">
+      {/* Background Image with parallax */}
       <div className="absolute inset-0 -z-10">
-        <Image
+        <ParallaxImage
           src="/hero-background.jpg"
           alt="Moderna arhitektura u Zagrebu"
-          fill
+          speed={0.15}
           priority
-          className="object-cover object-bottom opacity-50"
+          className="absolute inset-0"
         />
-        <div className="absolute inset-0 bg-linear-to-t from-background/30 via-background/50 to-background/90" />
+        <div className="absolute inset-0 bg-linear-to-t from-green-950/95 via-green-950/60 to-green-950/30" />
       </div>
 
-      <div className="mx-auto max-w-350 px-4 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-56 xl:py-64">
-        <div className="grid lg:grid-cols-[2fr_1fr] lg:gap-16 lg:items-center">
-          {/* Left Column: Title (first on mobile too) */}
-          <div>
-            <h1 className="font-display text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-6xl lg:text-7xl text-balance">
+      <div className="mx-auto max-w-350 w-full px-4 pt-32 pb-0 sm:px-6 lg:px-8">
+        <div className="pb-20 sm:pb-28 lg:pb-32">
+          <FadeIn direction="up" duration={0.8}>
+            <h1 className="text-fluid-hero font-display font-bold tracking-tight text-white max-w-4xl text-balance">
               Energetski certifikati i procjene nekretnina
             </h1>
-          </div>
+          </FadeIn>
 
-          {/* Right Column: Badge, Description, CTAs */}
-          <div className="mt-8 lg:mt-0">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm font-medium text-primary">
-              <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-              Zagreb i cijela Hrvatska
-            </div>
-
-            {/* Subheadline */}
-            <p className="mt-4 text-muted-foreground text-pretty">
+          <FadeIn direction="up" delay={0.2} duration={0.8}>
+            <p className="mt-6 max-w-2xl text-lg text-white/80 sm:text-xl text-pretty">
               Brza i stručna izrada energetskih certifikata za stanove, kuće i
               poslovne prostore te ovlaštena procjena nekretnina za prodaju,
               najam i kredit. Radimo u Zagrebu, okolici i cijeloj Hrvatskoj.
             </p>
+          </FadeIn>
 
-            {/* CTAs */}
-            <div className="mt-6 flex flex-col gap-4 sm:flex-row">
+          <FadeIn direction="up" delay={0.4} duration={0.8}>
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <Button
                 asChild
                 size="lg"
@@ -61,7 +64,7 @@ export function HeroSection() {
                 asChild
                 variant="outline"
                 size="lg"
-                className="border-light-green bg-light-green text-white hover:bg-primary hover:text-primary-foreground hover:border-primary"
+                className="border-white/30 bg-white/10 text-white hover:bg-white/20 hover:text-white"
               >
                 <a href="#usluge" className="flex items-center gap-2">
                   Pogledajte usluge
@@ -69,8 +72,28 @@ export function HeroSection() {
                 </a>
               </Button>
             </div>
+          </FadeIn>
+        </div>
+
+        {/* Stats strip */}
+        <div className="border-t border-white/15 py-8">
+          <div className="grid grid-cols-3 gap-8">
+            {stats.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <Counter
+                  value={stat.value}
+                  className="font-display text-3xl font-bold text-white sm:text-4xl"
+                />
+                <p className="mt-1 text-sm text-white/60">{stat.label}</p>
+              </div>
+            ))}
           </div>
         </div>
+      </div>
+
+      {/* Energy bar at very bottom */}
+      <div className="absolute bottom-0 left-0 right-0">
+        <EnergyBarReveal />
       </div>
     </section>
   );

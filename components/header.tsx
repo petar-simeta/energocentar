@@ -13,13 +13,27 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Sheet, SheetTrigger, SheetContent, SheetTitle } from "@/components/ui/sheet"
 import { services, navigation } from "@/lib/config/navigation"
+import { useHeaderScroll } from "@/components/motion/use-header-scroll"
 
-export function Header() {
+interface HeaderProps {
+  variant?: "default" | "transparent"
+}
+
+export function Header({ variant = "default" }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [servicesExpanded, setServicesExpanded] = useState(false)
+  const scrolled = useHeaderScroll(50)
+
+  const isTransparent = variant === "transparent" && !scrolled
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-foreground/15 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+    <header
+      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
+        isTransparent
+          ? "bg-transparent"
+          : "bg-white/95 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-white/80"
+      }`}
+    >
       <div className="mx-auto flex h-16 max-w-[1400px] items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center">
@@ -28,7 +42,9 @@ export function Header() {
             alt="ENERGOCENTAR"
             width={180}
             height={40}
-            className="h-9 w-auto"
+            className={`h-9 w-auto transition-all duration-300 ${
+              isTransparent ? "brightness-0 invert" : ""
+            }`}
             priority
           />
         </Link>
@@ -39,7 +55,9 @@ export function Header() {
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <button
-                className="nav-link flex cursor-pointer items-center gap-1 rounded-md px-3 py-2 font-display text-lg font-bold tracking-wide text-foreground transition-colors focus:outline-none"
+                className={`nav-link flex cursor-pointer items-center gap-1 rounded-md px-3 py-2 font-display text-lg font-bold tracking-wide transition-colors focus:outline-none ${
+                  isTransparent ? "text-white/90 hover:text-white" : "text-foreground"
+                }`}
                 aria-haspopup="menu"
                 aria-controls="services-menu"
               >
@@ -63,7 +81,9 @@ export function Header() {
             <Link
               key={item.name}
               href={item.href}
-              className="nav-link rounded-md px-3 py-2 font-display text-lg font-bold tracking-wide text-foreground transition-colors"
+              className={`nav-link rounded-md px-3 py-2 font-display text-lg font-bold tracking-wide transition-colors ${
+                isTransparent ? "text-white/90 hover:text-white" : "text-foreground"
+              }`}
             >
               {item.name}
             </Link>
@@ -80,7 +100,12 @@ export function Header() {
           {/* Mobile Menu Button */}
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="lg:hidden" aria-label="Otvori izbornik">
+              <Button
+                variant="ghost"
+                size="icon"
+                className={`lg:hidden ${isTransparent ? "text-white hover:bg-white/10" : ""}`}
+                aria-label="Otvori izbornik"
+              >
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
@@ -115,13 +140,13 @@ export function Header() {
                       />
                     </button>
                     {servicesExpanded && (
-                      <div className="ml-4 mt-1 flex flex-col gap-1 border-l border-border pl-4">
+                      <div className="ml-4 mt-1 flex flex-col gap-1 border-l-2 border-green-200 pl-4">
                         {services.map((service) => (
                           <Link
                             key={service.href}
                             href={service.href}
                             onClick={() => setMobileMenuOpen(false)}
-                            className="rounded-md px-3 py-2 font-display text-base text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                            className="rounded-md px-3 py-2 font-display text-base text-stone-600 transition-colors hover:bg-muted hover:text-foreground"
                           >
                             {service.name}
                           </Link>
@@ -160,6 +185,8 @@ export function Header() {
           </Sheet>
         </div>
       </div>
+      {/* Energy bar below header */}
+      {!isTransparent && <div className="energy-bar" aria-hidden="true" />}
     </header>
   )
 }

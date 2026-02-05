@@ -5,25 +5,25 @@
 
 :root {
   /* Primary green palette */
-  --background: #f0eeee;
-  --foreground: #000000;
+  --background: #fafaf9;
+  --foreground: #1c1917;
   --card: #ffffff;
-  --card-foreground: #000000;
+  --card-foreground: #1c1917;
   --popover: #ffffff;
-  --popover-foreground: #000000;
+  --popover-foreground: #1c1917;
   --primary: #2c652b;
-  --primary-foreground: oklch(0.98 0.005 100);
-  --secondary: oklch(0.92 0.01 100);
-  --secondary-foreground: oklch(0.2 0.04 145);
-  --muted: oklch(0.9 0.01 100);
-  --muted-foreground: oklch(0.45 0.03 145);
-  --accent: oklch(0.47 0.17 36); /* LAB 47,56,40 - topla narančasta */
-  --accent-hover: oklch(0.38 0.19 34); /* tamnija za hover */
-  --accent-foreground: oklch(0.98 0.005 100);
+  --primary-foreground: #fafaf9;
+  --secondary: #f5f5f4;
+  --secondary-foreground: #1a3f19;
+  --muted: #f5f5f4;
+  --muted-foreground: #57534e;
+  --accent: oklch(0.47 0.17 36);
+  --accent-hover: oklch(0.38 0.19 34);
+  --accent-foreground: #fafaf9;
   --destructive: oklch(0.55 0.2 27);
-  --destructive-foreground: oklch(0.98 0.005 100);
-  --border: oklch(0.88 0.02 100);
-  --input: oklch(0.92 0.01 100);
+  --destructive-foreground: #fafaf9;
+  --border: #e7e5e4;
+  --input: #e7e5e4;
   --ring: #2c652b;
   --chart-1: oklch(0.42 0.1 145);
   --chart-2: oklch(0.58 0.16 30);
@@ -31,6 +31,49 @@
   --chart-4: oklch(0.65 0.12 145);
   --chart-5: oklch(0.5 0.1 145);
   --radius: 0.5rem;
+
+  /* Extended green palette */
+  --green-950: #0f2b0e;
+  --green-900: #1a3f19;
+  --green-800: #265a24;
+  --green-700: #2c652b;
+  --green-600: #3d7d3b;
+  --green-500: #5c9253;
+  --green-400: #7db374;
+  --green-300: #a3cea0;
+  --green-200: #c8e4c6;
+  --green-100: #e4f2e3;
+  --green-50: #f4fbf3;
+
+  /* Warm stone neutrals */
+  --stone-950: #1c1917;
+  --stone-900: #292524;
+  --stone-800: #44403c;
+  --stone-700: #57534e;
+  --stone-600: #78716c;
+  --stone-500: #a8a29e;
+  --stone-400: #d6d3d1;
+  --stone-300: #e7e5e4;
+  --stone-200: #f5f5f4;
+  --stone-100: #fafaf9;
+  --stone-50: #fefefe;
+
+  /* Energy gradient stops */
+  --energy-a-plus: #0a7d3e;
+  --energy-a: #2c652b;
+  --energy-b: #5c9253;
+  --energy-c: #a3b833;
+  --energy-d: #f5c542;
+  --energy-e: #e88c30;
+  --energy-f: #d95b2b;
+  --energy-g: #d32f2f;
+
+  /* Surface tokens */
+  --surface-light: #fafaf9;
+  --surface-default: #f5f5f4;
+  --surface-muted: #eaf6e8;
+  --surface-dark: #1a3f19;
+  --surface-darker: #0f2b0e;
 
   /* Custom colors */
   --deep-green: #2c652b;
@@ -114,6 +157,50 @@
   --radius-xl: calc(var(--radius) + 4px);
   --color-deep-green: var(--deep-green);
   --color-light-green: var(--light-green);
+
+  /* Extended green palette */
+  --color-green-950: var(--green-950);
+  --color-green-900: var(--green-900);
+  --color-green-800: var(--green-800);
+  --color-green-700: var(--green-700);
+  --color-green-600: var(--green-600);
+  --color-green-500: var(--green-500);
+  --color-green-400: var(--green-400);
+  --color-green-300: var(--green-300);
+  --color-green-200: var(--green-200);
+  --color-green-100: var(--green-100);
+  --color-green-50: var(--green-50);
+
+  /* Stone neutrals */
+  --color-stone-950: var(--stone-950);
+  --color-stone-900: var(--stone-900);
+  --color-stone-800: var(--stone-800);
+  --color-stone-700: var(--stone-700);
+  --color-stone-600: var(--stone-600);
+  --color-stone-500: var(--stone-500);
+  --color-stone-400: var(--stone-400);
+  --color-stone-300: var(--stone-300);
+  --color-stone-200: var(--stone-200);
+  --color-stone-100: var(--stone-100);
+  --color-stone-50: var(--stone-50);
+
+  /* Energy colors */
+  --color-energy-a-plus: var(--energy-a-plus);
+  --color-energy-a: var(--energy-a);
+  --color-energy-b: var(--energy-b);
+  --color-energy-c: var(--energy-c);
+  --color-energy-d: var(--energy-d);
+  --color-energy-e: var(--energy-e);
+  --color-energy-f: var(--energy-f);
+  --color-energy-g: var(--energy-g);
+
+  /* Surface tokens */
+  --color-surface-light: var(--surface-light);
+  --color-surface-default: var(--surface-default);
+  --color-surface-muted: var(--surface-muted);
+  --color-surface-dark: var(--surface-dark);
+  --color-surface-darker: var(--surface-darker);
+
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -155,4 +242,40 @@ html {
 .nav-link:hover::after {
   width: 100%;
   left: 0;
+}
+
+/* Energy bar gradient */
+.energy-bar {
+  height: 3px;
+  background: linear-gradient(90deg,
+    var(--energy-a-plus) 0%,
+    var(--energy-a) 14%,
+    var(--energy-b) 28%,
+    var(--energy-c) 42%,
+    var(--energy-d) 57%,
+    var(--energy-e) 71%,
+    var(--energy-f) 85%,
+    var(--energy-g) 100%
+  );
+}
+
+/* Green-only variant for trust/quality contexts */
+.energy-bar-green {
+  height: 3px;
+  background: linear-gradient(90deg,
+    var(--energy-a-plus) 0%,
+    var(--green-500) 50%,
+    var(--green-300) 100%
+  );
+}
+
+/* Fluid typography */
+.text-fluid-hero {
+  font-size: clamp(2.5rem, 5vw + 1rem, 5rem);
+  line-height: 1.05;
+}
+
+.text-fluid-section {
+  font-size: clamp(1.75rem, 3vw + 0.5rem, 3rem);
+  line-height: 1.2;
 }

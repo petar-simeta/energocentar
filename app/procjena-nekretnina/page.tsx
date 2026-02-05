@@ -1,12 +1,4 @@
 import type { Metadata } from "next";
-import {
-  Building2,
-  Phone,
-  Search,
-  Calculator,
-  FileText,
-  type LucideIcon,
-} from "lucide-react";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { ServiceHero } from "@/components/service-hero";
@@ -55,15 +47,8 @@ export const metadata: Metadata = {
   },
 };
 
-const iconMap: Record<string, LucideIcon> = {
-  Phone,
-  Search,
-  Calculator,
-  FileText,
-};
-
 const processSteps = procjenaNekretnina.processSteps.map((step) => ({
-  icon: iconMap[step.iconName],
+  iconName: step.iconName,
   title: step.title,
   description: step.description,
 }));
@@ -86,10 +71,10 @@ export default function PropertyValuationPage() {
         serviceType="Procjena vrijednosti nekretnina"
       />
       <FaqJsonLd faqs={faqs} />
-      <Header />
+      <Header variant="transparent" />
       <main>
         <ServiceHero
-          icon={Building2}
+          iconName="Building2"
           title={procjenaNekretnina.hero.title}
           description={procjenaNekretnina.hero.description}
           image={procjenaNekretnina.hero.image}

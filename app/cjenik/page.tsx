@@ -3,6 +3,7 @@ import { Banknote } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { CtaSection } from "@/components/cta-section"
+import { PageHero } from "@/components/page-hero"
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd"
 import { pricingTables, priceFactors } from "@/content/cjenik"
 import { siteConfig } from "@/lib/config/site"
@@ -52,38 +53,40 @@ export default function CjenikPage() {
         ]}
       />
       <Header />
-      <main>
-        {/* Hero */}
-        <section className="border-b border-border bg-background py-16 sm:py-24">
-          <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-3xl text-center">
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10">
-                <Banknote className="h-7 w-7 text-primary" />
-              </div>
-              <h1 className="mt-6 font-display text-4xl font-bold text-foreground sm:text-5xl">Cjenik usluga</h1>
-              <p className="mt-4 text-lg text-muted-foreground">
-                Transparentne cijene bez skrivenih troškova. Sve cijene su izražene u eurima i uključuju PDV.
-              </p>
-            </div>
-          </div>
-        </section>
+      <main className="pt-[67px]">
+        <PageHero
+          icon={Banknote}
+          title="Cjenik usluga"
+          subtitle="Transparentne cijene bez skrivenih troškova. Sve cijene su izražene u eurima i uključuju PDV."
+        />
 
         {/* Pricing Tables */}
-        <section className="py-16 sm:py-24">
+        <section className="bg-surface-light py-16 sm:py-24">
           <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
-            <div className="grid gap-12 lg:grid-cols-3">
+            <div className="grid gap-8 lg:grid-cols-3">
               {pricingTables.map((table) => (
-                <div key={table.title} className="rounded-2xl border border-border bg-card p-6">
-                  <h2 className="font-display text-xl font-bold text-foreground">{table.title}</h2>
-                  <div className="mt-6 space-y-4">
-                    {table.items.map((item) => (
-                      <div key={item.service} className="flex items-center justify-between border-b border-border pb-3">
-                        <span className="text-sm text-muted-foreground">{item.service}</span>
-                        <span className="font-medium text-foreground">{item.price}</span>
-                      </div>
-                    ))}
+                <div key={table.title} className="overflow-hidden rounded-2xl bg-white shadow-sm">
+                  {/* Energy bar accent */}
+                  <div className="energy-bar" />
+                  <div className="bg-green-50 px-6 py-5">
+                    <h2 className="font-display text-xl font-bold text-foreground">{table.title}</h2>
                   </div>
-                  {table.note && <p className="mt-4 text-sm text-primary">{table.note}</p>}
+                  <div className="p-6">
+                    <div className="space-y-0">
+                      {table.items.map((item, index) => (
+                        <div
+                          key={item.service}
+                          className={`flex items-center justify-between py-3 ${
+                            index % 2 === 0 ? "bg-stone-50" : ""
+                          } -mx-3 px-3 rounded`}
+                        >
+                          <span className="text-sm text-stone-600">{item.service}</span>
+                          <span className="font-display font-bold text-foreground">{item.price}</span>
+                        </div>
+                      ))}
+                    </div>
+                    {table.note && <p className="mt-4 text-sm text-green-700">{table.note}</p>}
+                  </div>
                 </div>
               ))}
             </div>
@@ -91,19 +94,19 @@ export default function CjenikPage() {
         </section>
 
         {/* Price Factors */}
-        <section className="border-t border-border bg-card py-16 sm:py-24">
+        <section className="bg-surface-muted py-16 sm:py-24">
           <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="font-display text-2xl font-bold text-foreground sm:text-3xl">Što utječe na cijenu?</h2>
-              <p className="mt-4 text-muted-foreground">
+              <p className="mt-4 text-stone-600">
                 Konačna cijena ovisi o nekoliko faktora. Za točnu ponudu, kontaktirajte nas s podacima o nekretnini.
               </p>
             </div>
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {priceFactors.map((factor) => (
-                <div key={factor.title} className="rounded-xl border border-border bg-background p-6">
+                <div key={factor.title} className="rounded-xl bg-white p-6 shadow-sm">
                   <h3 className="font-medium text-foreground">{factor.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{factor.description}</p>
+                  <p className="mt-2 text-sm text-stone-600">{factor.description}</p>
                 </div>
               ))}
             </div>

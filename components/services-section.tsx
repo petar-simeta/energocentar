@@ -1,7 +1,10 @@
-import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight, FileCheck, Building2, Layers } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+"use client"
+
+import Image from "next/image"
+import Link from "next/link"
+import { ArrowRight, FileCheck, Building2, Layers } from "lucide-react"
+import { FadeIn } from "@/components/motion/fade-in"
+import { StaggerChildren, StaggerItem } from "@/components/motion/stagger"
 
 const services = [
   {
@@ -28,58 +31,62 @@ const services = [
     href: "/etaziranje",
     image: "/floor-plan-architectural-blueprint-professional.jpg",
   },
-];
+]
 
 export function ServicesSection() {
   return (
-    <section id="usluge" className="py-20 sm:py-28">
-      <div className="mx-auto max-w-350 px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h2 className="font-display text-3xl font-bold text-foreground sm:text-4xl text-balance">
-            Naše usluge
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Sve što vam treba za vašu nekretninu na jednom mjestu — brzo,
-            stručno i po fer cijenama.
-          </p>
-        </div>
+    <section id="usluge" className="bg-surface-default py-20 sm:py-28">
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
+        <FadeIn direction="up">
+          <div className="text-center">
+            <h2 className="text-fluid-section font-display font-bold text-foreground text-balance">
+              Naše usluge
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-stone-600">
+              Sve što vam treba za vašu nekretninu na jednom mjestu — brzo,
+              stručno i po fer cijenama.
+            </p>
+          </div>
+        </FadeIn>
 
-        <div className="mt-16 grid gap-8 lg:grid-cols-3">
+        <StaggerChildren staggerDelay={0.15} className="mt-16 grid gap-8 lg:grid-cols-3">
           {services.map((service) => (
-            <Card
-              key={service.title}
-              className="group overflow-hidden border-border bg-card transition-shadow hover:shadow-lg"
-            >
-              <div className="relative aspect-4/3 overflow-hidden">
-                <Image
-                  src={service.image || "/placeholder.svg"}
-                  alt={service.title}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-              <CardContent className="p-6">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                  <service.icon className="h-5 w-5 text-primary" />
+            <StaggerItem key={service.title}>
+              <Link
+                href={service.href}
+                className="group block overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+              >
+                {/* Energy bar accent at top */}
+                <div className="energy-bar" />
+
+                <div className="relative aspect-4/3 overflow-hidden">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                 </div>
-                <h3 className="mt-4 font-display text-xl font-semibold text-foreground">
-                  {service.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {service.description}
-                </p>
-                <Link
-                  href={service.href}
-                  className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary transition-colors hover:text-primary/80"
-                >
-                  Saznajte više
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </CardContent>
-            </Card>
+                <div className="p-6">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-green-100">
+                    <service.icon className="h-5 w-5 text-green-700" />
+                  </div>
+                  <h3 className="mt-4 font-display text-xl font-semibold text-foreground">
+                    {service.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-stone-600">
+                    {service.description}
+                  </p>
+                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-green-700 transition-colors group-hover:text-green-600">
+                    Saznajte više
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                  </span>
+                </div>
+              </Link>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerChildren>
       </div>
     </section>
-  );
+  )
 }
