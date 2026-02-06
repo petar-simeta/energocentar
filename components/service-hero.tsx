@@ -43,6 +43,9 @@ export function ServiceHero({
           speed={0.15}
           priority
           className="absolute inset-0"
+          imageClassName="object-cover object-bottom"
+          motionClassName="absolute inset-x-0 -top-[20%] bottom-0"
+          yRange={["0%", "15%"]}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-green-950/95 via-green-950/50 to-green-950/20" />
       </div>
