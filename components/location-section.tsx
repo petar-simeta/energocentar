@@ -24,7 +24,7 @@ export function LocationSection() {
           <FadeIn direction="left">
             <div className="relative aspect-4/3 overflow-hidden rounded-2xl">
               <ParallaxImage
-                src="/zagreb-city-panorama-aerial-view-modern-architectu.jpg"
+                src="/zagreb-from-the-sky.jpg"
                 alt="Panorama Zagreba"
                 speed={0.15}
                 className="absolute inset-0"
