@@ -20,3 +20,4 @@ These instructions are specific to Codex and complement `CLAUDE.md`.
 - Content source of truth: `content/` for page copy, `lib/config/site.ts` for NAP data.
 - If a change affects scope (forms, CMS, SSR), update `SPEC.md` and `ARCHITECTURE.md`.
 - Avoid destructive git commands.
+- When searching files/text, prefer `rg`; if unavailable, immediately fallback to `grep/find` without repeated status messages.

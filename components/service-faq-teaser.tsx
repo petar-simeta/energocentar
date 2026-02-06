@@ -46,7 +46,11 @@ export function ServiceFaqTeaser({ faqs }: ServiceFaqTeaserProps) {
           <FadeIn direction="right" className="lg:col-span-3">
             <Accordion type="single" collapsible className="w-full">
               {faqs.map((faq) => (
-                <AccordionItem key={faq.question} value={faq.question} className="border-stone-300 data-[state=open]:border-l-2 data-[state=open]:border-l-green-600 data-[state=open]:pl-4">
+                <AccordionItem
+                  key={faq.question}
+                  value={faq.question}
+                  className="border-stone-300 border-l-2 border-l-transparent pl-4 transition-colors hover:border-l-green-400 data-[state=open]:border-l-green-600"
+                >
                   <AccordionTrigger className="text-left text-base font-medium text-foreground hover:text-green-700 hover:no-underline">
                     {faq.question}
                   </AccordionTrigger>
