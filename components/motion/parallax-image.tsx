@@ -10,6 +10,9 @@ interface ParallaxImageProps {
   speed?: number
   priority?: boolean
   className?: string
+  imageClassName?: string
+  motionClassName?: string
+  yRange?: [string, string]
 }
 
 export function ParallaxImage({
@@ -18,6 +21,9 @@ export function ParallaxImage({
   speed = 0.2,
   priority = false,
   className = "",
+  imageClassName = "object-cover",
+  motionClassName = "absolute inset-[-20%]",
+  yRange,
 }: ParallaxImageProps) {
   const ref = useRef<HTMLDivElement>(null)
   const shouldReduceMotion = useReducedMotion()
@@ -26,7 +32,11 @@ export function ParallaxImage({
     offset: ["start end", "end start"],
   })
 
-  const y = useTransform(scrollYProgress, [0, 1], [`-${speed * 100}%`, `${speed * 100}%`])
+  const y = useTransform(
+    scrollYProgress,
+    [0, 1],
+    yRange ?? [`-${speed * 100}%`, `${speed * 100}%`],
+  )
 
   if (shouldReduceMotion) {
     return (
@@ -37,7 +47,7 @@ export function ParallaxImage({
             alt={alt}
             fill
             priority={priority}
-            className="object-cover"
+            className={imageClassName}
           />
         </div>
       </div>
@@ -47,13 +57,13 @@ export function ParallaxImage({
   return (
     <div className={className}>
       <div ref={ref} className="relative h-full w-full overflow-hidden">
-        <motion.div className="absolute inset-[-20%]" style={{ y }}>
+        <motion.div className={motionClassName} style={{ y }}>
           <Image
             src={src}
             alt={alt}
             fill
             priority={priority}
-            className="object-cover"
+            className={imageClassName}
           />
         </motion.div>
       </div>
