@@ -65,7 +65,6 @@ export function ServicesSection() {
                     alt={service.title}
                     speed={0.12}
                     className="absolute inset-0"
-                    imageClassName="object-cover"
                   />
                 </div>
                 <div className="flex flex-1 flex-col p-6">

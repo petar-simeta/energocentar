@@ -21,8 +21,8 @@ export function ParallaxImage({
   speed = 0.2,
   priority = false,
   className = "",
-  imageClassName = "object-cover",
-  motionClassName = "absolute inset-[-20%]",
+  imageClassName = "object-cover object-bottom",
+  motionClassName = "absolute inset-x-0 -top-[20%] bottom-0",
   yRange,
 }: ParallaxImageProps) {
   const ref = useRef<HTMLDivElement>(null)
@@ -35,7 +35,7 @@ export function ParallaxImage({
   const y = useTransform(
     scrollYProgress,
     [0, 1],
-    yRange ?? [`-${speed * 100}%`, `${speed * 100}%`],
+    yRange ?? ["0%", `${speed * 100}%`],
   )
 
   if (shouldReduceMotion) {
