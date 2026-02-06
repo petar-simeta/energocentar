@@ -52,7 +52,7 @@ export function Header({ variant = "default" }: HeaderProps) {
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-6 lg:flex">
           {/* Usluge Dropdown */}
-          <DropdownMenu>
+          <DropdownMenu modal={false}>
             <DropdownMenuTrigger asChild>
               <button
                 className={`nav-link flex cursor-pointer items-center gap-1 rounded-md px-3 py-2 font-display text-lg font-bold tracking-wide transition-colors focus:outline-none ${
