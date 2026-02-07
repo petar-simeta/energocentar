@@ -2,6 +2,7 @@
 
 import { type ReactNode } from "react"
 import { motion, useReducedMotion } from "framer-motion"
+import { cn } from "@/lib/utils"
 
 interface FadeInProps {
   children: ReactNode
@@ -26,12 +27,32 @@ export function FadeIn({
   className,
 }: FadeInProps) {
   const shouldReduceMotion = useReducedMotion()
+  const isHorizontalMotion = direction === "left" || direction === "right"
 
   if (shouldReduceMotion) {
-    return <div className={className}>{children}</div>
+    return (
+      <div className={cn(className, isHorizontalMotion && "overflow-x-clip")}>
+        {children}
+      </div>
+    )
   }
 
   const offset = directionOffset[direction]
+
+  if (isHorizontalMotion) {
+    return (
+      <div className={cn(className, "overflow-x-clip")}>
+        <motion.div
+          initial={{ opacity: 0, ...offset }}
+          whileInView={{ opacity: 1, x: 0, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration, delay, ease: [0.25, 0.1, 0.25, 1] }}
+        >
+          {children}
+        </motion.div>
+      </div>
+    )
+  }
 
   return (
     <motion.div
