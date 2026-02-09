@@ -45,7 +45,7 @@ npm run build      # Production build
 
 ```bash
 # .env.local (create from .env.example)
-NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX  # Optional, GA loads only after consent
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX  # Required for GA, loaded only after consent
 ```
 
 ---

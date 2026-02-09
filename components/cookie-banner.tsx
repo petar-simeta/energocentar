@@ -1,48 +1,46 @@
 "use client"
 
 import { useEffect, useSyncExternalStore } from "react"
-import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import {
+  getConsentServerSnapshot,
+  getConsentSnapshot,
+  setConsent,
+  subscribeConsent,
+} from "@/lib/analytics/consent"
 
-const CONSENT_KEY = "cookie-consent"
-const CONSENT_EVENT = "analytics-consent"
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID?.trim()
+const GA_SCRIPT_ID = "ga-script"
 
-function subscribe(onStoreChange: () => void) {
-  if (typeof window === "undefined") return () => undefined
-  window.addEventListener(CONSENT_EVENT, onStoreChange)
-  return () => window.removeEventListener(CONSENT_EVENT, onStoreChange)
+const CONSENT_DENIED: ConsentPayload = {
+  analytics_storage: "denied",
+  ad_storage: "denied",
+  ad_user_data: "denied",
+  ad_personalization: "denied",
 }
 
-function getSnapshot(): "accepted" | "declined" | null {
-  if (typeof window === "undefined") return null
-  const consent = localStorage.getItem(CONSENT_KEY)
-  return consent === "accepted" || consent === "declined" ? consent : null
-}
-
-function getServerSnapshot() {
-  return null
+const CONSENT_GRANTED: ConsentPayload = {
+  analytics_storage: "granted",
+  ad_storage: "denied",
+  ad_user_data: "denied",
+  ad_personalization: "denied",
 }
 
 export function CookieBanner() {
-  const consent = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)
+  const consent = useSyncExternalStore(
+    subscribeConsent,
+    getConsentSnapshot,
+    getConsentServerSnapshot
+  )
 
   useEffect(() => {
     if (consent === "accepted") {
-      loadGoogleAnalytics()
+      enableGoogleAnalytics()
     } else if (consent === "declined") {
       disableGoogleAnalytics()
     }
   }, [consent])
-
-  const acceptCookies = () => {
-    localStorage.setItem(CONSENT_KEY, "accepted")
-    notifyConsent("accepted")
-  }
-
-  const declineCookies = () => {
-    localStorage.setItem(CONSENT_KEY, "declined")
-    notifyConsent("declined")
-  }
 
   if (consent !== null) return null
 
@@ -55,10 +53,19 @@ export function CookieBanner() {
         </Link>
       </p>
       <div className="mt-3 flex gap-2">
-        <Button onClick={acceptCookies} size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
+        <Button
+          onClick={() => setConsent("accepted")}
+          size="sm"
+          className="bg-primary text-primary-foreground hover:bg-primary/90"
+        >
           Prihvati
         </Button>
-        <Button onClick={declineCookies} variant="outline" size="sm" className="border-border">
+        <Button
+          onClick={() => setConsent("declined")}
+          variant="outline"
+          size="sm"
+          className="border-border"
+        >
           Odbij
         </Button>
       </div>
@@ -70,48 +77,92 @@ function isValidGA4Id(id: string): boolean {
   return /^G-[A-Z0-9]+$/.test(id)
 }
 
-function loadGoogleAnalytics() {
-  const GA_ID = process.env.NEXT_PUBLIC_GA_ID
+function enableGoogleAnalytics() {
   if (!GA_ID || typeof window === "undefined" || !isValidGA4Id(GA_ID)) return
-  window[`ga-disable-${GA_ID}`] = false
-  if (document.getElementById("ga-script")) return
 
-  // Load gtag.js
+  window[`ga-disable-${GA_ID}`] = false
+  window.dataLayer = window.dataLayer || []
+  window.gtag =
+    window.gtag ||
+    function gtag(...args: unknown[]) {
+      window.dataLayer.push(args)
+    }
+
+  window.gtag("consent", "default", CONSENT_DENIED)
+  window.gtag("consent", "update", CONSENT_GRANTED)
+  window.gtag("js", new Date())
+  window.gtag("config", GA_ID, {
+    anonymize_ip: true,
+    allow_google_signals: false,
+    allow_ad_personalization_signals: false,
+  })
+
+  if (document.getElementById(GA_SCRIPT_ID)) return
   const script = document.createElement("script")
-  script.id = "ga-script"
+  script.id = GA_SCRIPT_ID
   script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`
   script.async = true
   document.head.appendChild(script)
-
-  // Initialize gtag
-  window.dataLayer = window.dataLayer || []
-  function gtag(...args: unknown[]) {
-    window.dataLayer.push(args)
-  }
-  gtag("js", new Date())
-  gtag("config", GA_ID)
 }
 
 function disableGoogleAnalytics() {
-  const GA_ID = process.env.NEXT_PUBLIC_GA_ID
   if (!GA_ID || typeof window === "undefined" || !isValidGA4Id(GA_ID)) return
+
   window[`ga-disable-${GA_ID}`] = true
-  const script = document.getElementById("ga-script")
+  window.gtag?.("consent", "update", CONSENT_DENIED)
+  clearGoogleAnalyticsCookies()
+
+  const script = document.getElementById(GA_SCRIPT_ID)
   if (script?.parentNode) {
     script.parentNode.removeChild(script)
   }
+
   window.dataLayer = []
+  window.gtag = undefined
 }
 
-function notifyConsent(consent: "accepted" | "declined") {
-  if (typeof window === "undefined") return
-  window.dispatchEvent(new CustomEvent(CONSENT_EVENT, { detail: { consent } }))
+function clearGoogleAnalyticsCookies() {
+  if (typeof document === "undefined") return
+  const cookieNames = getGaCookieNames()
+  for (const name of cookieNames) {
+    expireCookie(name)
+  }
+}
+
+function getGaCookieNames(): string[] {
+  const allCookies = document.cookie
+    .split(";")
+    .map((cookie) => cookie.trim().split("=")[0])
+    .filter(Boolean)
+
+  return allCookies.filter((name) => name === "_ga" || name.startsWith("_ga_"))
+}
+
+function expireCookie(name: string) {
+  const expires = "Thu, 01 Jan 1970 00:00:00 GMT"
+  document.cookie = `${name}=; expires=${expires}; path=/; SameSite=Lax`
+  document.cookie = `${name}=; expires=${expires}; path=/; SameSite=Lax; Secure`
+
+  const hostnameParts = window.location.hostname.split(".")
+  for (let i = 0; i < hostnameParts.length - 1; i += 1) {
+    const domain = `.${hostnameParts.slice(i).join(".")}`
+    document.cookie = `${name}=; expires=${expires}; path=/; domain=${domain}; SameSite=Lax`
+    document.cookie = `${name}=; expires=${expires}; path=/; domain=${domain}; SameSite=Lax; Secure`
+  }
 }
 
 // Type declaration for gtag and GA disable flags
+type ConsentPayload = {
+  analytics_storage: "granted" | "denied"
+  ad_storage: "granted" | "denied"
+  ad_user_data: "granted" | "denied"
+  ad_personalization: "granted" | "denied"
+}
+
 declare global {
   interface Window {
     dataLayer: unknown[]
+    gtag?: (...args: unknown[]) => void
     [key: `ga-disable-${string}`]: boolean
   }
 }

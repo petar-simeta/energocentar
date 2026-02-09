@@ -104,11 +104,13 @@ page.tsx (example: service page)
 - Loads only after cookie consent
 - Controlled by `CookieBanner` component
 - Stores consent in `localStorage` (not a cookie)
+- Consent can be changed any time on `/kolacici`
+- Uses Google Consent Mode with denied-by-default ad signals and IP anonymization
 
 ```typescript
 // Cookie consent flow
 1. User visits → check localStorage("cookie-consent")
 2. If null → show banner
 3. If "accepted" → load GA script
-4. If "declined" → do nothing
+4. If "declined" → disable GA + clear GA cookies
 ```

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect, useState, useCallback } from "react";
+import { useRef, useEffect, useState, useCallback, useSyncExternalStore } from "react";
 import * as THREE from "three";
 import { TextGeometry } from "three/addons/geometries/TextGeometry.js";
 import { FontLoader } from "three/addons/loaders/FontLoader.js";
@@ -22,6 +22,7 @@ const IMPULSE = 0.07;
 const DRAG_SENSITIVITY = 0.001;
 const DECAY_RATE = 0.015;
 const MAX_VELOCITY = 0.3;
+const REDUCED_MOTION_QUERY = "(prefers-reduced-motion: reduce)";
 
 function velocityToGradeIndex(velocity: number): number {
   const absV = Math.abs(velocity);
@@ -42,15 +43,11 @@ export default function NotFoundScene() {
   const lastMouseXRef = useRef(0);
   const [activeGrade, setActiveGrade] = useState(7); // Start at G (idle)
 
-  // Check reduced motion
-  const [reducedMotion, setReducedMotion] = useState(false);
-  useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setReducedMotion(mq.matches);
-    const handler = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
-    mq.addEventListener("change", handler);
-    return () => mq.removeEventListener("change", handler);
-  }, []);
+  const reducedMotion = useSyncExternalStore(
+    subscribeReducedMotion,
+    getReducedMotionSnapshot,
+    getReducedMotionServerSnapshot
+  );
 
   const handlePointerDown = useCallback((e: PointerEvent) => {
     isDraggingRef.current = true;
@@ -267,4 +264,20 @@ export default function NotFoundScene() {
       <div ref={containerRef} className="h-full w-full" />
     </div>
   );
+}
+
+function subscribeReducedMotion(onStoreChange: () => void) {
+  if (typeof window === "undefined") return () => undefined;
+  const mq = window.matchMedia(REDUCED_MOTION_QUERY);
+  mq.addEventListener("change", onStoreChange);
+  return () => mq.removeEventListener("change", onStoreChange);
+}
+
+function getReducedMotionSnapshot() {
+  if (typeof window === "undefined") return false;
+  return window.matchMedia(REDUCED_MOTION_QUERY).matches;
+}
+
+function getReducedMotionServerSnapshot() {
+  return false;
 }

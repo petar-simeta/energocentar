@@ -103,6 +103,7 @@ export default function PrivatnostPage() {
                 <ul className="mt-4 space-y-2 pl-6 text-stone-600">
                   <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600" />Izvršenja ugovora (pružanje usluga)</li>
                   <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600" />Zakonskih obveza (vođenje poslovne dokumentacije)</li>
+                  <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600" />Privole (analitički kolačići)</li>
                   <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-600" />Legitimnog interesa (poboljšanje usluga)</li>
                 </ul>
               </div>
@@ -147,7 +148,7 @@ export default function PrivatnostPage() {
               </div>
 
               <p className="text-sm text-stone-500">
-                <em>Posljednja izmjena: siječanj 2026.</em>
+                <em>Posljednja izmjena: veljača 2026.</em>
               </p>
             </div>
           </div>
