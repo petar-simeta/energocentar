@@ -84,10 +84,13 @@ function enableGoogleAnalytics() {
   window.dataLayer = window.dataLayer || []
   window.gtag =
     window.gtag ||
-    function gtag(...args: unknown[]) {
-      window.dataLayer.push(args)
+    function gtag() {
+      // GA snippet expects queued commands as `arguments`.
+      // eslint-disable-next-line prefer-rest-params
+      window.dataLayer.push(arguments)
     }
 
+  initializeGoogleAnalytics()
   window.gtag("consent", "default", CONSENT_DENIED)
   window.gtag("consent", "update", CONSENT_GRANTED)
 
@@ -107,6 +110,9 @@ function enableGoogleAnalytics() {
     console.warn("Google Analytics script failed to load.")
   }
   document.head.appendChild(script)
+  window.setTimeout(() => {
+    initializeGoogleAnalytics()
+  }, 1500)
 }
 
 function disableGoogleAnalytics() {
