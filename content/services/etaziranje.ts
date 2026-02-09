@@ -80,6 +80,6 @@ export const etaziranje = {
       "Izračun površina i pripadajućih udjela u vlasništvu",
       "Pomoć u pripremi dokumentacije za predaju (prema dogovoru)",
     ],
-    image: "/floor-plan-technical-drawing-apartment-layout-prof.jpg",
+    image: "/etaziranje-tlocrt-stana-elaborat.jpg",
   },
 };

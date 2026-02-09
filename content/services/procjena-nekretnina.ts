@@ -79,6 +79,6 @@ export const procjenaNekretnina = {
       "Analiza tržišta i usporedivih prodaja (gdje je primjenjivo)",
       "Potpis/ovjera ovlaštenog procjenitelja",
     ],
-    image: "/property-valuation-report-documents-professional-r.jpg",
+    image: "/procjena-nekretnine-izvjestaj-dokumentacija.jpg",
   },
 };

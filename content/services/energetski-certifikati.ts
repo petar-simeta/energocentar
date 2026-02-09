@@ -81,6 +81,6 @@ export const energetskiCertifikati = {
       "Dokument spreman za potrebe prodaje ili iznajmljivanja",
     ],
     note: "Energetski certifikat vrijedi 10 godina, osim ako se na nekretnini ne izvedu značajne energetske rekonstrukcije.",
-    image: "/energy-certificate-document-official-stamp-profess.jpg",
+    image: "/energetski-certifikat-zgrade-zagreb.jpeg",
   },
 };

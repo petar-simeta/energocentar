@@ -13,7 +13,7 @@ const services = [
     description:
       "Izrada energetskih certifikata za stanove, kuće, poslovne prostore i zgrade. Obavezno pri prodaji ili iznajmljivanju nekretnine, u skladu s važećim zakonima.",
     href: "/energetski-certifikati",
-    image: "/energy-efficiency-certificate-document-professiona.jpg",
+    image: "/energetski-certifikat-zgrade-zagreb.jpeg",
   },
   {
     icon: Building2,
@@ -21,7 +21,7 @@ const services = [
     description:
       "Ovlaštena procjena tržišne vrijednosti nekretnina za banke, sudove, kupoprodaju, nasljeđivanje i kreditne potrebe.",
     href: "/procjena-nekretnina",
-    image: "/property-valuation-real-estate-professional-inspec.jpg",
+    image: "/procjena-vrijednosti-nekretnine-strucni-pregled.jpg",
   },
   {
     icon: Layers,
@@ -29,7 +29,7 @@ const services = [
     description:
       "Izrada dokumentacije i provedba etažiranja stanova i zgrada radi upisa vlasništva u zemljišne knjige.",
     href: "/etaziranje",
-    image: "/etaziranje-zgrada-3d.jpeg",
+    image: "/etaziranje-zgrade-strucno-savjetovanje.jpeg",
   },
 ]
 
