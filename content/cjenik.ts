@@ -2,30 +2,27 @@ export const pricingTables = [
   {
     title: "Energetski certifikati",
     items: [
-      { service: "Stan do 50 m²", price: "od 80 €" },
-      { service: "Stan 50-100 m²", price: "od 100 €" },
-      { service: "Stan preko 100 m²", price: "od 120 €" },
-      { service: "Kuća do 150 m²", price: "od 120 €" },
-      { service: "Kuća preko 150 m²", price: "od 150 €" },
+      { service: "Stanovi na zajedničko grijanje", detail: "toplana", price: "od 160 EUR" },
+      { service: "Stanovi na zasebno grijanje", detail: "plinski bojler", price: "od 185 EUR" },
+      { service: "Kuća do 200 m²", price: "od 265 EUR" },
+      { service: "Kuća preko 200 m²", price: "od 330 EUR" },
+      { service: "Nove obiteljske kuće", detail: "za uporabnu dozvolu", price: "od 370 EUR" },
       { service: "Poslovni prostor", price: "Po dogovoru" },
     ],
-    note: "Hitna izrada (isti dan): +30 €",
   },
   {
     title: "Procjena nekretnina",
     items: [
       { service: "Procjena stana", price: "od 200 €" },
       { service: "Procjena kuće", price: "od 300 €" },
-      { service: "Procjena zemljišta", price: "od 150 €" },
+      { service: "Procjena zemljišta", price: "od 200 €" },
       { service: "Procjena poslovnog prostora", price: "Po dogovoru" },
     ],
   },
   {
     title: "Etažiranje",
     items: [
-      { service: "Etažiranje (do 4 stana)", price: "od 500 €" },
-      { service: "Etažiranje (5-10 stanova)", price: "od 800 €" },
-      { service: "Etažiranje (preko 10 stanova)", price: "Po dogovoru" },
+      { service: "Etažiranje", price: "od 1,5 EUR po m² + 400 EUR etažni elaborat" },
     ],
   },
 ]
@@ -42,9 +39,5 @@ export const priceFactors = [
   {
     title: "Složenost",
     description: "Nestandardne nekretnine zahtijevaju dodatnu analizu",
-  },
-  {
-    title: "Hitnost",
-    description: "Hitne izrade imaju dodatnu naknadu",
   },
 ]

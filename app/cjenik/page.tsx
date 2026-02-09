@@ -72,20 +72,31 @@ export default function CjenikPage() {
                     <h2 className="font-display text-xl font-bold text-foreground">{table.title}</h2>
                   </div>
                   <div className="p-6">
-                    <div className="space-y-0">
-                      {table.items.map((item, index) => (
-                        <div
-                          key={item.service}
-                          className={`flex items-center justify-between py-3 ${
-                            index % 2 === 0 ? "bg-stone-50" : ""
-                          } -mx-3 px-3 rounded`}
-                        >
-                          <span className="text-sm text-stone-600">{item.service}</span>
-                          <span className="font-display font-bold text-foreground">{item.price}</span>
-                        </div>
-                      ))}
-                    </div>
-                    {table.note && <p className="mt-4 text-sm text-green-700">{table.note}</p>}
+                    {table.title === "Etažiranje" ? (
+                      <p className="leading-relaxed text-stone-600">
+                        Cijena etažiranja je{" "}
+                        <span className="font-display font-bold text-foreground">{table.items[0]?.price}</span>.
+                      </p>
+                    ) : (
+                      <div className="space-y-0">
+                        {table.items.map((item, index) => (
+                          <div
+                            key={item.service}
+                            className={`-mx-3 flex items-start justify-between gap-8 rounded px-4 py-3 sm:gap-12 ${
+                              index % 2 === 0 ? "bg-stone-50" : ""
+                            }`}
+                          >
+                            <span className="flex-1 text-sm text-stone-600">
+                              <span className="block">{item.service}</span>
+                              {"detail" in item && item.detail && (
+                                <span className="mt-0.5 block text-xs italic text-stone-500">{item.detail}</span>
+                              )}
+                            </span>
+                            <span className="shrink-0 pl-4 font-display font-bold text-foreground">{item.price}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
@@ -102,7 +113,7 @@ export default function CjenikPage() {
                 Konačna cijena ovisi o nekoliko faktora. Za točnu ponudu, kontaktirajte nas s podacima o nekretnini.
               </p>
             </div>
-            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {priceFactors.map((factor) => (
                 <div key={factor.title} className="rounded-xl bg-white p-6 shadow-sm">
                   <h3 className="font-medium text-foreground">{factor.title}</h3>
