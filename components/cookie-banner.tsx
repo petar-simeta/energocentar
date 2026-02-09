@@ -90,18 +90,22 @@ function enableGoogleAnalytics() {
 
   window.gtag("consent", "default", CONSENT_DENIED)
   window.gtag("consent", "update", CONSENT_GRANTED)
-  window.gtag("js", new Date())
-  window.gtag("config", GA_ID, {
-    anonymize_ip: true,
-    allow_google_signals: false,
-    allow_ad_personalization_signals: false,
-  })
 
-  if (document.getElementById(GA_SCRIPT_ID)) return
+  if (document.getElementById(GA_SCRIPT_ID)) {
+    initializeGoogleAnalytics()
+    return
+  }
+
   const script = document.createElement("script")
   script.id = GA_SCRIPT_ID
   script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`
   script.async = true
+  script.onload = () => {
+    initializeGoogleAnalytics()
+  }
+  script.onerror = () => {
+    console.warn("Google Analytics script failed to load.")
+  }
   document.head.appendChild(script)
 }
 
@@ -119,6 +123,28 @@ function disableGoogleAnalytics() {
 
   window.dataLayer = []
   window.gtag = undefined
+  window.__gaInitializedId = undefined
+}
+
+function initializeGoogleAnalytics() {
+  if (!GA_ID || typeof window === "undefined") return
+  if (!window.gtag) return
+  if (window.__gaInitializedId === GA_ID) return
+
+  window.gtag("js", new Date())
+  window.gtag("config", GA_ID, {
+    anonymize_ip: true,
+    allow_google_signals: false,
+    allow_ad_personalization_signals: false,
+    send_page_view: false,
+  })
+  window.gtag("event", "page_view", {
+    page_title: document.title,
+    page_location: window.location.href,
+    page_path: window.location.pathname,
+  })
+
+  window.__gaInitializedId = GA_ID
 }
 
 function clearGoogleAnalyticsCookies() {
@@ -163,6 +189,7 @@ declare global {
   interface Window {
     dataLayer: unknown[]
     gtag?: (...args: unknown[]) => void
+    __gaInitializedId?: string
     [key: `ga-disable-${string}`]: boolean
   }
 }
