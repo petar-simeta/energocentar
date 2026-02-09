@@ -2,6 +2,7 @@ import type React from "react";
 import type { Metadata } from "next";
 import { Jost, DM_Sans } from "next/font/google";
 import { Toaster } from "sonner";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { AnalyticsConsent } from "@/components/analytics-consent";
 import { CookieBanner } from "@/components/cookie-banner";
 import "./globals.css";
@@ -42,6 +43,7 @@ export default function RootLayout({
         <Toaster position="bottom-center" richColors />
         <AnalyticsConsent />
         <CookieBanner />
+        <SpeedInsights />
       </body>
     </html>
   );
