@@ -2,8 +2,8 @@ export const pricingTables = [
   {
     title: "Energetski certifikati",
     items: [
-      { service: "Stanovi na zajedničko grijanje", detail: "toplana", price: "od 160 EUR" },
-      { service: "Stanovi na zasebno grijanje", detail: "plinski bojler", price: "od 185 EUR" },
+      { service: "Stanovi na zajedničko grijanje", detail: "npr. toplana", price: "od 160 EUR" },
+      { service: "Stanovi na zasebno grijanje", detail: "npr. plinski bojler", price: "od 185 EUR" },
       { service: "Kuća do 200 m²", price: "od 265 EUR" },
       { service: "Kuća preko 200 m²", price: "od 330 EUR" },
       { service: "Nove obiteljske kuće", detail: "za uporabnu dozvolu", price: "od 370 EUR" },

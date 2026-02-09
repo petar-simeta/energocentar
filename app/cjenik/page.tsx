@@ -101,6 +101,7 @@ export default function CjenikPage() {
                 </div>
               ))}
             </div>
+            <p className="mt-6 text-center text-xs italic text-stone-500">Sve cijene uključuju PDV.</p>
           </div>
         </section>
 
