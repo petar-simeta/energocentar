@@ -29,7 +29,7 @@ const services = [
     description:
       "Izrada dokumentacije i provedba etažiranja stanova i zgrada radi upisa vlasništva u zemljišne knjige.",
     href: "/etaziranje",
-    image: "/etaziranje-tlocrt-stana-3d.jpeg",
+    image: "/etaziranje-zgrada-3d.jpeg",
   },
 ]
 

@@ -11,7 +11,7 @@ export const etaziranje = {
     title: "Etažiranje nekretnina u Zagrebu i Hrvatskoj",
     description:
       "Izrađujemo elaborat etažiranja (etažni elaborat) za upis posebnih dijelova nekretnine u zemljišne knjige. Vodimo vas kroz cijeli postupak — od prikupljanja dokumentacije i mjerenja do predaje i upisa.",
-    image: "/architectural-floor-plan-blueprint-technical-drawi.jpg",
+    image: "/etaziranje-hero-image.jpg",
   },
 
   whatIs: {

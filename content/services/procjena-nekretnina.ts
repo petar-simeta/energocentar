@@ -11,7 +11,7 @@ export const procjenaNekretnina = {
     title: "Procjena vrijednosti nekretnina u Zagrebu i Hrvatskoj",
     description:
       "Izrađujemo procjenu tržišne vrijednosti nekretnina (stanova, kuća, poslovnih prostora i zemljišta) za kredit, sud, ostavinu, podjelu imovine i porezne potrebe. Elaborat potpisuje ovlašteni procjenitelj, a dokument je prihvatljiv za banke i nadležne institucije.",
-    image: "/luxury-apartment-interior-real-estate-valuation-pr.jpg",
+    image: "/procjena-nekretnina-hero-image.jpg",
   },
 
   whatIs: {
