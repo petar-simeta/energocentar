@@ -4,6 +4,7 @@ import { Jost, DM_Sans } from "next/font/google";
 import { Toaster } from "sonner";
 import { AnalyticsConsent } from "@/components/analytics-consent";
 import { CookieBanner } from "@/components/cookie-banner";
+import { siteConfig } from "@/lib/config/site";
 import "./globals.css";
 
 const jost = Jost({
@@ -19,7 +20,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.energocentar.com"),
+  metadataBase: new URL(siteConfig.url),
 };
 
 export default function RootLayout({

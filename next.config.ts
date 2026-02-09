@@ -23,6 +23,22 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "energocentar.com" }],
+        destination: "https://www.energocentar.hr/:path*",
+        permanent: true,
+      },
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.energocentar.com" }],
+        destination: "https://www.energocentar.hr/:path*",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

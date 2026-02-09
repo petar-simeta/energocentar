@@ -29,7 +29,7 @@ Phone (display): 099 2265 707
 Phone (tel href): +385992265707
 Email: certifikati@energocentar.com
 Service area: Zagreb + okolica Zagreba + cijela Hrvatska
-Website: https://www.energocentar.com
+Website: https://www.energocentar.hr
 
 ---
 
