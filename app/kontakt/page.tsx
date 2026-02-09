@@ -70,16 +70,16 @@ export default function KontaktPage() {
 
                 <div className="mt-8 space-y-6">
                   {/* Phone */}
-                  <div className="flex items-start gap-4 rounded-xl bg-green-50 p-4">
+                  <div className="flex flex-col gap-3 rounded-xl bg-green-50 p-4 sm:flex-row sm:items-start sm:gap-4">
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-green-100">
                       <Phone className="h-6 w-6 text-green-700" />
                     </div>
-                    <div className="flex-1">
+                    <div className="min-w-0 flex-1">
                       <h3 className="font-medium text-foreground">Telefon</h3>
-                      <div className="mt-1 flex items-center gap-2">
+                      <div className="mt-1 flex flex-wrap items-center gap-2">
                         <a
                           href={`tel:${siteConfig.phone.href}`}
-                          className="text-lg font-semibold text-green-700 hover:underline"
+                          className="text-base font-semibold text-green-700 hover:underline sm:text-lg"
                         >
                           {siteConfig.phone.display}
                         </a>
@@ -93,16 +93,16 @@ export default function KontaktPage() {
                   </div>
 
                   {/* Email */}
-                  <div className="flex items-start gap-4 rounded-xl bg-green-50 p-4">
+                  <div className="flex flex-col gap-3 rounded-xl bg-green-50 p-4 sm:flex-row sm:items-start sm:gap-4">
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-green-100">
                       <Mail className="h-6 w-6 text-green-700" />
                     </div>
-                    <div className="flex-1">
+                    <div className="min-w-0 flex-1">
                       <h3 className="font-medium text-foreground">Email</h3>
-                      <div className="mt-1 flex items-center gap-2">
+                      <div className="mt-1 flex flex-wrap items-center gap-2">
                         <a
                           href={`mailto:${siteConfig.email}`}
-                          className="text-lg font-semibold text-green-700 hover:underline"
+                          className="break-all text-base font-semibold text-green-700 hover:underline sm:text-lg"
                         >
                           {siteConfig.email}
                         </a>
@@ -116,11 +116,11 @@ export default function KontaktPage() {
                   </div>
 
                   {/* Working Hours */}
-                  <div className="flex items-start gap-4 rounded-xl bg-green-50 p-4">
+                  <div className="flex flex-col gap-3 rounded-xl bg-green-50 p-4 sm:flex-row sm:items-start sm:gap-4">
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-green-100">
                       <Clock className="h-6 w-6 text-green-700" />
                     </div>
-                    <div>
+                    <div className="min-w-0 flex-1">
                       <h3 className="font-medium text-foreground">Radno vrijeme</h3>
                       <div className="mt-1 space-y-1 text-stone-600">
                         {kontakt.workingHours.map((wh) => (
@@ -131,22 +131,22 @@ export default function KontaktPage() {
                   </div>
 
                   {/* Address */}
-                  <div className="flex items-start gap-4 rounded-xl bg-green-50 p-4">
+                  <div className="flex flex-col gap-3 rounded-xl bg-green-50 p-4 sm:flex-row sm:items-start sm:gap-4">
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-green-100">
                       <MapPin className="h-6 w-6 text-green-700" />
                     </div>
-                    <div>
+                    <div className="min-w-0 flex-1">
                       <h3 className="font-medium text-foreground">Adresa</h3>
-                      <p className="mt-1 text-stone-600">{siteConfig.address.display}</p>
+                      <p className="mt-1 break-words text-stone-600">{siteConfig.address.display}</p>
                     </div>
                   </div>
 
                   {/* Area */}
-                  <div className="flex items-start gap-4 rounded-xl bg-green-50 p-4">
+                  <div className="flex flex-col gap-3 rounded-xl bg-green-50 p-4 sm:flex-row sm:items-start sm:gap-4">
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-green-100">
                       <MapPin className="h-6 w-6 text-green-700" />
                     </div>
-                    <div>
+                    <div className="min-w-0 flex-1">
                       <h3 className="font-medium text-foreground">Područje djelovanja</h3>
                       <div className="mt-1 space-y-1 text-stone-600">
                         {kontakt.areas.map((area) => (
