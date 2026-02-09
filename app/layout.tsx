@@ -22,6 +22,9 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
+  verification: {
+    google: "9GK6SSdePVyAQQMwlzG_407tShwAJXakQJsvWPvuko4",
+  },
 };
 
 export default function RootLayout({
