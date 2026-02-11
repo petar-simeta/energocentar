@@ -72,7 +72,7 @@ export default function EnergyCertificatePage() {
       />
       <FaqJsonLd faqs={faqs} />
       <Header variant="transparent" />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <ServiceHero
           iconName="FileCheck"
           title={energetskiCertifikati.hero.title}

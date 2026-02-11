@@ -61,7 +61,7 @@ export default function ONamaPage() {
         ]}
       />
       <Header />
-      <main className="pt-[67px]">
+      <main id="main-content" tabIndex={-1} className="pt-[67px]">
         <PageHero
           title="O nama"
           subtitle={siteConfig.description}

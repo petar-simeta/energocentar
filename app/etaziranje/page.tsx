@@ -72,7 +72,7 @@ export default function CondominiumPage() {
       />
       <FaqJsonLd faqs={faqs} />
       <Header variant="transparent" />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <ServiceHero
           iconName="Layers"
           title={etaziranje.hero.title}

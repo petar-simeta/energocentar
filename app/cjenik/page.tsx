@@ -53,7 +53,7 @@ export default function CjenikPage() {
         ]}
       />
       <Header />
-      <main className="pt-[67px]">
+      <main id="main-content" tabIndex={-1} className="pt-[67px]">
         <PageHero
           icon={Banknote}
           title="Cjenik usluga"

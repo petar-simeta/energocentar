@@ -53,7 +53,7 @@ export default function KontaktPage() {
         ]}
       />
       <Header />
-      <main className="pt-[67px]">
+      <main id="main-content" tabIndex={-1} className="pt-[67px]">
         <PageHero
           icon={Phone}
           title={kontakt.hero.title}
