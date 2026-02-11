@@ -17,7 +17,7 @@ export const values = [
     iconName: "Clock",
     title: "Brzina",
     description:
-      "Razumijemo da vrijeme često igra ključnu ulogu. Zato energetske certifikate izrađujemo u roku od 24-48 sati.",
+      "Razumijemo da vrijeme često igra ključnu ulogu. Zato energetske certifikate izrađujemo u roku od 48-72 sata.",
   },
   {
     iconName: "Building2",

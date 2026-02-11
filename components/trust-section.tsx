@@ -14,7 +14,7 @@ const stats = [
   },
   {
     icon: Clock,
-    value: "48h",
+    value: "48-72h",
     label: "prosječno vrijeme izrade certifikata",
   },
   {

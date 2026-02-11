@@ -39,7 +39,7 @@ export const faqGroups: FaqGroup[] = [
       {
         question: "Koliko traje izrada energetskog certifikata?",
         answer:
-          "Nakon obavljenog energetskog pregleda, certifikat se najčešće izrađuje u roku od 24 do 48 sati. Po potrebi je moguća i hitna izrada isti dan.",
+          "Nakon obavljenog energetskog pregleda, certifikat se najčešće izrađuje u roku od 48 do 72 sata. Po potrebi je moguća i hitna izrada isti dan.",
       },
       {
         question: "Što je potrebno za izradu energetskog certifikata?",

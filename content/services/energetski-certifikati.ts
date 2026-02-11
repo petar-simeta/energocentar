@@ -1,8 +1,8 @@
 export const energetskiCertifikati = {
   meta: {
-    title: "Energetski certifikat Zagreb | Izrada u 24–48 h",
+    title: "Energetski certifikat Zagreb | Izrada u 48–72 h",
     description:
-      "Izrada energetskog certifikata za stanove, kuće, zgrade i poslovne prostore u Zagrebu i okolici. Obavezno pri prodaji i najmu. Rok 24–48 h.",
+      "Izrada energetskog certifikata za stanove, kuće, zgrade i poslovne prostore u Zagrebu i okolici. Obavezno pri prodaji i najmu. Rok 48–72 h.",
     keywords:
       "energetski certifikat zagreb, izrada energetskog certifikata, energetska iskaznica, energetski certifikat cijena",
   },
@@ -11,7 +11,7 @@ export const energetskiCertifikati = {
     title: "Energetski certifikati u Zagrebu i Hrvatskoj",
     description: [
       "Izrađujemo energetske certifikate (energetske iskaznice) za stanove, kuće, zgrade i poslovne prostore u Zagrebu i cijeloj Hrvatskoj.",
-      "Certifikat je obavezan pri prodaji i iznajmljivanju nekretnine — izlazimo na teren, obavljamo energetski pregled i isporučujemo dokument u roku od 24–48 sati.",
+      "Certifikat je obavezan pri prodaji i iznajmljivanju nekretnine — izlazimo na teren, obavljamo energetski pregled i isporučujemo dokument u roku od 48–72 sata.",
     ],
     image: "/energetski-certifikat-hero-image.jpg",
   },
@@ -65,7 +65,7 @@ export const energetskiCertifikati = {
       iconName: "FileText",
       title: "Izrada i dostava certifikata",
       description:
-        "Izrađujemo energetski certifikat i dostavljamo ga digitalno (PDF). Po dogovoru je moguć i tiskani primjerak. Rok izrade je najčešće 24–48 sati.",
+        "Izrađujemo energetski certifikat i dostavljamo ga digitalno (PDF). Po dogovoru je moguć i tiskani primjerak. Rok izrade je najčešće 48–72 sata.",
     },
   ],
 
