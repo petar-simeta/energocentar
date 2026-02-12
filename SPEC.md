@@ -27,7 +27,7 @@ Company name: ENERGOCENTAR d.o.o.
 OIB: 33876995825
 Phone (display): 099 2265 707
 Phone (tel href): +385992265707
-Email: certifikati@energocentar.com
+Email: info@energocentar.hr
 Service area: Zagreb + okolica Zagreba + cijela Hrvatska
 Website: https://www.energocentar.hr
 

@@ -77,8 +77,9 @@ const localBusinessJsonLd = {
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
-      description: "Po dogovoru",
-      byAppointment: true,
+      dayOfWeek: siteConfig.workingHours.dayOfWeek,
+      opens: siteConfig.workingHours.opens,
+      closes: siteConfig.workingHours.closes,
     },
   ],
 }

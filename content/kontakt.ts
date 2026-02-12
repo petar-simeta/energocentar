@@ -31,11 +31,5 @@ export const kontakt = {
     },
   ],
 
-  workingHours: [
-    { label: "Ponedjeljak - Petak", value: "8:00 - 18:00" },
-    { label: "Subota", value: "9:00 - 13:00" },
-    { label: "Nedjelja", value: "zatvoreno" },
-  ],
-
   areas: ["Zagreb", "Zagrebačka županija", "Cijela Hrvatska"],
 }

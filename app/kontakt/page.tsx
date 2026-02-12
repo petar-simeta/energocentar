@@ -72,6 +72,14 @@ const contactPageJsonLd = {
           availableLanguage: ["hr"],
         },
       ],
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: siteConfig.workingHours.dayOfWeek,
+          opens: siteConfig.workingHours.opens,
+          closes: siteConfig.workingHours.closes,
+        },
+      ],
     },
     {
       "@type": "ContactPage",
@@ -168,11 +176,7 @@ export default function KontaktPage() {
                     </div>
                     <div className="min-w-0 flex-1">
                       <h3 className="font-medium text-foreground">Radno vrijeme</h3>
-                      <div className="mt-1 space-y-1 text-stone-600">
-                        {kontakt.workingHours.map((wh) => (
-                          <p key={wh.label}>{wh.label}: {wh.value}</p>
-                        ))}
-                      </div>
+                      <p className="mt-1 text-stone-600">Ponedjeljak - Petak: {siteConfig.workingHours.opens} - {siteConfig.workingHours.closes}</p>
                     </div>
                   </div>
 

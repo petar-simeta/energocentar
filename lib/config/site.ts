@@ -6,7 +6,7 @@ export const siteConfig = {
     display: "099 2265 707",
     href: "+385992265707",
   },
-  email: "certifikati@energocentar.com",
+  email: "info@energocentar.hr",
   address: {
     street: "Ulica Petra Kružića 6",
     city: "Zagreb",
@@ -20,9 +20,15 @@ export const siteConfig = {
   description:
     "ENERGOCENTAR d.o.o. – izrada energetskih certifikata, procjena vrijednosti nekretnina i etažiranje stanova i zgrada u Zagrebu i cijeloj Hrvatskoj.",
   workingHours: {
-    weekdays: "8:00 - 18:00",
-    saturday: "9:00 - 13:00",
-    display: "Radnim danom od 8:00 do 18:00 · Subotom od 9:00 do 13:00",
+    dayOfWeek: [
+      "https://schema.org/Monday",
+      "https://schema.org/Tuesday",
+      "https://schema.org/Wednesday",
+      "https://schema.org/Thursday",
+      "https://schema.org/Friday",
+    ],
+    opens: "08:00",
+    closes: "16:00",
   },
 } as const;
 

@@ -54,6 +54,14 @@ const pricingCatalogJsonLd = {
       telephone: siteConfig.phone.href,
       email: siteConfig.email,
       priceRange: siteConfig.priceRange,
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: siteConfig.workingHours.dayOfWeek,
+          opens: siteConfig.workingHours.opens,
+          closes: siteConfig.workingHours.closes,
+        },
+      ],
     },
     {
       "@type": "OfferCatalog",
