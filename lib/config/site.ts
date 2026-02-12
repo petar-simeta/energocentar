@@ -14,7 +14,7 @@ export const siteConfig = {
     country: "Hrvatska",
     display: "Ulica Petra Kružića 6, Zagreb",
   },
-  url: "https://www.energocentar.hr",
+  url: "https://energocentar.hr",
   areaServed: ["Zagreb", "Zagrebačka županija", "Hrvatska"],
   description:
     "ENERGOCENTAR d.o.o. – izrada energetskih certifikata, procjena vrijednosti nekretnina i etažiranje stanova i zgrada u Zagrebu i cijeloj Hrvatskoj.",

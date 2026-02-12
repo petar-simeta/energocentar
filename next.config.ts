@@ -27,14 +27,20 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/:path*",
+        has: [{ type: "host", value: "www.energocentar.hr" }],
+        destination: "https://energocentar.hr/:path*",
+        permanent: true,
+      },
+      {
+        source: "/:path*",
         has: [{ type: "host", value: "energocentar.com" }],
-        destination: "https://www.energocentar.hr/:path*",
+        destination: "https://energocentar.hr/:path*",
         permanent: true,
       },
       {
         source: "/:path*",
         has: [{ type: "host", value: "www.energocentar.com" }],
-        destination: "https://www.energocentar.hr/:path*",
+        destination: "https://energocentar.hr/:path*",
         permanent: true,
       },
     ];

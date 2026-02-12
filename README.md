@@ -2,7 +2,7 @@
 
 Marketing website for a company offering energy certificates, property valuation, and condominium division in Zagreb and across Croatia.
 
-**Live:** https://www.energocentar.hr
+**Live:** https://energocentar.hr
 **Stack:** Next.js 16, TypeScript, Tailwind CSS, shadcn/ui
 **Hosting:** Vercel
 
