@@ -37,6 +37,13 @@ export function ServiceFaqTeaser({ faqs }: ServiceFaqTeaserProps) {
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
+                  href="/kontakt"
+                  className="inline-flex items-center gap-1 text-sm font-medium text-green-700 transition-colors hover:text-green-600"
+                >
+                  Pošaljite upit
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link
                   href={`tel:${siteConfig.phone.href}`}
                   className="inline-flex items-center gap-1 text-sm font-medium text-green-700 transition-colors hover:text-green-600"
                 >

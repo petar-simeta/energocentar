@@ -23,38 +23,38 @@ export const faqGroups: FaqGroup[] = [
       {
         question: "Koliko vrijedi energetski certifikat u Hrvatskoj?",
         answer:
-          "Energetski certifikat vrijedi 10 godina od dana izdavanja, pod uvjetom da na nekretnini nisu napravljene značajne rekonstrukcije koje utječu na energetsku učinkovitost.",
+          "Energetski certifikat u Hrvatskoj vrijedi 10 godina od dana izdavanja, pod uvjetom da na nekretnini nisu izvedene značajne rekonstrukcije koje utječu na energetsku učinkovitost.",
       },
       {
         question:
           "Je li energetski certifikat obavezan pri prodaji nekretnine?",
         answer:
           "Da. Energetski certifikat je zakonski obavezan pri prodaji nekretnine u Hrvatskoj, sukladno Zakonu o gradnji i Pravilniku o energetskom certificiranju zgrada.",
+        links: [{ label: "Detalji usluge", href: "/energetski-certifikati" }],
       },
       {
         question:
           "Treba li energetski certifikat za iznajmljivanje stana ili apartmana?",
         answer:
-          "Da. Energetski certifikat je obavezan i pri iznajmljivanju stana, kuće ili poslovnog prostora, bez obzira radi li se o dugoročnom ili kratkoročnom najmu (apartmani).",
+          "Da. Energetski certifikat je obavezan i pri iznajmljivanju stana, kuće ili poslovnog prostora, uključujući dugoročni i kratkoročni najam (apartmani).",
       },
       {
         question: "Kolika je cijena energetskog certifikata u Zagrebu?",
         answer:
           "Cijena energetskog certifikata ovisi o vrsti i veličini nekretnine. Prema važećem cjeniku, stanovi na zajedničko grijanje su od 160 EUR, a stanovi na zasebno grijanje od 185 EUR. Točna cijena definira se prema površini, vrsti objekta i složenosti.",
-        links: [
-          { label: "Pogledajte cjenik", href: "/cjenik" },
-          { label: "Zatražite ponudu", href: "/kontakt" },
-        ],
+        links: [{ label: "Pogledajte cjenik", href: "/cjenik" }],
       },
       {
         question: "Koliko traje izrada energetskog certifikata?",
         answer:
-          "Nakon obavljenog energetskog pregleda, certifikat se najčešće izrađuje u roku od 48 do 72 sata. Po potrebi je moguća i hitna izrada isti dan.",
+          "Nakon obavljenog energetskog pregleda, izrada energetskog certifikata najčešće traje 48 do 72 sata. Po potrebi je moguća i hitna izrada isti dan.",
+        links: [{ label: "Rezervirajte termin", href: "/kontakt" }],
       },
       {
         question: "Što je potrebno za izradu energetskog certifikata?",
         answer:
-          "Potrebni su osnovni podaci o nekretnini (adresa, površina, godina gradnje), pristup svim prostorijama te podaci o sustavu grijanja i hlađenja ako postoje. Građevinska dokumentacija je korisna, ali nije obavezna.",
+          "Potrebni su osnovni podaci o nekretnini (adresa, površina, godina gradnje), pristup svim prostorijama te podaci o sustavu grijanja i hlađenja (ako postoje). Građevinska dokumentacija je korisna, ali nije obavezna.",
+        links: [{ label: "Pošaljite podatke", href: "/kontakt" }],
       },
       {
         question: "Tko smije izdavati energetske certifikate?",
@@ -71,7 +71,8 @@ export const faqGroups: FaqGroup[] = [
       {
         question: "Vrijedi li energetski certifikat ako renoviram stan?",
         answer:
-          "Ako renovacija značajno utječe na energetsku učinkovitost (npr. nova stolarija, fasada, grijanje), preporučuje se izrada novog certifikata iako stari formalno još vrijedi.",
+          "Ako renovacija značajno utječe na energetsku učinkovitost (npr. nova stolarija, fasada ili sustav grijanja/hlađenja), preporučuje se izrada novog certifikata iako stari formalno još vrijedi.",
+        links: [{ label: "Savjet za vaš slučaj", href: "/kontakt" }],
       },
       {
         question: "Mogu li dobiti kaznu ako nemam energetski certifikat?",
@@ -88,10 +89,7 @@ export const faqGroups: FaqGroup[] = [
           "Koji je najbrži način da dobijem ponudu za energetski certifikat?",
         answer:
           "Najbrže je poslati osnovne podatke: lokaciju, vrstu nekretnine (stan, kuća, poslovni prostor) i površinu u m². Na temelju toga možemo dati okvirnu cijenu i predložiti termin pregleda.",
-        links: [
-          { label: "Pošaljite upit", href: "/kontakt" },
-          { label: "Provjerite cjenik", href: "/cjenik" },
-        ],
+        links: [{ label: "Pošaljite upit", href: "/kontakt" }],
       },
     ],
   },
@@ -103,12 +101,13 @@ export const faqGroups: FaqGroup[] = [
       {
         question: "Kada je potrebna procjena vrijednosti nekretnine?",
         answer:
-          "Procjena je potrebna kod kupoprodaje, nasljeđivanja, diobe imovine, sudskih postupaka, osiguranja imovine ili za potrebe bankovnog kredita.",
+          "Procjena vrijednosti nekretnine potrebna je kod kupoprodaje, nasljeđivanja, diobe imovine, sudskih postupaka, osiguranja imovine ili za potrebe bankovnog kredita.",
+        links: [{ label: "Više o procjeni nekretnina", href: "/procjena-nekretnina" }],
       },
       {
         question: "Koliko traje izrada procjene nekretnine?",
         answer:
-          "Procjena se u pravilu izrađuje u roku od 3 do 5 radnih dana, ovisno o složenosti nekretnine i dostupnosti dokumentacije.",
+          "Elaborat procjene nekretnine u pravilu se izrađuje u roku od 3 do 5 radnih dana, ovisno o složenosti predmeta i dostupnosti dokumentacije.",
       },
       {
         question: "Tko može izrađivati procjene nekretnina?",
@@ -118,36 +117,37 @@ export const faqGroups: FaqGroup[] = [
       {
         question: "Je li procjena nekretnine prihvatljiva za banku (kredit)?",
         answer:
-          "Da. Procjene izrađene od ovlaštenih procjenitelja u pravilu su prihvatljive za sve banke i kreditne institucije u Hrvatskoj.",
+          "Da. Procjene koje izrađuje ovlašteni procjenitelj u pravilu su prihvatljive za banke i kreditne institucije u Hrvatskoj.",
+        links: [{ label: "Procjena za kredit", href: "/procjena-nekretnina" }],
       },
       {
         question: "Kolika je cijena procjene nekretnine?",
         answer:
           "Cijena procjene ovisi o vrsti nekretnine, lokaciji i složenosti predmeta procjene. Prema važećem cjeniku, procjena stana je od 200 EUR, kuće od 300 EUR, a zemljišta od 200 EUR.",
-        links: [
-          { label: "Pogledajte cjenik", href: "/cjenik" },
-          { label: "Zatražite ponudu", href: "/kontakt" },
-        ],
+        links: [{ label: "Pogledajte cjenik", href: "/cjenik" }],
       },
       {
         question: "Utječe li lokacija na procijenjenu vrijednost nekretnine?",
         answer:
-          "Da. Lokacija je jedan od ključnih faktora u procjeni vrijednosti nekretnine, osobito u gradovima poput Zagreba i njegove okolice.",
+          "Da. Lokacija je jedan od ključnih faktora u procjeni vrijednosti nekretnine, osobito na tržištu Zagreba i okolice.",
       },
       {
         question: "Može li se procjena nekretnine koristiti na sudu?",
         answer:
           "Da. Procjena izrađena od ovlaštenog sudskog vještaka može se koristiti u sudskim i upravnim postupcima.",
+        links: [{ label: "Procjena za sud", href: "/procjena-nekretnina" }],
       },
       {
         question: "Što je potrebno za procjenu vrijednosti nekretnine?",
         answer:
-          "Potrebni su osnovni podaci o nekretnini (adresa, površina, vrsta i namjena), pristup nekretnini radi pregleda te po mogućnosti vlasnički list i tlocrt. Točan popis ovisi o svrsi procjene.",
+          "Potrebni su osnovni podaci o nekretnini (adresa, površina, vrsta i namjena), pristup nekretnini radi pregleda te po mogućnosti vlasnički list i tlocrt. Točan popis ovisi o svrsi procjene (banka, sud, ostavina i sl.).",
+        links: [{ label: "Pošaljite dokumente", href: "/kontakt" }],
       },
       {
         question: "Mogu li dobiti informativnu procjenu prije prodaje?",
         answer:
           "Da. Informativna procjena može pomoći pri određivanju realne prodajne cijene prema tržišnim uvjetima i usporedivim prodajama.",
+        links: [{ label: "Kontakt", href: "/kontakt" }],
       },
     ],
   },
@@ -160,6 +160,7 @@ export const faqGroups: FaqGroup[] = [
         question: "Što je etažiranje nekretnine?",
         answer:
           "Etažiranje je postupak kojim se posebni dijelovi zgrade (stanovi, poslovni prostori, garaže) upisuju kao samostalne vlasničke cjeline u zemljišne knjige.",
+        links: [{ label: "Više o etažiranju", href: "/etaziranje" }],
       },
       {
         question: "Kada je potrebno etažiranje?",
@@ -169,26 +170,25 @@ export const faqGroups: FaqGroup[] = [
       {
         question: "Koliko traje postupak etažiranja?",
         answer:
-          "Postupak etažiranja u prosjeku traje od 30 do 90 dana, ovisno o složenosti predmeta i brzini postupanja nadležnih institucija.",
+          "Postupak etažiranja u prosjeku traje 30 do 90 dana, ovisno o složenosti predmeta i brzini postupanja nadležnih institucija.",
       },
       {
         question: "Trebam li suglasnost svih suvlasnika za etažiranje?",
         answer:
           "Za etažiranje je u pravilu potrebna suglasnost suvlasnika koji imaju više od 50 % suvlasničkih udjela u zgradi, ovisno o konkretnom slučaju.",
+        links: [{ label: "Savjet za vaš slučaj", href: "/kontakt" }],
       },
       {
         question: "Može li se etažirati stara zgrada?",
         answer:
           "Da. Etažiranje je moguće i za starije zgrade, pod uvjetom da postoji odgovarajuća dokumentacija i ispunjeni zakonski uvjeti.",
+        links: [{ label: "Pošaljite podatke", href: "/kontakt" }],
       },
       {
         question: "Kolika je cijena etažiranja stana ili zgrade?",
         answer:
           "Cijena etažiranja ovisi o broju posebnih dijelova, složenosti zgrade i potrebnoj dokumentaciji. U važećem cjeniku početna cijena je od 1,5 EUR po m² + 400 EUR za etažni elaborat, a konačna cijena određuje se nakon analize slučaja.",
-        links: [
-          { label: "Pogledajte cjenik", href: "/cjenik" },
-          { label: "Pošaljite upit", href: "/kontakt" },
-        ],
+        links: [{ label: "Pogledajte cjenik", href: "/cjenik" }],
       },
       {
         question: "Je li etažiranje obavezno po zakonu?",
@@ -199,16 +199,19 @@ export const faqGroups: FaqGroup[] = [
         question: "Što je etažni elaborat (elaborat etažiranja)?",
         answer:
           "Etažni elaborat je tehnička dokumentacija s tlocrtima, opisom posebnih dijelova i izračunom površina, koja služi kao temelj za upis etažnog vlasništva u zemljišne knjige.",
+        links: [{ label: "Izrada etažnog elaborata", href: "/etaziranje" }],
       },
       {
         question: "Što je potrebno za etažiranje (dokumentacija)?",
         answer:
           "Potrebni su osnovni podaci o zgradi, dokumentacija koju imate (projekt, tlocrt, dozvole), vlasnički list ako je dostupan, suglasnost suvlasnika (ako je potrebna) te pristup objektu radi pregleda i mjerenja.",
+        links: [{ label: "Kontakt za provjeru", href: "/kontakt" }],
       },
       {
         question: "Je li etažiranje isto što i upis u gruntovnicu?",
         answer:
           "Etažiranje je postupak uspostave etažnog vlasništva, dok je upis u zemljišne knjige (gruntovnicu) završni korak u kojem se posebni dijelovi evidentiraju kao zasebne vlasničke cjeline.",
+        links: [{ label: "Više o postupku", href: "/etaziranje" }],
       },
     ],
   },
