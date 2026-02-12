@@ -52,6 +52,7 @@ const localBusinessJsonLd = {
   telephone: siteConfig.phone.href,
   email: siteConfig.email,
   url: siteConfig.url,
+  priceRange: siteConfig.priceRange,
   description: siteConfig.description,
   logo: `${siteConfig.url}/brand/logo.svg`,
   image: `${siteConfig.url}/og.jpg`,

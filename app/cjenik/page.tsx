@@ -43,9 +43,178 @@ export const metadata: Metadata = {
   },
 }
 
+const pricingCatalogJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": `${siteConfig.url}/#business`,
+      name: siteConfig.name,
+      url: siteConfig.url,
+      telephone: siteConfig.phone.href,
+      email: siteConfig.email,
+      priceRange: siteConfig.priceRange,
+    },
+    {
+      "@type": "OfferCatalog",
+      "@id": `${canonical}/#offer-catalog`,
+      name: "Cjenik usluga ENERGOCENTAR",
+      url: canonical,
+      inLanguage: "hr-HR",
+      itemListElement: [
+    {
+      "@type": "Offer",
+      name: "Energetski certifikat - Stanovi na zajedničko grijanje",
+      priceSpecification: {
+        "@type": "PriceSpecification",
+        priceCurrency: "EUR",
+        minPrice: 160,
+        valueAddedTaxIncluded: true,
+      },
+      itemOffered: {
+        "@type": "Service",
+        name: "Stanovi na zajedničko grijanje",
+        category: "Energetski certifikati",
+        provider: { "@id": `${siteConfig.url}/#business` },
+      },
+      seller: { "@id": `${siteConfig.url}/#business` },
+      url: canonical,
+    },
+    {
+      "@type": "Offer",
+      name: "Energetski certifikat - Stanovi na zasebno grijanje",
+      priceSpecification: {
+        "@type": "PriceSpecification",
+        priceCurrency: "EUR",
+        minPrice: 185,
+        valueAddedTaxIncluded: true,
+      },
+      itemOffered: {
+        "@type": "Service",
+        name: "Stanovi na zasebno grijanje",
+        category: "Energetski certifikati",
+        provider: { "@id": `${siteConfig.url}/#business` },
+      },
+      seller: { "@id": `${siteConfig.url}/#business` },
+      url: canonical,
+    },
+    {
+      "@type": "Offer",
+      name: "Energetski certifikat - Kuća do 200 m2",
+      priceSpecification: {
+        "@type": "PriceSpecification",
+        priceCurrency: "EUR",
+        minPrice: 265,
+        valueAddedTaxIncluded: true,
+      },
+      itemOffered: {
+        "@type": "Service",
+        name: "Kuća do 200 m2",
+        category: "Energetski certifikati",
+        provider: { "@id": `${siteConfig.url}/#business` },
+      },
+      seller: { "@id": `${siteConfig.url}/#business` },
+      url: canonical,
+    },
+    {
+      "@type": "Offer",
+      name: "Energetski certifikat - Kuća preko 200 m2",
+      priceSpecification: {
+        "@type": "PriceSpecification",
+        priceCurrency: "EUR",
+        minPrice: 330,
+        valueAddedTaxIncluded: true,
+      },
+      itemOffered: {
+        "@type": "Service",
+        name: "Kuća preko 200 m2",
+        category: "Energetski certifikati",
+        provider: { "@id": `${siteConfig.url}/#business` },
+      },
+      seller: { "@id": `${siteConfig.url}/#business` },
+      url: canonical,
+    },
+    {
+      "@type": "Offer",
+      name: "Energetski certifikat - Nove obiteljske kuće",
+      priceSpecification: {
+        "@type": "PriceSpecification",
+        priceCurrency: "EUR",
+        minPrice: 370,
+        valueAddedTaxIncluded: true,
+      },
+      itemOffered: {
+        "@type": "Service",
+        name: "Nove obiteljske kuće",
+        category: "Energetski certifikati",
+        provider: { "@id": `${siteConfig.url}/#business` },
+      },
+      seller: { "@id": `${siteConfig.url}/#business` },
+      url: canonical,
+    },
+    {
+      "@type": "Offer",
+      name: "Procjena nekretnina - Procjena stana",
+      priceSpecification: {
+        "@type": "PriceSpecification",
+        priceCurrency: "EUR",
+        minPrice: 200,
+        valueAddedTaxIncluded: true,
+      },
+      itemOffered: {
+        "@type": "Service",
+        name: "Procjena stana",
+        category: "Procjena nekretnina",
+        provider: { "@id": `${siteConfig.url}/#business` },
+      },
+      seller: { "@id": `${siteConfig.url}/#business` },
+      url: canonical,
+    },
+    {
+      "@type": "Offer",
+      name: "Procjena nekretnina - Procjena kuće",
+      priceSpecification: {
+        "@type": "PriceSpecification",
+        priceCurrency: "EUR",
+        minPrice: 300,
+        valueAddedTaxIncluded: true,
+      },
+      itemOffered: {
+        "@type": "Service",
+        name: "Procjena kuće",
+        category: "Procjena nekretnina",
+        provider: { "@id": `${siteConfig.url}/#business` },
+      },
+      seller: { "@id": `${siteConfig.url}/#business` },
+      url: canonical,
+    },
+    {
+      "@type": "Offer",
+      name: "Procjena nekretnina - Procjena zemljišta",
+      priceSpecification: {
+        "@type": "PriceSpecification",
+        priceCurrency: "EUR",
+        minPrice: 200,
+        valueAddedTaxIncluded: true,
+      },
+      itemOffered: {
+        "@type": "Service",
+        name: "Procjena zemljišta",
+        category: "Procjena nekretnina",
+        provider: { "@id": `${siteConfig.url}/#business` },
+      },
+      seller: { "@id": `${siteConfig.url}/#business` },
+      url: canonical,
+    },
+      ],
+    },
+  ],
+}
+
 export default function CjenikPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingCatalogJsonLd) }} />
       <BreadcrumbJsonLd
         items={[
           { name: "Početna", path: "/" },

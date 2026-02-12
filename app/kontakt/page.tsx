@@ -43,9 +43,55 @@ export const metadata: Metadata = {
   },
 }
 
+const contactPageJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": `${siteConfig.url}/#business`,
+      name: siteConfig.name,
+      url: siteConfig.url,
+      telephone: siteConfig.phone.href,
+      email: siteConfig.email,
+      priceRange: siteConfig.priceRange,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: siteConfig.address.street,
+        addressLocality: siteConfig.address.city,
+        postalCode: siteConfig.address.postalCode,
+        addressCountry: siteConfig.address.country,
+      },
+      areaServed: siteConfig.areaServed,
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          contactType: "customer service",
+          telephone: siteConfig.phone.href,
+          email: siteConfig.email,
+          areaServed: siteConfig.areaServed,
+          availableLanguage: ["hr"],
+        },
+      ],
+    },
+    {
+      "@type": "ContactPage",
+      "@id": `${canonical}/#contact-page`,
+      url: canonical,
+      name: "Kontakt | ENERGOCENTAR d.o.o.",
+      description:
+        "Kontaktirajte ENERGOCENTAR d.o.o. za energetske certifikate, procjene nekretnina i etažiranje.",
+      inLanguage: "hr-HR",
+      mainEntity: {
+        "@id": `${siteConfig.url}/#business`,
+      },
+    },
+  ],
+}
+
 export default function KontaktPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageJsonLd) }} />
       <BreadcrumbJsonLd
         items={[
           { name: "Početna", path: "/" },
