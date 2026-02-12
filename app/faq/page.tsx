@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import { HelpCircle } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
@@ -100,7 +101,22 @@ export default function FaqPage() {
                         <AccordionTrigger className="text-left text-base font-medium text-foreground hover:text-green-700 hover:no-underline">
                           {faq.question}
                         </AccordionTrigger>
-                        <AccordionContent className="text-stone-600">{faq.answer}</AccordionContent>
+                        <AccordionContent className="text-stone-600">
+                          <p>{faq.answer}</p>
+                          {faq.links?.length ? (
+                            <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+                              {faq.links.map((link) => (
+                                <Link
+                                  key={`${faq.question}-${link.href}`}
+                                  href={link.href}
+                                  className="font-medium text-green-700 underline-offset-2 transition-colors hover:text-green-600 hover:underline"
+                                >
+                                  {link.label}
+                                </Link>
+                              ))}
+                            </div>
+                          ) : null}
+                        </AccordionContent>
                       </AccordionItem>
                     ))}
                   </Accordion>

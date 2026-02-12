@@ -21,6 +21,7 @@ export const energetskiCertifikati = {
     content: [
       "Energetski certifikat (energetska iskaznica) je službeni dokument koji prikazuje energetsku učinkovitost zgrade ili njezinog dijela (npr. stana). U certifikatu se određuje energetski razred (od A+ do G) te se navode ključni pokazatelji potrošnje energije.",
       "U Hrvatskoj je energetski certifikat u pravilu obavezan pri prodaji ili iznajmljivanju nekretnine. Bez certifikata se nekretnina ne bi trebala oglašavati kao prodaja ili najam, a kupci i najmoprimci imaju pravo dobiti informaciju o energetskom razredu. Obveza proizlazi iz Pravilnika o energetskom certificiranju zgrada i Zakona o gradnji te se primjenjuje na većinu nekretnina koje se prodaju ili iznajmljuju.",
+      "U sustavu certificiranja razlikuju se zgrade s jednostavnim tehničkim sustavom (Modul 1) i zgrade sa složenim tehničkim sustavom (Modul 2). Ta podjela utječe na opseg pregleda, potrebne podatke i način izračuna.",
       "Ako želite točnu ponudu, najbrže je da nam pošaljete osnovne podatke (vrsta nekretnine, površina, lokacija) — odgovorimo isti dan.",
     ],
     highlightsTitle: "Kada vam je potrebno?",

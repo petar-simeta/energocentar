@@ -1,9 +1,15 @@
-interface FaqItem {
-  question: string;
-  answer: string;
+export interface FaqLink {
+  label: string;
+  href: string;
 }
 
-interface FaqGroup {
+export interface FaqItem {
+  question: string;
+  answer: string;
+  links?: FaqLink[];
+}
+
+export interface FaqGroup {
   title: string;
   slug: string;
   faqs: FaqItem[];
@@ -34,7 +40,11 @@ export const faqGroups: FaqGroup[] = [
       {
         question: "Kolika je cijena energetskog certifikata u Zagrebu?",
         answer:
-          "Cijena energetskog certifikata ovisi o vrsti i veličini nekretnine. Za stan do 50 m² cijena je od 80 €. Točna cijena definira se prema površini, vrsti objekta i složenosti.",
+          "Cijena energetskog certifikata ovisi o vrsti i veličini nekretnine. Prema važećem cjeniku, stanovi na zajedničko grijanje su od 160 EUR, a stanovi na zasebno grijanje od 185 EUR. Točna cijena definira se prema površini, vrsti objekta i složenosti.",
+        links: [
+          { label: "Pogledajte cjenik", href: "/cjenik" },
+          { label: "Zatražite ponudu", href: "/kontakt" },
+        ],
       },
       {
         question: "Koliko traje izrada energetskog certifikata?",
@@ -50,6 +60,13 @@ export const faqGroups: FaqGroup[] = [
         question: "Tko smije izdavati energetske certifikate?",
         answer:
           "Energetske certifikate smiju izdavati isključivo ovlašteni energetski certifikatori upisani u registar nadležnog ministarstva.",
+      },
+      {
+        question:
+          "Koja je razlika između jednostavnog i složenog tehničkog sustava (Modul 1 i Modul 2)?",
+        answer:
+          "U sustavu certificiranja razlikuju se zgrade s jednostavnim tehničkim sustavom (Modul 1) i zgrade sa složenim tehničkim sustavom (Modul 2). Modul 1 odnosi se na jednostavnije tehničke sustave, a Modul 2 na složenije sustave grijanja, hlađenja, ventilacije i pripreme potrošne tople vode. Kategorija utječe na opseg pregleda i izračuna.",
+        links: [{ label: "Provjerite kategoriju objekta", href: "/kontakt" }],
       },
       {
         question: "Vrijedi li energetski certifikat ako renoviram stan?",
@@ -71,6 +88,10 @@ export const faqGroups: FaqGroup[] = [
           "Koji je najbrži način da dobijem ponudu za energetski certifikat?",
         answer:
           "Najbrže je poslati osnovne podatke: lokaciju, vrstu nekretnine (stan, kuća, poslovni prostor) i površinu u m². Na temelju toga možemo dati okvirnu cijenu i predložiti termin pregleda.",
+        links: [
+          { label: "Pošaljite upit", href: "/kontakt" },
+          { label: "Provjerite cjenik", href: "/cjenik" },
+        ],
       },
     ],
   },
@@ -102,7 +123,11 @@ export const faqGroups: FaqGroup[] = [
       {
         question: "Kolika je cijena procjene nekretnine?",
         answer:
-          "Cijena procjene ovisi o vrsti nekretnine, lokaciji i složenosti predmeta procjene. Točna cijena definira se nakon uvida u osnovne podatke.",
+          "Cijena procjene ovisi o vrsti nekretnine, lokaciji i složenosti predmeta procjene. Prema važećem cjeniku, procjena stana je od 200 EUR, kuće od 300 EUR, a zemljišta od 200 EUR.",
+        links: [
+          { label: "Pogledajte cjenik", href: "/cjenik" },
+          { label: "Zatražite ponudu", href: "/kontakt" },
+        ],
       },
       {
         question: "Utječe li lokacija na procijenjenu vrijednost nekretnine?",
@@ -159,7 +184,11 @@ export const faqGroups: FaqGroup[] = [
       {
         question: "Kolika je cijena etažiranja stana ili zgrade?",
         answer:
-          "Cijena etažiranja ovisi o broju posebnih dijelova, složenosti zgrade i potrebnoj dokumentaciji. Točna cijena određuje se nakon analize slučaja.",
+          "Cijena etažiranja ovisi o broju posebnih dijelova, složenosti zgrade i potrebnoj dokumentaciji. U važećem cjeniku početna cijena je od 1,5 EUR po m² + 400 EUR za etažni elaborat, a konačna cijena određuje se nakon analize slučaja.",
+        links: [
+          { label: "Pogledajte cjenik", href: "/cjenik" },
+          { label: "Pošaljite upit", href: "/kontakt" },
+        ],
       },
       {
         question: "Je li etažiranje obavezno po zakonu?",

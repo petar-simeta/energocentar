@@ -6,11 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { siteConfig } from "@/lib/config/site"
 import { FadeIn } from "@/components/motion/fade-in"
 import { EnergyBarReveal } from "@/components/motion/energy-bar-reveal"
-
-interface FaqItem {
-  question: string
-  answer: string
-}
+import type { FaqItem } from "@/content/faq"
 
 interface ServiceFaqTeaserProps {
   faqs: FaqItem[]
@@ -32,13 +28,22 @@ export function ServiceFaqTeaser({ faqs }: ServiceFaqTeaserProps) {
               <p className="mt-4 text-stone-600">
                 Odgovori na najčešća pitanja naših klijenata. Imate dodatnih pitanja? Slobodno nas kontaktirajte.
               </p>
-              <Link
-                href={`tel:${siteConfig.phone.href}`}
-                className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-green-700 transition-colors hover:text-green-600"
-              >
-                Nazovite za više informacija
-                <ArrowRight className="h-4 w-4" />
-              </Link>
+              <div className="mt-6 flex flex-wrap items-center gap-4">
+                <Link
+                  href="/faq"
+                  className="inline-flex items-center gap-1 text-sm font-medium text-green-700 transition-colors hover:text-green-600"
+                >
+                  Pročitajte više na FAQ
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link
+                  href={`tel:${siteConfig.phone.href}`}
+                  className="inline-flex items-center gap-1 text-sm font-medium text-green-700 transition-colors hover:text-green-600"
+                >
+                  Nazovite za više informacija
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
             </div>
           </FadeIn>
 
@@ -54,7 +59,22 @@ export function ServiceFaqTeaser({ faqs }: ServiceFaqTeaserProps) {
                   <AccordionTrigger className="text-left text-base font-medium text-foreground hover:text-green-700 hover:no-underline">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-stone-600">{faq.answer}</AccordionContent>
+                  <AccordionContent className="text-stone-600">
+                    <p>{faq.answer}</p>
+                    {faq.links?.length ? (
+                      <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+                        {faq.links.map((link) => (
+                          <Link
+                            key={`${faq.question}-${link.href}`}
+                            href={link.href}
+                            className="font-medium text-green-700 underline-offset-2 transition-colors hover:text-green-600 hover:underline"
+                          >
+                            {link.label}
+                          </Link>
+                        ))}
+                      </div>
+                    ) : null}
+                  </AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
